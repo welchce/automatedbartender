@@ -21,7 +21,21 @@ namespace AutomatedBartender
 
         private void AdminExitBtn_Click(object sender, EventArgs e)
         {
-            AdminMainScreen.ActiveForm.Close();
+           this.Close();
+        }
+
+        private void AdminManageUsersBtn_Click(object sender, EventArgs e)
+        {
+            Form manageUsersScreen = new ManageUsersScreen();
+            manageUsersScreen.Show();
+            this.Close();
+        }
+
+        private void AdminPersonalHistoryBtn_Click(object sender, EventArgs e)
+        {
+            Form drinkHistory = new DrinkHistory();
+            drinkHistory.Show();
+            this.Close();
         }
     }
 }

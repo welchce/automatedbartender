@@ -21,5 +21,12 @@ namespace AutomatedBartender
         {
             this.Close();
         }
+
+        private void UserPersonalHistoryBtn_Click(object sender, EventArgs e)
+        {
+            Form drinkHistory = new DrinkHistory();
+            drinkHistory.Show();
+            this.Close();
+        }
     }
 }
