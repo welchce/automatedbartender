@@ -89,6 +89,7 @@
             this.Top25BackBtn.TabIndex = 1;
             this.Top25BackBtn.Text = "Back";
             this.Top25BackBtn.UseVisualStyleBackColor = true;
+            this.Top25BackBtn.Click += new System.EventHandler(this.Top25BackBtn_Click);
             // 
             // tableLayoutPanel1
             // 

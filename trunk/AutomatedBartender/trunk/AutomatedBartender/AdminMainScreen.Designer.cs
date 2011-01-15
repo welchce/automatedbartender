@@ -130,6 +130,7 @@
             this.AdminTop25Btn.TabIndex = 1;
             this.AdminTop25Btn.Text = "Top 25";
             this.AdminTop25Btn.UseVisualStyleBackColor = true;
+            this.AdminTop25Btn.Click += new System.EventHandler(this.AdminTop25Btn_Click);
             // 
             // AdminNewDrinkBtn
             // 

@@ -85,6 +85,7 @@
             this.UserTop25Btn.TabIndex = 1;
             this.UserTop25Btn.Text = "Top 25";
             this.UserTop25Btn.UseVisualStyleBackColor = true;
+            this.UserTop25Btn.Click += new System.EventHandler(this.UserTop25Btn_Click);
             // 
             // UserAllDrinksBtn
             // 
