@@ -24,7 +24,7 @@ namespace AutomatedBartender
 
         private void UserPersonalHistoryBtn_Click(object sender, EventArgs e)
         {
-            Form drinkHistory = new DrinkHistory();
+            Form drinkHistory = new DrinkHistory(false);
             drinkHistory.Show();
             this.Close();
         }

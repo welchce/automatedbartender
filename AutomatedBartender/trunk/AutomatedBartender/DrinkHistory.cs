@@ -11,10 +11,39 @@ namespace AutomatedBartender
 {
     public partial class DrinkHistory : Form
     {
-        public DrinkHistory()
+        bool isAdmin = false;
+        public DrinkHistory(bool admin)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
+            setIsAdmin(admin);
         }
+
+        private void DrinkHistoryBackBtn_Click(object sender, EventArgs e)
+        {
+            if (getIsAdmin() == true)
+            {
+                Form adminMainScreen = new AdminMainScreen();
+                adminMainScreen.Show();
+                this.Close();
+            }
+            else
+            {
+                Form userMainScreen = new UserMainScreen();
+                userMainScreen.Show();
+                this.Close();
+            }
+        }
+
+        private bool getIsAdmin()
+        {
+            return isAdmin;
+        }
+
+        private void setIsAdmin(bool value)
+        {
+            isAdmin = value;
+        }
+
     }
 }

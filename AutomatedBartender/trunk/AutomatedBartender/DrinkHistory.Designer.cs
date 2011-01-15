@@ -120,6 +120,7 @@
             this.DrinkHistoryBackBtn.TabIndex = 1;
             this.DrinkHistoryBackBtn.Text = "Back";
             this.DrinkHistoryBackBtn.UseVisualStyleBackColor = true;
+            this.DrinkHistoryBackBtn.Click += new System.EventHandler(this.DrinkHistoryBackBtn_Click);
             // 
             // DrinkHistory
             // 
