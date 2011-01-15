@@ -14,6 +14,7 @@ namespace AutomatedBartender
         public DrinkHistory()
         {
             InitializeComponent();
+            AutomatedBartender.WindowProperties.resizeScreen(this);
         }
     }
 }
