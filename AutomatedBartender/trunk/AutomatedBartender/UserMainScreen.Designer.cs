@@ -63,7 +63,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(260, 238);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // UserNewDrinkBtn
             // 
@@ -116,6 +115,7 @@
             this.UserExitBtn.TabIndex = 4;
             this.UserExitBtn.Text = "Exit";
             this.UserExitBtn.UseVisualStyleBackColor = true;
+            this.UserExitBtn.Click += new System.EventHandler(this.UserExitBtn_Click);
             // 
             // label1
             // 

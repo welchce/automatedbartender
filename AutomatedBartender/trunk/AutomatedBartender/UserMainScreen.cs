@@ -17,9 +17,9 @@ namespace AutomatedBartender
             AutomatedBartender.WindowProperties.resizeScreen(this);
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void UserExitBtn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

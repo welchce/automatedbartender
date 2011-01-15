@@ -19,9 +19,14 @@ namespace AutomatedBartender
 
         private void ToUserScreenBtn_Click(object sender, EventArgs e)
         {
-            Form UserForm = new AutomatedBartender.UserMainScreen();
-            UserForm.Show();
-            MainSwipeScreen.
+            Form userMainScreen = new UserMainScreen();
+            userMainScreen.Show();
+        }
+
+        private void ToAdminScreenBtn_Click(object sender, EventArgs e)
+        {
+            Form adminMainScreen = new AdminMainScreen();
+            adminMainScreen.Show();
         }
     }
 }
