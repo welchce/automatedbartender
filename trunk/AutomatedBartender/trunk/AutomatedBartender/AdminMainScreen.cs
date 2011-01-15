@@ -33,7 +33,7 @@ namespace AutomatedBartender
 
         private void AdminPersonalHistoryBtn_Click(object sender, EventArgs e)
         {
-            Form drinkHistory = new DrinkHistory();
+            Form drinkHistory = new DrinkHistory(true);
             drinkHistory.Show();
             this.Close();
         }
