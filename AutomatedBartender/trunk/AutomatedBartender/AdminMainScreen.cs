@@ -37,5 +37,12 @@ namespace AutomatedBartender
             drinkHistory.Show();
             this.Close();
         }
+
+        private void AdminTop25Btn_Click(object sender, EventArgs e)
+        {
+            Form top25 = new Top25(true);
+            top25.Show();
+            this.Close();
+        }
     }
 }
