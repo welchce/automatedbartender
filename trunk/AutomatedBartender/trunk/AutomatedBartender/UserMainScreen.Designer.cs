@@ -105,6 +105,7 @@
             this.UserPersonalHistoryBtn.TabIndex = 3;
             this.UserPersonalHistoryBtn.Text = "Personal History";
             this.UserPersonalHistoryBtn.UseVisualStyleBackColor = true;
+            this.UserPersonalHistoryBtn.Click += new System.EventHandler(this.UserPersonalHistoryBtn_Click);
             // 
             // UserExitBtn
             // 

@@ -88,7 +88,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Admin Main Screen";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
             // 
             // AdminManageUsersBtn
             // 
@@ -99,6 +98,7 @@
             this.AdminManageUsersBtn.TabIndex = 4;
             this.AdminManageUsersBtn.Text = "Manage Users";
             this.AdminManageUsersBtn.UseVisualStyleBackColor = true;
+            this.AdminManageUsersBtn.Click += new System.EventHandler(this.AdminManageUsersBtn_Click);
             // 
             // AdminPersonalHistoryBtn
             // 
@@ -109,6 +109,7 @@
             this.AdminPersonalHistoryBtn.TabIndex = 3;
             this.AdminPersonalHistoryBtn.Text = "Personal History";
             this.AdminPersonalHistoryBtn.UseVisualStyleBackColor = true;
+            this.AdminPersonalHistoryBtn.Click += new System.EventHandler(this.AdminPersonalHistoryBtn_Click);
             // 
             // AdminAllDrinksBtn
             // 
