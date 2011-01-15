@@ -16,5 +16,12 @@ namespace AutomatedBartender
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
         }
+
+        private void ManageUsersBackbtn_Click(object sender, EventArgs e)
+        {
+            Form adminMainScreen = new AdminMainScreen();
+            adminMainScreen.Show();
+            this.Close();
+        }
     }
 }

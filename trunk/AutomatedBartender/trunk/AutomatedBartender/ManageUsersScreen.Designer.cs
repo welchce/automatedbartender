@@ -150,6 +150,7 @@
             this.ManageUsersBackbtn.TabIndex = 1;
             this.ManageUsersBackbtn.Text = "Back";
             this.ManageUsersBackbtn.UseVisualStyleBackColor = true;
+            this.ManageUsersBackbtn.Click += new System.EventHandler(this.ManageUsersBackbtn_Click);
             // 
             // ManageUsersScreen
             // 
