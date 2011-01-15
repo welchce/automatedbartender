@@ -14,6 +14,7 @@ namespace AutomatedBartender
         public ManageUsersScreen()
         {
             InitializeComponent();
+            AutomatedBartender.WindowProperties.resizeScreen(this);
         }
     }
 }
