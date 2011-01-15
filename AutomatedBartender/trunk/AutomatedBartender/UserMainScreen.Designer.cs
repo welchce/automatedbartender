@@ -138,7 +138,7 @@
             this.UserBACLabel.Name = "UserBACLabel";
             this.UserBACLabel.Size = new System.Drawing.Size(124, 61);
             this.UserBACLabel.TabIndex = 7;
-            this.UserBACLabel.Text = "BAC\r\n0.0%";
+            this.UserBACLabel.Text = "BAC\r1.0%";
             this.UserBACLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserMainScreen
