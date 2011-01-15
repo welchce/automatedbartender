@@ -109,6 +109,9 @@
       <DependentUpon>UserMainScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="WindowProperties.cs" />
+    <EmbeddedResource Include="AddUserScreen.resx">
+      <DependentUpon>AddUserScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminMainScreen.resx">
       <DependentUpon>AdminMainScreen.cs</DependentUpon>
     </EmbeddedResource>
