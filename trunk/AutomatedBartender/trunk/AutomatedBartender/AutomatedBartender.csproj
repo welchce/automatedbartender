@@ -94,6 +94,12 @@
     <Compile Include="AddUserScreen.Designer.cs">
       <DependentUpon>AddUserScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainSwipeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMainScreen.resx">
       <DependentUpon>AdminMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainSwipeScreen.resx">
       <DependentUpon>MainSwipeScreen.cs</DependentUpon>
