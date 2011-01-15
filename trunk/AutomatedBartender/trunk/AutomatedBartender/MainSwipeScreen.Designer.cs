@@ -88,6 +88,7 @@
             this.ToAdminScreenBtn.TabIndex = 2;
             this.ToAdminScreenBtn.Text = "Admin Main Screen";
             this.ToAdminScreenBtn.UseVisualStyleBackColor = true;
+            this.ToAdminScreenBtn.Click += new System.EventHandler(this.ToAdminScreenBtn_Click);
             // 
             // MainSwipeScreen
             // 

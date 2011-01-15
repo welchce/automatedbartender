@@ -60,6 +60,7 @@
             this.AdminExitBtn.TabIndex = 6;
             this.AdminExitBtn.Text = "Exit";
             this.AdminExitBtn.UseVisualStyleBackColor = true;
+            this.AdminExitBtn.Click += new System.EventHandler(this.AdminExitBtn_Click);
             // 
             // AdminBACLabel
             // 
@@ -87,7 +88,7 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Admin Main Screen";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // AdminManageUsersBtn
             // 
@@ -138,7 +139,6 @@
             this.AdminNewDrinkBtn.TabIndex = 0;
             this.AdminNewDrinkBtn.Text = "New Drink";
             this.AdminNewDrinkBtn.UseVisualStyleBackColor = true;
-            this.AdminNewDrinkBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -178,7 +178,6 @@
             this.Name = "AdminMainScreen";
             this.Text = "Admin Main Screen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.AdminMainScreen_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

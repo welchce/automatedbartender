@@ -16,27 +16,12 @@ namespace AutomatedBartender
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
-            AdminNewDrinkBtn.Left = this.Width/10;
-            AdminNewDrinkBtn.Top = this.Height/10;
-            AdminTop25Btn.Left = 4 * this.Width / 10;
-            AdminTop25Btn.Top = this.Height / 10;
-            AdminAllDrinksBtn.Left = 7 * this.Width / 10;
-            AdminAllDrinksBtn.Top = this.Height / 10;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void AdminExitBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void AdminMainScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            AdminMainScreen.ActiveForm.Close();
         }
     }
 }
