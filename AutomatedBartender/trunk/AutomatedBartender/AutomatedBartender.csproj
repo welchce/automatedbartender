@@ -94,6 +94,12 @@
     <Compile Include="AddUserScreen.Designer.cs">
       <DependentUpon>AddUserScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewDrink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewDrink.Designer.cs">
+      <DependentUpon>NewDrink.cs</DependentUpon>
+    </Compile>
     <Compile Include="DrinkHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMainScreen.resx">
       <DependentUpon>AdminMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewDrink.resx">
+      <DependentUpon>NewDrink.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DrinkHistory.resx">
       <DependentUpon>DrinkHistory.cs</DependentUpon>
