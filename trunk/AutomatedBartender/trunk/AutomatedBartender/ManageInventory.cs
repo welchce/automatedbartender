@@ -14,6 +14,14 @@ namespace AutomatedBartender
         public ManageInventory()
         {
             InitializeComponent();
+            AutomatedBartender.WindowProperties.resizeScreen(this);
+        }
+
+        private void manageInventoryBackbtn_Click(object sender, EventArgs e)
+        {
+            Form adminMainScreen = new AdminMain();
+            adminMainScreen.Show();
+            this.Close();
         }
     }
 }
