@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AutomatedBartender
 {
-    public partial class AdminMainScreen : Form
+    public partial class AdminMain : Form
     {
-        public AdminMainScreen()
+        public AdminMain()
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
@@ -26,7 +26,7 @@ namespace AutomatedBartender
 
         private void AdminManageUsersBtn_Click(object sender, EventArgs e)
         {
-            Form manageUsersScreen = new ManageUsersScreen();
+            Form manageUsersScreen = new ManageUsers();
             manageUsersScreen.Show();
             this.Close();
         }

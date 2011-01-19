@@ -1,6 +1,6 @@
 ﻿namespace AutomatedBartender
 {
-    partial class MainSwipeScreen
+    partial class MainSwipe
     {
         /// <summary>
         /// Required designer variable.

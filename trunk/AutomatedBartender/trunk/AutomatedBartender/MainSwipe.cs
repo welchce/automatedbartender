@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace AutomatedBartender
 {
-    public partial class MainSwipeScreen : Form
+    public partial class MainSwipe : Form
     {
-        public MainSwipeScreen()
+        public MainSwipe()
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
@@ -19,13 +19,13 @@ namespace AutomatedBartender
 
         private void ToUserScreenBtn_Click(object sender, EventArgs e)
         {
-            Form userMainScreen = new UserMainScreen();
+            Form userMainScreen = new UserMain();
             userMainScreen.Show();
         }
 
         private void ToAdminScreenBtn_Click(object sender, EventArgs e)
         {
-            Form adminMainScreen = new AdminMainScreen();
+            Form adminMainScreen = new AdminMain();
             adminMainScreen.Show();
         }
     }
