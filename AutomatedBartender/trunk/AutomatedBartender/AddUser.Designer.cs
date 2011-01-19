@@ -1,6 +1,6 @@
 ﻿namespace AutomatedBartender
 {
-    partial class AddUserScreen
+    partial class AddUser
     {
         /// <summary>
         /// Required designer variable.
