@@ -23,13 +23,13 @@ namespace AutomatedBartender
         {
             if (getIsAdmin() == true)
             {
-                Form adminMainScreen = new AdminMainScreen();
+                Form adminMainScreen = new AdminMain();
                 adminMainScreen.Show();
                 this.Close();
             }
             else
             {
-                Form userMainScreen = new UserMainScreen();
+                Form userMainScreen = new UserMain();
                 userMainScreen.Show();
                 this.Close();
             }

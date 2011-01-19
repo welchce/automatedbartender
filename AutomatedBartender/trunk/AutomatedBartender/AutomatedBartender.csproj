@@ -82,11 +82,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminMainScreen.cs">
+    <Compile Include="AdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminMainScreen.Designer.cs">
-      <DependentUpon>AdminMainScreen.cs</DependentUpon>
+    <Compile Include="AdminMain.Designer.cs">
+      <DependentUpon>AdminMain.cs</DependentUpon>
     </Compile>
     <Compile Include="AddUser.cs">
       <SubType>Form</SubType>
@@ -112,32 +112,32 @@
     <Compile Include="Top25.Designer.cs">
       <DependentUpon>Top25.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainSwipeScreen.cs">
+    <Compile Include="MainSwipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainSwipeScreen.Designer.cs">
-      <DependentUpon>MainSwipeScreen.cs</DependentUpon>
+    <Compile Include="MainSwipe.Designer.cs">
+      <DependentUpon>MainSwipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageUsersScreen.cs">
+    <Compile Include="ManageUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageUsersScreen.Designer.cs">
-      <DependentUpon>ManageUsersScreen.cs</DependentUpon>
+    <Compile Include="ManageUsers.Designer.cs">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserMainScreen.cs">
+    <Compile Include="UserMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserMainScreen.Designer.cs">
-      <DependentUpon>UserMainScreen.cs</DependentUpon>
+    <Compile Include="UserMain.Designer.cs">
+      <DependentUpon>UserMain.cs</DependentUpon>
     </Compile>
     <Compile Include="WindowProperties.cs" />
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminMainScreen.resx">
-      <DependentUpon>AdminMainScreen.cs</DependentUpon>
+    <EmbeddedResource Include="AdminMain.resx">
+      <DependentUpon>AdminMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewDrink.resx">
       <DependentUpon>NewDrink.cs</DependentUpon>
@@ -148,11 +148,11 @@
     <EmbeddedResource Include="Top25.resx">
       <DependentUpon>Top25.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainSwipeScreen.resx">
-      <DependentUpon>MainSwipeScreen.cs</DependentUpon>
+    <EmbeddedResource Include="MainSwipe.resx">
+      <DependentUpon>MainSwipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageUsersScreen.resx">
-      <DependentUpon>ManageUsersScreen.cs</DependentUpon>
+    <EmbeddedResource Include="ManageUsers.resx">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -163,8 +163,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserMainScreen.resx">
-      <DependentUpon>UserMainScreen.cs</DependentUpon>
+    <EmbeddedResource Include="UserMain.resx">
+      <DependentUpon>UserMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AutomatedBartender_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
