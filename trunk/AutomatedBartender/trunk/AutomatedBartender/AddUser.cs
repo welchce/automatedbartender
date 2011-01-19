@@ -16,5 +16,10 @@ namespace AutomatedBartender
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
         }
+
+        private void AddUserNobtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
