@@ -1,6 +1,6 @@
 ﻿namespace AutomatedBartender
 {
-    partial class NewDrink
+    partial class AddDrink
     {
         /// <summary>
         /// Required designer variable.
