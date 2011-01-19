@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace AutomatedBartender
 {
-    public partial class AddUserScreen : Form
+    public partial class AddUser : Form
     {
-        public AddUserScreen()
+        public AddUser()
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
