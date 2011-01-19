@@ -68,7 +68,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(397, 56);
             this.label1.TabIndex = 0;
-            this.label1.Text = "New Drinks";
+            this.label1.Text = "Add Drink";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -91,14 +91,14 @@
             this.textBox1.Size = new System.Drawing.Size(397, 20);
             this.textBox1.TabIndex = 2;
             // 
-            // NewDrink
+            // AddDrink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 366);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "NewDrink";
-            this.Text = "NewDrinks";
+            this.Name = "AddDrink";
+            this.Text = "AddDrink";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
