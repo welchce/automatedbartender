@@ -58,5 +58,12 @@ namespace AutomatedBartender
             allDrinks.Show();
             this.Close();
         }
+
+        private void AdminAddDrinkBtn_Click(object sender, EventArgs e)
+        {
+            Form addDrink = new AddDrink(true);
+            addDrink.Show();
+            this.Close();
+        }
     }
 }

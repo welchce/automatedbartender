@@ -36,7 +36,7 @@
             this.AdminPersonalHistoryBtn = new System.Windows.Forms.Button();
             this.AdminAllDrinksBtn = new System.Windows.Forms.Button();
             this.AdminTop25Btn = new System.Windows.Forms.Button();
-            this.AdminNewDrinkBtn = new System.Windows.Forms.Button();
+            this.AdminAddDrinkBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -134,15 +134,16 @@
             this.AdminTop25Btn.UseVisualStyleBackColor = true;
             this.AdminTop25Btn.Click += new System.EventHandler(this.AdminTop25Btn_Click);
             // 
-            // AdminNewDrinkBtn
+            // AdminAddDrinkBtn
             // 
-            this.AdminNewDrinkBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AdminNewDrinkBtn.Location = new System.Drawing.Point(3, 69);
-            this.AdminNewDrinkBtn.Name = "AdminNewDrinkBtn";
-            this.AdminNewDrinkBtn.Size = new System.Drawing.Size(98, 60);
-            this.AdminNewDrinkBtn.TabIndex = 0;
-            this.AdminNewDrinkBtn.Text = "New Drink";
-            this.AdminNewDrinkBtn.UseVisualStyleBackColor = true;
+            this.AdminAddDrinkBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdminAddDrinkBtn.Location = new System.Drawing.Point(3, 69);
+            this.AdminAddDrinkBtn.Name = "AdminAddDrinkBtn";
+            this.AdminAddDrinkBtn.Size = new System.Drawing.Size(98, 60);
+            this.AdminAddDrinkBtn.TabIndex = 0;
+            this.AdminAddDrinkBtn.Text = "Add Drink";
+            this.AdminAddDrinkBtn.UseVisualStyleBackColor = true;
+            this.AdminAddDrinkBtn.Click += new System.EventHandler(this.AdminAddDrinkBtn_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -160,7 +161,7 @@
             this.tableLayoutPanel1.Controls.Add(this.AdminAllDrinksBtn, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.AdminManageInventoryBtn, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.AdminTop25Btn, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.AdminNewDrinkBtn, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.AdminAddDrinkBtn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -199,7 +200,7 @@
         private System.Windows.Forms.Button AdminManageUsersBtn;
         private System.Windows.Forms.Button AdminAllDrinksBtn;
         private System.Windows.Forms.Button AdminTop25Btn;
-        private System.Windows.Forms.Button AdminNewDrinkBtn;
+        private System.Windows.Forms.Button AdminAddDrinkBtn;
     }
 }
 
