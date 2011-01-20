@@ -36,6 +36,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ManageUsersRemovebtn = new System.Windows.Forms.Button();
             this.ManageUsersBackbtn = new System.Windows.Forms.Button();
+            this.openFD = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageUsersGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -69,9 +70,9 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.manageUsersGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.manageUsersGridView1.Location = new System.Drawing.Point(3, 68);
+            this.manageUsersGridView1.Location = new System.Drawing.Point(3, 61);
             this.manageUsersGridView1.Name = "manageUsersGridView1";
-            this.manageUsersGridView1.Size = new System.Drawing.Size(254, 126);
+            this.manageUsersGridView1.Size = new System.Drawing.Size(254, 136);
             this.manageUsersGridView1.TabIndex = 0;
             // 
             // label1
@@ -81,7 +82,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(64, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 39);
+            this.label1.Size = new System.Drawing.Size(132, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "Manage Users";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,11 +97,11 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Controls.Add(this.ManageUsersImportbtn, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 42);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 38);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 20);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 17);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // ManageUsersImportbtn
@@ -108,10 +109,11 @@
             this.ManageUsersImportbtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ManageUsersImportbtn.Location = new System.Drawing.Point(3, 3);
             this.ManageUsersImportbtn.Name = "ManageUsersImportbtn";
-            this.ManageUsersImportbtn.Size = new System.Drawing.Size(78, 14);
+            this.ManageUsersImportbtn.Size = new System.Drawing.Size(78, 11);
             this.ManageUsersImportbtn.TabIndex = 0;
             this.ManageUsersImportbtn.Text = "ImportUsers";
             this.ManageUsersImportbtn.UseVisualStyleBackColor = true;
+            this.ManageUsersImportbtn.Click += new System.EventHandler(this.ManageUsersImportbtn_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -124,11 +126,11 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.ManageUsersRemovebtn, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.ManageUsersBackbtn, 2, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 200);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 203);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(254, 35);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(254, 32);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // ManageUsersRemovebtn
@@ -136,7 +138,7 @@
             this.ManageUsersRemovebtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ManageUsersRemovebtn.Location = new System.Drawing.Point(130, 3);
             this.ManageUsersRemovebtn.Name = "ManageUsersRemovebtn";
-            this.ManageUsersRemovebtn.Size = new System.Drawing.Size(57, 29);
+            this.ManageUsersRemovebtn.Size = new System.Drawing.Size(57, 26);
             this.ManageUsersRemovebtn.TabIndex = 0;
             this.ManageUsersRemovebtn.Text = "Remove";
             this.ManageUsersRemovebtn.UseVisualStyleBackColor = true;
@@ -146,11 +148,15 @@
             this.ManageUsersBackbtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ManageUsersBackbtn.Location = new System.Drawing.Point(193, 3);
             this.ManageUsersBackbtn.Name = "ManageUsersBackbtn";
-            this.ManageUsersBackbtn.Size = new System.Drawing.Size(58, 29);
+            this.ManageUsersBackbtn.Size = new System.Drawing.Size(58, 26);
             this.ManageUsersBackbtn.TabIndex = 1;
             this.ManageUsersBackbtn.Text = "Back";
             this.ManageUsersBackbtn.UseVisualStyleBackColor = true;
             this.ManageUsersBackbtn.Click += new System.EventHandler(this.ManageUsersBackbtn_Click);
+            // 
+            // openFD
+            // 
+            this.openFD.FileName = "openFileDialog1";
             // 
             // ManageUsers
             // 
@@ -179,5 +185,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button ManageUsersRemovebtn;
         private System.Windows.Forms.Button ManageUsersBackbtn;
+        private System.Windows.Forms.OpenFileDialog openFD;
     }
 }
