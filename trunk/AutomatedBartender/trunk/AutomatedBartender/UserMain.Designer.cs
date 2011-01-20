@@ -96,6 +96,7 @@
             this.UserAllDrinksBtn.TabIndex = 2;
             this.UserAllDrinksBtn.Text = "All Drinks";
             this.UserAllDrinksBtn.UseVisualStyleBackColor = true;
+            this.UserAllDrinksBtn.Click += new System.EventHandler(this.UserAllDrinksBtn_Click);
             // 
             // UserPersonalHistoryBtn
             // 
@@ -143,13 +144,13 @@
             this.UserBACLabel.Text = "BAC\r0.0%";
             this.UserBACLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UserMainScreen
+            // UserMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "UserMainScreen";
+            this.Name = "UserMain";
             this.Text = "UserMainScreen";
             this.TopMost = true;
             this.tableLayoutPanel1.ResumeLayout(false);
