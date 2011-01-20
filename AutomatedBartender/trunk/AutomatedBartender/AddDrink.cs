@@ -18,6 +18,16 @@ namespace AutomatedBartender
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setIsAdmin(admin);
         }
+        private bool getIsAdmin()
+        {
+            return isAdmin;
+        }
+
+        private void setIsAdmin(bool value)
+        {
+            isAdmin = value;
+        }
+
         private void AddDrinkBackBtn_Click(object sender, EventArgs e)
         {
             if (getIsAdmin() == true)
@@ -32,15 +42,6 @@ namespace AutomatedBartender
                 userMainScreen.Show();
                 this.Close();
             }
-        }
-        private bool getIsAdmin()
-        {
-            return isAdmin;
-        }
-
-        private void setIsAdmin(bool value)
-        {
-            isAdmin = value;
         }
     }
 }
