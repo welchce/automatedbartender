@@ -50,6 +50,7 @@
             this.AdminManageInventoryBtn.TabIndex = 5;
             this.AdminManageInventoryBtn.Text = "Manage Inventory";
             this.AdminManageInventoryBtn.UseVisualStyleBackColor = true;
+            this.AdminManageInventoryBtn.Click += new System.EventHandler(this.AdminManageInventoryBtn_Click);
             // 
             // AdminExitBtn
             // 
@@ -120,6 +121,7 @@
             this.AdminAllDrinksBtn.TabIndex = 2;
             this.AdminAllDrinksBtn.Text = "All Drinks";
             this.AdminAllDrinksBtn.UseVisualStyleBackColor = true;
+            this.AdminAllDrinksBtn.Click += new System.EventHandler(this.AdminAllDrinksBtn_Click);
             // 
             // AdminTop25Btn
             // 
@@ -171,13 +173,13 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(313, 266);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
-            // AdminMainScreen
+            // AdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 291);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "AdminMainScreen";
+            this.Name = "AdminMain";
             this.Text = "Admin Main Screen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);

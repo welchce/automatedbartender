@@ -44,5 +44,19 @@ namespace AutomatedBartender
             top25.Show();
             this.Close();
         }
+
+        private void AdminManageInventoryBtn_Click(object sender, EventArgs e)
+        {
+            Form manageInventory = new ManageInventory();
+            manageInventory.Show();
+            this.Close();
+        }
+
+        private void AdminAllDrinksBtn_Click(object sender, EventArgs e)
+        {
+            Form allDrinks = new AllDrinks(true);
+            allDrinks.Show();
+            this.Close();
+        }
     }
 }
