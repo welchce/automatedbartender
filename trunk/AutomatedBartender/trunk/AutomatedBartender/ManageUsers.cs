@@ -23,5 +23,13 @@ namespace AutomatedBartender
             adminMainScreen.Show();
             this.Close();
         }
+
+        private void ManageUsersImportbtn_Click(object sender, EventArgs e)
+        {
+            openFD.InitialDirectory = "C:\\";
+            openFD.Title = "Open an Excel File"; 
+            openFD.ShowDialog();
+
+        }
     }
 }
