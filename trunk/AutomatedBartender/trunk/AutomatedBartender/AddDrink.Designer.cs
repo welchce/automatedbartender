@@ -33,18 +33,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.AddDrinkTextBox = new System.Windows.Forms.TextBox();
             this.AddDrinkIngredientTable = new System.Windows.Forms.DataGridView();
-            this.Ingredient = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.AddDrinkAddRowBtn = new System.Windows.Forms.Button();
             this.AddDrinkBackBtn = new System.Windows.Forms.Button();
             this.AddDrinkSubmitBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.Ingredient = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddDrinkIngredientTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -98,15 +101,21 @@
             // 
             // AddDrinkTextBox
             // 
+            this.AddDrinkTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.AddDrinkTextBox, 3);
             this.AddDrinkTextBox.Location = new System.Drawing.Point(3, 130);
             this.AddDrinkTextBox.Multiline = true;
             this.AddDrinkTextBox.Name = "AddDrinkTextBox";
-            this.AddDrinkTextBox.Size = new System.Drawing.Size(397, 31);
+            this.AddDrinkTextBox.Size = new System.Drawing.Size(397, 45);
             this.AddDrinkTextBox.TabIndex = 2;
             // 
             // AddDrinkIngredientTable
             // 
+            this.AddDrinkIngredientTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.AddDrinkIngredientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AddDrinkIngredientTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ingredient,
@@ -117,20 +126,6 @@
             this.tableLayoutPanel1.SetRowSpan(this.AddDrinkIngredientTable, 2);
             this.AddDrinkIngredientTable.Size = new System.Drawing.Size(397, 78);
             this.AddDrinkIngredientTable.TabIndex = 3;
-            // 
-            // Ingredient
-            // 
-            this.Ingredient.FillWeight = 175F;
-            this.Ingredient.HeaderText = "Ingredient";
-            this.Ingredient.Name = "Ingredient";
-            this.Ingredient.Width = 175;
-            // 
-            // Amount
-            // 
-            this.Amount.FillWeight = 175F;
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 175;
             // 
             // AddDrinkAddRowBtn
             // 
@@ -151,6 +146,7 @@
             this.AddDrinkBackBtn.TabIndex = 5;
             this.AddDrinkBackBtn.Text = "Back";
             this.AddDrinkBackBtn.UseVisualStyleBackColor = true;
+            this.AddDrinkBackBtn.Click += new System.EventHandler(this.AddDrinkBackBtn_Click);
             // 
             // AddDrinkSubmitBtn
             // 
@@ -161,6 +157,20 @@
             this.AddDrinkSubmitBtn.TabIndex = 6;
             this.AddDrinkSubmitBtn.Text = "Submit";
             this.AddDrinkSubmitBtn.UseVisualStyleBackColor = true;
+            // 
+            // Ingredient
+            // 
+            this.Ingredient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ingredient.FillWeight = 175F;
+            this.Ingredient.HeaderText = "Ingredient";
+            this.Ingredient.Name = "Ingredient";
+            // 
+            // Amount
+            // 
+            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Amount.FillWeight = 175F;
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
             // 
             // AddDrink
             // 
@@ -184,12 +194,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox AddDrinkTextBox;
         private System.Windows.Forms.DataGridView AddDrinkIngredientTable;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Ingredient;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Amount;
         private System.Windows.Forms.Button AddDrinkAddRowBtn;
         private System.Windows.Forms.Button AddDrinkBackBtn;
         private System.Windows.Forms.Button AddDrinkSubmitBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Ingredient;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Amount;
 
     }
 }
