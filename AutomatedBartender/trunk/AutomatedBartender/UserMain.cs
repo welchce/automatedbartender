@@ -35,5 +35,12 @@ namespace AutomatedBartender
             top25.Show();
             this.Close();
         }
+
+        private void UserAllDrinksBtn_Click(object sender, EventArgs e)
+        {
+            Form allDrinks = new AllDrinks(false);
+            allDrinks.Show();
+            this.Close();
+        }
     }
 }
