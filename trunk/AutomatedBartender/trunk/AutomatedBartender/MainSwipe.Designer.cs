@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ToUserScreenBtn = new System.Windows.Forms.Button();
             this.ToAdminScreenBtn = new System.Windows.Forms.Button();
+            this.IDtextbox = new System.Windows.Forms.TextBox();
+            this.DoneLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,12 +48,12 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.ToUserScreenBtn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.ToAdminScreenBtn, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 13);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 82);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(259, 237);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(259, 168);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -63,7 +65,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 225);
+            this.label1.Size = new System.Drawing.Size(253, 159);
             this.label1.TabIndex = 0;
             this.label1.Text = "To Begin\r\nPlease Swipe\r\nI.D.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,9 +73,9 @@
             // ToUserScreenBtn
             // 
             this.ToUserScreenBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToUserScreenBtn.Location = new System.Drawing.Point(3, 228);
+            this.ToUserScreenBtn.Location = new System.Drawing.Point(3, 162);
             this.ToUserScreenBtn.Name = "ToUserScreenBtn";
-            this.ToUserScreenBtn.Size = new System.Drawing.Size(123, 6);
+            this.ToUserScreenBtn.Size = new System.Drawing.Size(123, 3);
             this.ToUserScreenBtn.TabIndex = 1;
             this.ToUserScreenBtn.Text = "User Main Screen";
             this.ToUserScreenBtn.UseVisualStyleBackColor = true;
@@ -82,25 +84,49 @@
             // ToAdminScreenBtn
             // 
             this.ToAdminScreenBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToAdminScreenBtn.Location = new System.Drawing.Point(132, 228);
+            this.ToAdminScreenBtn.Location = new System.Drawing.Point(132, 162);
             this.ToAdminScreenBtn.Name = "ToAdminScreenBtn";
-            this.ToAdminScreenBtn.Size = new System.Drawing.Size(124, 6);
+            this.ToAdminScreenBtn.Size = new System.Drawing.Size(124, 3);
             this.ToAdminScreenBtn.TabIndex = 2;
             this.ToAdminScreenBtn.Text = "Admin Main Screen";
             this.ToAdminScreenBtn.UseVisualStyleBackColor = true;
             this.ToAdminScreenBtn.Click += new System.EventHandler(this.ToAdminScreenBtn_Click);
             // 
-            // MainSwipeScreen
+            // IDtextbox
+            // 
+            this.IDtextbox.AcceptsReturn = true;
+            this.IDtextbox.AcceptsTab = true;
+            this.IDtextbox.Location = new System.Drawing.Point(12, 12);
+            this.IDtextbox.Name = "IDtextbox";
+            this.IDtextbox.Size = new System.Drawing.Size(100, 20);
+            this.IDtextbox.TabIndex = 1;
+            this.IDtextbox.TextChanged += new System.EventHandler(this.IDtextbox_TextChanged);
+            // 
+            // DoneLbl
+            // 
+            this.DoneLbl.AutoSize = true;
+            this.DoneLbl.Location = new System.Drawing.Point(118, 12);
+            this.DoneLbl.Name = "DoneLbl";
+            this.DoneLbl.Size = new System.Drawing.Size(33, 13);
+            this.DoneLbl.TabIndex = 2;
+            this.DoneLbl.Text = "Done";
+            this.DoneLbl.Visible = false;
+            // 
+            // MainSwipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.DoneLbl);
+            this.Controls.Add(this.IDtextbox);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "MainSwipeScreen";
+            this.Name = "MainSwipe";
             this.Text = "MainSwipeScreen";
+            this.Load += new System.EventHandler(this.MainSwipe_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,5 +136,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ToUserScreenBtn;
         private System.Windows.Forms.Button ToAdminScreenBtn;
+        private System.Windows.Forms.TextBox IDtextbox;
+        private System.Windows.Forms.Label DoneLbl;
     }
 }
