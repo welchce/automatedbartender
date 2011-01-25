@@ -34,6 +34,7 @@
             this.ToAdminScreenBtn = new System.Windows.Forms.Button();
             this.IDtextbox = new System.Windows.Forms.TextBox();
             this.DoneLbl = new System.Windows.Forms.Label();
+            this.InfoRTB = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,23 +101,36 @@
             this.IDtextbox.Name = "IDtextbox";
             this.IDtextbox.Size = new System.Drawing.Size(100, 20);
             this.IDtextbox.TabIndex = 1;
+            this.IDtextbox.Text = "%OHNORTH BEND^WELCH$CHRISTOPHER$E$^31 MUIRFIELD DR^?;6360231921525308=13061988063" +
+                "0?%1045052      D B             1600150BROBRO                          92\"*SA   " +
+                "  ?";
             this.IDtextbox.TextChanged += new System.EventHandler(this.IDtextbox_TextChanged);
             // 
             // DoneLbl
             // 
             this.DoneLbl.AutoSize = true;
-            this.DoneLbl.Location = new System.Drawing.Point(118, 12);
+            this.DoneLbl.Location = new System.Drawing.Point(29, 44);
             this.DoneLbl.Name = "DoneLbl";
             this.DoneLbl.Size = new System.Drawing.Size(33, 13);
             this.DoneLbl.TabIndex = 2;
             this.DoneLbl.Text = "Done";
             this.DoneLbl.Visible = false;
             // 
+            // InfoRTB
+            // 
+            this.InfoRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.InfoRTB.Location = new System.Drawing.Point(118, 12);
+            this.InfoRTB.Name = "InfoRTB";
+            this.InfoRTB.Size = new System.Drawing.Size(153, 123);
+            this.InfoRTB.TabIndex = 3;
+            this.InfoRTB.Text = "";
+            // 
             // MainSwipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.InfoRTB);
             this.Controls.Add(this.DoneLbl);
             this.Controls.Add(this.IDtextbox);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -138,5 +152,6 @@
         private System.Windows.Forms.Button ToAdminScreenBtn;
         private System.Windows.Forms.TextBox IDtextbox;
         private System.Windows.Forms.Label DoneLbl;
+        private System.Windows.Forms.RichTextBox InfoRTB;
     }
 }
