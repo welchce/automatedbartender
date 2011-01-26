@@ -72,6 +72,7 @@ namespace AutomatedBartender
             int Weight = 0;
             int ExpireYear = 0;
             int ExpireMonth = 0;
+            string test = "";
 
             Today = DateTime.Today.ToString();
 
@@ -199,6 +200,7 @@ namespace AutomatedBartender
 
             indexStart = indexEnd+3;
             indexEnd = indexStart + 3;
+            test = IDtextbox.Text.Substring(indexStart, indexEnd - indexStart);
             Weight = int.Parse(IDtextbox.Text.Substring(indexStart, indexEnd - indexStart));
 
             InfoRTB.Text = InfoRTB.Text +  "First Name: " + FirstName +"\n";
