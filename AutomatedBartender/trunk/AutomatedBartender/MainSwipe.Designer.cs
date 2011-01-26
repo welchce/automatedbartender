@@ -101,9 +101,6 @@
             this.IDtextbox.Name = "IDtextbox";
             this.IDtextbox.Size = new System.Drawing.Size(100, 20);
             this.IDtextbox.TabIndex = 1;
-            this.IDtextbox.Text = "%OHNORTH BEND^WELCH$CHRISTOPHER$E$^31 MUIRFIELD DR^?;6360231921525308=13061988063" +
-                "0?%1045052      D B             1600150BROBRO                          92\"*SA   " +
-                "  ?";
             this.IDtextbox.TextChanged += new System.EventHandler(this.IDtextbox_TextChanged);
             // 
             // DoneLbl
