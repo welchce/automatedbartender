@@ -11,10 +11,42 @@ namespace AutomatedBartender
 {
     public partial class MainSwipe : Form
     {
+        public string IDINFO;
+        public int NumQuestionMarks;
+        public bool FoundPercent;
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 37 )
+            {
+                FoundPercent = true;
+            }
+            if (FoundPercent)
+            {
+                IDINFO = IDINFO + e.KeyChar.ToString();
+            }
+            if (e.KeyChar == 63)
+            {
+                NumQuestionMarks++;
+                if (NumQuestionMarks == 3)
+                {
+                    FoundPercent = false;
+                    IDtextbox.Text = IDINFO;
+                    InfoFromID();
+                    IDINFO = "";
+                }
+            }
+            e.Handled = true;
+        }
+
         public MainSwipe()
         {
             InitializeComponent();
+            FoundPercent = false;
+            NumQuestionMarks = 0;
+            IDINFO = "";
             AutomatedBartender.WindowProperties.resizeScreen(this);
+            this.KeyPreview = true;
+            this.KeyPress += new KeyPressEventHandler(Form1_KeyPress);
         }
 
         private void ToUserScreenBtn_Click(object sender, EventArgs e)
