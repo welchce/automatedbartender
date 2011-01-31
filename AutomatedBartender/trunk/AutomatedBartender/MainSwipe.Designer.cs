@@ -80,6 +80,7 @@
             this.ToUserScreenBtn.TabIndex = 1;
             this.ToUserScreenBtn.Text = "User Main Screen";
             this.ToUserScreenBtn.UseVisualStyleBackColor = true;
+            this.ToUserScreenBtn.Visible = false;
             this.ToUserScreenBtn.Click += new System.EventHandler(this.ToUserScreenBtn_Click);
             // 
             // ToAdminScreenBtn
@@ -91,6 +92,7 @@
             this.ToAdminScreenBtn.TabIndex = 2;
             this.ToAdminScreenBtn.Text = "Admin Main Screen";
             this.ToAdminScreenBtn.UseVisualStyleBackColor = true;
+            this.ToAdminScreenBtn.Visible = false;
             this.ToAdminScreenBtn.Click += new System.EventHandler(this.ToAdminScreenBtn_Click);
             // 
             // IDtextbox
@@ -101,6 +103,7 @@
             this.IDtextbox.Name = "IDtextbox";
             this.IDtextbox.Size = new System.Drawing.Size(100, 20);
             this.IDtextbox.TabIndex = 1;
+            this.IDtextbox.Visible = false;
             this.IDtextbox.TextChanged += new System.EventHandler(this.IDtextbox_TextChanged);
             // 
             // DoneLbl
@@ -121,6 +124,7 @@
             this.InfoRTB.Size = new System.Drawing.Size(153, 123);
             this.InfoRTB.TabIndex = 3;
             this.InfoRTB.Text = "";
+            this.InfoRTB.Visible = false;
             // 
             // MainSwipe
             // 
@@ -131,6 +135,7 @@
             this.Controls.Add(this.DoneLbl);
             this.Controls.Add(this.IDtextbox);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.KeyPreview = true;
             this.Name = "MainSwipe";
             this.Text = "MainSwipeScreen";
             this.Load += new System.EventHandler(this.MainSwipe_Load);
