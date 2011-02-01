@@ -12,41 +12,74 @@ namespace AutomatedBartender
     public partial class MainSwipe : Form
     {
         public string IDINFO;
+        public string Suffix;
         public int NumQuestionMarks;
-        public bool FoundPercent;
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        public bool WaitForIDInput;
+        public bool WaitForSuffix;
+        /*Author Christopher Welch
+         *      2011 01 31     */
+        private void MainSwipe_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //if the character pressed is a %
             if (e.KeyChar == 37 )
             {
-                FoundPercent = true;
+                WaitForIDInput = true;
             }
-            if (FoundPercent)
+            //since % starts an ID, start logging the following characters
+            if (WaitForIDInput)
             {
-                IDINFO = IDINFO + e.KeyChar.ToString();
+                if (WaitForSuffix)
+                {
+                    Suffix = e.KeyChar.ToString();
+                }
+                else
+                {
+                    IDINFO = IDINFO + e.KeyChar.ToString();
+                }
+                e.Handled = true;   //e.Handled = true; tells the program that the character has been consumed and will not be used any where else
             }
+            //if no percent has been entered, input is regular from the user
+            else
+            {
+                IDINFO = "";
+                e.Handled = false;  //e.Handled = false; tells the program that the character has NOT been consumed and can be used else where
+            }
+            //if the character is a question mark, count
             if (e.KeyChar == 63)
             {
                 NumQuestionMarks++;
-                if (NumQuestionMarks == 3)
-                {
-                    FoundPercent = false;
-                    IDtextbox.Text = IDINFO;
-                    InfoFromID();
-                    IDINFO = "";
-                }
             }
-            e.Handled = true;
+            //the 3rd question mark ends the ID sequence
+            if (NumQuestionMarks == 3)
+            {
+                WaitForSuffix = true;
+            }
+            //once the suffix has been recorded, parse the information
+            if (NumQuestionMarks == 3 && Suffix != "")
+            {
+                InfoRTB.Text = "";
+                InfoFromID();
+                WaitForIDInput = false;
+                WaitForSuffix = false;
+                NumQuestionMarks = 0;
+                IDINFO = "";
+                Suffix = "";
+            }
         }
 
         public MainSwipe()
         {
             InitializeComponent();
-            FoundPercent = false;
-            NumQuestionMarks = 0;
-            IDINFO = "";
             AutomatedBartender.WindowProperties.resizeScreen(this);
+
+            //sets up all variables for the ID swipe
+            WaitForIDInput = false;
+            WaitForSuffix = false;
+            NumQuestionMarks = 0;
+            Suffix = "";
+            IDINFO = "";
             this.KeyPreview = true;
-            this.KeyPress += new KeyPressEventHandler(Form1_KeyPress);
+            this.KeyPress += new KeyPressEventHandler(MainSwipe_KeyPress);
         }
 
         private void ToUserScreenBtn_Click(object sender, EventArgs e)
@@ -61,30 +94,9 @@ namespace AutomatedBartender
             adminMainScreen.Show();
         }
 
-        private void MainSwipe_Load(object sender, EventArgs e)
-        {
-            IDtextbox.Focus();
-        }
-
-        private void IDtextbox_TextChanged(object sender, EventArgs e)
-        {
-            int done = 0;
-            for (int i = 0; i < IDtextbox.TextLength; i++)
-            {   
-                if (IDtextbox.Text.Substring(i,1) == "?")
-                {
-                    done++;
-                    if (done == 3)
-                    {
-                        DoneLbl.Visible = true;
-                        InfoFromID();
-                    }
-                }
-            }
-        }
-
         private void InfoFromID()
         {
+            //declare all variables needed
             string State = "";
             string City = "";
             string Street = "";
@@ -104,52 +116,63 @@ namespace AutomatedBartender
             int Weight = 0;
             int ExpireYear = 0;
             int ExpireMonth = 0;
-            string test = "";
 
             Today = DateTime.Today.ToString();
 
+            //get current month
             indexStart = 0;
             indexEnd = Today.IndexOf("/");
             CurrentMonth = int.Parse(Today.Substring(indexStart, indexEnd - indexStart));
 
+            //get current day
             indexStart = indexEnd+1;
             indexEnd = Today.IndexOf("/",indexStart);
             CurrentDay = int.Parse(Today.Substring(indexStart, indexEnd - indexStart));
 
+            //get current year
             indexStart = indexEnd + 1;
             indexEnd = Today.IndexOf(" ");
             CurrentYear = int.Parse(Today.Substring(indexStart, indexEnd - indexStart));
 
-            State = IDtextbox.Text.Substring(1, 2);
+            //2 letter state designation entered right away
+            State = IDINFO.Substring(1, 2);
 
+            //get city from ID
             indexStart = 3;
-            indexEnd = IDtextbox.Text.IndexOf("^");
-            City = IDtextbox.Text.Substring(indexStart,indexEnd-indexStart);
+            indexEnd = IDINFO.IndexOf("^");
+            City = IDINFO.Substring(indexStart,indexEnd-indexStart);
 
-            indexStart = IDtextbox.Text.IndexOf("^")+1;
-            indexEnd = IDtextbox.Text.IndexOf("$");
-            LastName = IDtextbox.Text.Substring(indexStart, indexEnd - indexStart);
+            //get last name from ID
+            indexStart = IDINFO.IndexOf("^")+1;
+            indexEnd = IDINFO.IndexOf("$");
+            LastName = IDINFO.Substring(indexStart, indexEnd - indexStart);
 
-            indexStart = IDtextbox.Text.IndexOf("$")+1;
-            indexEnd = IDtextbox.Text.IndexOf("$",indexStart);
-            FirstName = IDtextbox.Text.Substring(indexStart, indexEnd - indexStart);
+            //get first name from ID
+            indexStart = IDINFO.IndexOf("$")+1;
+            indexEnd = IDINFO.IndexOf("$",indexStart);
+            FirstName = IDINFO.Substring(indexStart, indexEnd - indexStart);
 
-            indexStart = IDtextbox.Text.IndexOf("",indexEnd)+1;
+            //get middle initial from ID
+            indexStart = IDINFO.IndexOf("",indexEnd)+1;
             indexEnd = indexStart + 1;
-            MI = IDtextbox.Text.Substring(indexStart, indexEnd - indexStart);
+            MI = IDINFO.Substring(indexStart, indexEnd - indexStart);
 
-            indexStart = IDtextbox.Text.IndexOf("^",indexEnd)+1;
-            indexEnd = IDtextbox.Text.IndexOf("^?");
-            Street = IDtextbox.Text.Substring(indexStart, indexEnd - indexStart);
+            //get street from ID
+            indexStart = IDINFO.IndexOf("^",indexEnd)+1;
+            indexEnd = IDINFO.IndexOf("^?");
+            Street = IDINFO.Substring(indexStart, indexEnd - indexStart);
 
-            indexStart = IDtextbox.Text.IndexOf("=")+1;
+            //get ID expired year
+            indexStart = IDINFO.IndexOf("=")+1;
             indexEnd = indexStart + 2;
-            ExpireYear = 2000 + int.Parse(IDtextbox.Text.Substring(indexStart, indexEnd - indexStart));
+            ExpireYear = 2000 + int.Parse(IDINFO.Substring(indexStart, indexEnd - indexStart));
 
+            //get ID expired month
             indexStart = indexEnd;
             indexEnd = indexStart + 2;
-            ExpireMonth = int.Parse(IDtextbox.Text.Substring(indexStart, indexEnd - indexStart));
+            ExpireMonth = int.Parse(IDINFO.Substring(indexStart, indexEnd - indexStart));
 
+            //check if the ID is valid
             if (CurrentYear < ExpireYear)
             {
                 InfoRTB.Text = InfoRTB.Text + "Valid\n";
@@ -170,18 +193,22 @@ namespace AutomatedBartender
                 InfoRTB.Text = InfoRTB.Text + "Not Valid\n";
             }
 
-            indexStart = IDtextbox.Text.IndexOf("=")+5;
+            //get ID DOB Year
+            indexStart = IDINFO.IndexOf("=")+5;
             indexEnd = indexStart + 4;
-            DOBYear = int.Parse(IDtextbox.Text.Substring(indexStart, indexEnd - indexStart));
+            DOBYear = int.Parse(IDINFO.Substring(indexStart, indexEnd - indexStart));
 
+            //get ID DOB Month
             indexStart = indexEnd;
             indexEnd = indexStart + 2;
-            DOBMonth = int.Parse(IDtextbox.Text.Substring(indexStart, indexEnd - indexStart));
+            DOBMonth = int.Parse(IDINFO.Substring(indexStart, indexEnd - indexStart));
 
+            //get ID DOB Day
             indexStart = indexEnd;
             indexEnd = indexStart + 2;
-            DOBDay = int.Parse(IDtextbox.Text.Substring(indexStart, indexEnd - indexStart));
+            DOBDay = int.Parse(IDINFO.Substring(indexStart, indexEnd - indexStart));
 
+            //check if they are of age
             if (CurrentYear - 21 > DOBYear)
             {
                 InfoRTB.Text = InfoRTB.Text + "Legal\n";
@@ -213,10 +240,10 @@ namespace AutomatedBartender
                 InfoRTB.Text = InfoRTB.Text + "Underage\n";
             }
 
-
+            //get ID gender
             indexStart = indexEnd + 31;
             indexEnd = indexStart + 1;
-            Gender = IDtextbox.Text.Substring(indexStart, indexEnd - indexStart);
+            Gender = IDINFO.Substring(indexStart, indexEnd - indexStart);
             if (Gender == "1" | Gender == "M")
             {
                 Gender = "Male";
@@ -230,10 +257,10 @@ namespace AutomatedBartender
                 Gender = "N/A";
             }
 
+            //get ID weight
             indexStart = indexEnd+3;
             indexEnd = indexStart + 3;
-            test = IDtextbox.Text.Substring(indexStart, indexEnd - indexStart);
-            Weight = int.Parse(IDtextbox.Text.Substring(indexStart, indexEnd - indexStart));
+            Weight = int.Parse(IDINFO.Substring(indexStart, indexEnd - indexStart));
 
             InfoRTB.Text = InfoRTB.Text +  "First Name: " + FirstName +"\n";
             InfoRTB.Text = InfoRTB.Text + "Middle Initial: " + MI + "\n";

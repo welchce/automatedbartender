@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ToUserScreenBtn = new System.Windows.Forms.Button();
             this.ToAdminScreenBtn = new System.Windows.Forms.Button();
-            this.IDtextbox = new System.Windows.Forms.TextBox();
             this.DoneLbl = new System.Windows.Forms.Label();
             this.InfoRTB = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -95,17 +94,6 @@
             this.ToAdminScreenBtn.Visible = false;
             this.ToAdminScreenBtn.Click += new System.EventHandler(this.ToAdminScreenBtn_Click);
             // 
-            // IDtextbox
-            // 
-            this.IDtextbox.AcceptsReturn = true;
-            this.IDtextbox.AcceptsTab = true;
-            this.IDtextbox.Location = new System.Drawing.Point(12, 12);
-            this.IDtextbox.Name = "IDtextbox";
-            this.IDtextbox.Size = new System.Drawing.Size(100, 20);
-            this.IDtextbox.TabIndex = 1;
-            this.IDtextbox.Visible = false;
-            this.IDtextbox.TextChanged += new System.EventHandler(this.IDtextbox_TextChanged);
-            // 
             // DoneLbl
             // 
             this.DoneLbl.AutoSize = true;
@@ -118,13 +106,13 @@
             // 
             // InfoRTB
             // 
-            this.InfoRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.InfoRTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.InfoRTB.Location = new System.Drawing.Point(118, 12);
             this.InfoRTB.Name = "InfoRTB";
-            this.InfoRTB.Size = new System.Drawing.Size(153, 123);
+            this.InfoRTB.Size = new System.Drawing.Size(153, 210);
             this.InfoRTB.TabIndex = 3;
             this.InfoRTB.Text = "";
-            this.InfoRTB.Visible = false;
             // 
             // MainSwipe
             // 
@@ -133,12 +121,10 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.InfoRTB);
             this.Controls.Add(this.DoneLbl);
-            this.Controls.Add(this.IDtextbox);
             this.Controls.Add(this.tableLayoutPanel1);
             this.KeyPreview = true;
             this.Name = "MainSwipe";
             this.Text = "MainSwipeScreen";
-            this.Load += new System.EventHandler(this.MainSwipe_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -152,7 +138,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ToUserScreenBtn;
         private System.Windows.Forms.Button ToAdminScreenBtn;
-        private System.Windows.Forms.TextBox IDtextbox;
         private System.Windows.Forms.Label DoneLbl;
         private System.Windows.Forms.RichTextBox InfoRTB;
     }
