@@ -106,7 +106,7 @@
     <Compile Include="AddDrink.Designer.cs">
       <DependentUpon>AddDrink.cs</DependentUpon>
     </Compile>
-    <Compile Include="StoredProcedures.cs" />
+    <Compile Include="DatabaseCalls.cs" />
     <Compile Include="Swipe.cs" />
     <Compile Include="DrinkHistory.cs">
       <SubType>Form</SubType>
