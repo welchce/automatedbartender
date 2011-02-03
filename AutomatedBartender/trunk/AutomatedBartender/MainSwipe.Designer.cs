@@ -108,6 +108,7 @@
             // 
             this.InfoRTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.InfoRTB.Enabled = false;
             this.InfoRTB.Location = new System.Drawing.Point(118, 12);
             this.InfoRTB.Name = "InfoRTB";
             this.InfoRTB.Size = new System.Drawing.Size(153, 210);

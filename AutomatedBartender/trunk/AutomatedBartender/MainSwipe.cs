@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace AutomatedBartender
 {
@@ -21,7 +22,7 @@ namespace AutomatedBartender
         private void MainSwipe_KeyPress(object sender, KeyPressEventArgs e)
         {
             //if the character pressed is a %
-            if (e.KeyChar == 37 )
+            if (e.KeyChar == 37)
             {
                 WaitForIDInput = true;
             }
@@ -59,12 +60,16 @@ namespace AutomatedBartender
             {
                 InfoRTB.Text = "";
                 Swipe ThisSwipe = new Swipe();
-                InfoRTB.Text = ThisSwipe.InfoFromID(IDINFO, Suffix);
+                string[] theReturn = ThisSwipe.InfoFromID(IDINFO, Suffix);
+                //string theReturn = "";
+                //InfoRTB.Text = theReturn;
                 WaitForIDInput = false;
                 WaitForSuffix = false;
                 NumQuestionMarks = 0;
                 IDINFO = "";
                 Suffix = "";
+                DatabaseCalls DBC = new DatabaseCalls();
+                DBC.verifyUser(theReturn[0]);
             }
         }
 
@@ -72,6 +77,7 @@ namespace AutomatedBartender
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
+  
 
             //sets up all variables for the ID swipe
             WaitForIDInput = false;
