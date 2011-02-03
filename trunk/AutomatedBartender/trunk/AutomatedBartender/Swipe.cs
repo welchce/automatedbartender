@@ -7,7 +7,7 @@ namespace AutomatedBartender
 {
     class Swipe
     {
-        public string InfoFromID(string IDINFO, String Suffix)
+        public string[] InfoFromID(string IDINFO, String Suffix)
         {
             //declare all variables needed
             string State = "";
@@ -17,6 +17,7 @@ namespace AutomatedBartender
             string MI = "";
             string LastName = "";
             string Gender = "";
+            string DL = "";
             int indexStart = 0;
             int indexEnd = 0;
             int CurrentYear = 10;
@@ -67,6 +68,11 @@ namespace AutomatedBartender
             indexStart = IDINFO.IndexOf("^", indexEnd) + 1;
             indexEnd = IDINFO.IndexOf("^?");
             Street = IDINFO.Substring(indexStart, indexEnd - indexStart);
+
+            //get DL from ID
+            indexStart = indexEnd+3;
+            indexEnd = IDINFO.IndexOf("=");
+            DL = IDINFO.Substring(indexStart, indexEnd - indexStart);
 
             //get ID expired year
             indexStart = IDINFO.IndexOf("=") + 1;
@@ -178,7 +184,13 @@ namespace AutomatedBartender
             INFOOUTPUT = INFOOUTPUT + "Weight: " + Weight + " lbs\n";
             INFOOUTPUT = INFOOUTPUT + "Gender: " + Gender + "\n";
             INFOOUTPUT = INFOOUTPUT + "Suffix: " + Suffix + "\n";
-            return INFOOUTPUT;
+            //return INFOOUTPUT;
+            string[] arrayToReturn = new string[3];
+            arrayToReturn[0] = DL;
+            arrayToReturn[1] = LastName;
+            arrayToReturn[2] = FirstName;
+            return arrayToReturn;
+            
         }
     }
 }

@@ -106,6 +106,11 @@
     <Compile Include="AddDrink.Designer.cs">
       <DependentUpon>AddDrink.cs</DependentUpon>
     </Compile>
+    <Compile Include="BartenderDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BartenderDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseCalls.cs" />
     <Compile Include="Swipe.cs" />
     <Compile Include="DrinkHistory.cs">
@@ -186,7 +191,19 @@
     <EmbeddedResource Include="UserMain.resx">
       <DependentUpon>UserMain.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="AutomatedBartender_TemporaryKey.pfx" />
+    <None Include="BartenderDataSet.xsc">
+      <DependentUpon>BartenderDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BartenderDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BartenderDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BartenderDataSet.xss">
+      <DependentUpon>BartenderDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
