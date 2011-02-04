@@ -60,7 +60,7 @@ namespace AutomatedBartender
             {
                 //InfoRTB.Text = "";
                 Swipe ThisSwipe = new Swipe();
-                string[] theReturn = ThisSwipe.InfoFromID(IDINFO, Suffix);
+                ThisSwipe.InfoFromID(IDINFO, Suffix);
                 //string theReturn = "";
                 //InfoRTB.Text = theReturn;
                 WaitForIDInput = false;
@@ -68,8 +68,8 @@ namespace AutomatedBartender
                 NumQuestionMarks = 0;
                 IDINFO = "";
                 Suffix = "";
-                DatabaseCalls DBC = new DatabaseCalls();
-                DBC.verifyUser(theReturn[0]);
+                //DatabaseCalls DBC = new DatabaseCalls();
+                //DBC.verifyUser(theReturn[0]);
             }
         }
 
@@ -104,9 +104,21 @@ namespace AutomatedBartender
         private void ChrisLoginBtn_Click(object sender, EventArgs e)
         {
             Swipe ThisSwipe = new Swipe();
-            string[] theReturn = ThisSwipe.InfoFromID("%OHNORTH BEND^WELCH$CHRISTOPHER$E$^31 MUIRFIELD DR^?;6360231921525308=130619880630?%1045052      D B             1600150BROBRO                          92\"*SA     ?", "A");
-            DatabaseCalls DBC = new DatabaseCalls();
-            DBC.verifyUser(theReturn[0]);
+            ThisSwipe.InfoFromID("%OHNORTH BEND^WELCH$CHRISTOPHER$E$^31 MUIRFIELD DR^?;6360231921525308=130619880630?%1045052      D B             1600150BROBRO                          92\"*SA     ?", "A");
+            //DatabaseCalls DBC = new DatabaseCalls();
+            //DBC.verifyUser(theReturn[0]);
+        }
+
+        private void TestLoginBtn_Click(object sender, EventArgs e)
+        {
+            Swipe ThisSwipe = new Swipe();
+            ThisSwipe.InfoFromID("%OHNORTH BEND^WELCH$STEVE$E$^31 MUIRFIELD DR^?;6360231921525369=130619880630?%1045052      D B             1600150BROBRO                          92\"*SA     ?", "A");
+        }
+
+        private void MattLoginBtn_Click(object sender, EventArgs e)
+        {
+            Swipe ThisSwipe = new Swipe();
+            ThisSwipe.InfoFromID("%OHNORTH BEND^Fuller$Matt$E$^31 MUIRFIELD DR^?;6360231921696969=130619880630?%1045052      D B             1600150BROBRO                          92\"*SA     ?", "A");
         }
     }
 }

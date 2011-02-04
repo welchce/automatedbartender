@@ -7,7 +7,7 @@ namespace AutomatedBartender
 {
     class Swipe
     {
-        public string[] InfoFromID(string IDINFO, string Suffix)
+        public void InfoFromID(string IDINFO, string Suffix)
         {
             //declare all variables needed
             string State = "";
@@ -158,15 +158,15 @@ namespace AutomatedBartender
             Gender = IDINFO.Substring(indexStart, indexEnd - indexStart);
             if (Gender == "1" | Gender == "M")
             {
-                Gender = "Male";
+                Gender = "M";
             }
             else if (Gender == "2" | Gender == "F")
             {
-                Gender = "Female";
+                Gender = "F";
             }
             else
             {
-                Gender = "N/A";
+                Gender = "N";
             }
 
             //get ID weight
@@ -174,7 +174,7 @@ namespace AutomatedBartender
             indexEnd = indexStart + 3;
             Weight = int.Parse(IDINFO.Substring(indexStart, indexEnd - indexStart));
 
-            INFOOUTPUT = INFOOUTPUT + "First Name: " + FirstName + "\n";
+            /*INFOOUTPUT = INFOOUTPUT + "First Name: " + FirstName + "\n";
             INFOOUTPUT = INFOOUTPUT + "Middle Initial: " + MI + "\n";
             INFOOUTPUT = INFOOUTPUT + "Last Name: " + LastName + "\n";
             INFOOUTPUT = INFOOUTPUT + "Address: " + Street + "\n";
@@ -189,7 +189,16 @@ namespace AutomatedBartender
             arrayToReturn[0] = DL;
             arrayToReturn[1] = LastName;
             arrayToReturn[2] = FirstName;
-            return arrayToReturn;
+            return arrayToReturn;*/
+            DatabaseCalls DBC = new DatabaseCalls();
+            string userType = DBC.verifyUser(DL);
+            if (userType == "New")
+            {
+                bool user = DBC.updateUser(LastName, FirstName, DL, Gender, Weight);
+            }
+            else
+            {
+            }
             
         }
     }
