@@ -34,6 +34,8 @@
             this.ToAdminScreenBtn = new System.Windows.Forms.Button();
             this.DoneLbl = new System.Windows.Forms.Label();
             this.ChrisLoginBtn = new System.Windows.Forms.Button();
+            this.TestLoginBtn = new System.Windows.Forms.Button();
+            this.MattLoginBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,11 +116,33 @@
             this.ChrisLoginBtn.UseVisualStyleBackColor = true;
             this.ChrisLoginBtn.Click += new System.EventHandler(this.ChrisLoginBtn_Click);
             // 
+            // TestLoginBtn
+            // 
+            this.TestLoginBtn.Location = new System.Drawing.Point(178, 34);
+            this.TestLoginBtn.Name = "TestLoginBtn";
+            this.TestLoginBtn.Size = new System.Drawing.Size(75, 23);
+            this.TestLoginBtn.TabIndex = 4;
+            this.TestLoginBtn.Text = "Test Login";
+            this.TestLoginBtn.UseVisualStyleBackColor = true;
+            this.TestLoginBtn.Click += new System.EventHandler(this.TestLoginBtn_Click);
+            // 
+            // MattLoginBtn
+            // 
+            this.MattLoginBtn.Location = new System.Drawing.Point(97, 63);
+            this.MattLoginBtn.Name = "MattLoginBtn";
+            this.MattLoginBtn.Size = new System.Drawing.Size(75, 23);
+            this.MattLoginBtn.TabIndex = 5;
+            this.MattLoginBtn.Text = "Matt Login";
+            this.MattLoginBtn.UseVisualStyleBackColor = true;
+            this.MattLoginBtn.Click += new System.EventHandler(this.MattLoginBtn_Click);
+            // 
             // MainSwipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.MattLoginBtn);
+            this.Controls.Add(this.TestLoginBtn);
             this.Controls.Add(this.ChrisLoginBtn);
             this.Controls.Add(this.DoneLbl);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -140,5 +164,7 @@
         private System.Windows.Forms.Button ToAdminScreenBtn;
         private System.Windows.Forms.Label DoneLbl;
         private System.Windows.Forms.Button ChrisLoginBtn;
+        private System.Windows.Forms.Button TestLoginBtn;
+        private System.Windows.Forms.Button MattLoginBtn;
     }
 }

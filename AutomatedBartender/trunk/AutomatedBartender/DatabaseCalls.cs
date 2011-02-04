@@ -45,18 +45,45 @@ namespace AutomatedBartender
 
             int test = cmd.ExecuteNonQuery();*/
 
-        public bool verifyUser(string LicenseNo)
+        public string verifyUser(string LicenseNo)
         {
             string sqlCmd = "SELECT LicenseNo FROM tblUsers WHERE LicenseNo = '" + LicenseNo + "'";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             //SqlParameter returnParameter = new SqlParameter("@LicenseNo", SqlDbType.VarChar);
             //returnParameter.Direction = ParameterDirection.ReturnValue;
             myConnection.Open();
-            if ((string)cmd.ExecuteScalar() != "null")
+            string test = (string)cmd.ExecuteScalar();
+            if (cmd.ExecuteScalar() != null)
             {
-                return true;
+                string sqlCmd2 = "SELECT Admin FROM tblUsers WHERE LicenseNo = '" + LicenseNo + "'";
+                SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
+                //myConnection.Open();
+                if ((bool)cmd2.ExecuteScalar())
+                {
+                    return "Admin";
+                }else
+                {
+                    return "Regular";
+                }
             }
 
+            return "New";
+        }
+        public bool updateUser(string LastName, string FirstName, string LicenseNo, string Gender, int Weight)
+        {
+            //SELECT TOP 1 * FROM tblUsers WHERE FirstName = 'Matt' AND LastName = 'Fuller'
+            string sqlCmd = "SELECT TOP 1 * FROM tblUsers WHERE FirstName = '"+FirstName+"' AND LastName = '"+LastName+"'";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            //int test = (int)cmd.ExecuteScalar();
+            if (cmd.ExecuteScalar() != null)
+            {
+                int id = (int)cmd.ExecuteScalar();
+                string sqlCmd2 = "UPDATE tblUsers SET Gender = '" + Gender + "', Weight = " + Weight + ", LicenseNo = '" + LicenseNo + "'WHERE   id = " + id;
+                SqlCommand cmd2 = new SqlCommand(sqlCmd, myConnection);
+                cmd2.ExecuteScalar();
+                
+                return true;
+            }
             return false;
         }
     }
