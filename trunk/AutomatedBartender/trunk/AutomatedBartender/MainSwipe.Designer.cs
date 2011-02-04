@@ -33,7 +33,7 @@
             this.ToUserScreenBtn = new System.Windows.Forms.Button();
             this.ToAdminScreenBtn = new System.Windows.Forms.Button();
             this.DoneLbl = new System.Windows.Forms.Label();
-            this.InfoRTB = new System.Windows.Forms.RichTextBox();
+            this.ChrisLoginBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,23 +104,22 @@
             this.DoneLbl.Text = "Done";
             this.DoneLbl.Visible = false;
             // 
-            // InfoRTB
+            // ChrisLoginBtn
             // 
-            this.InfoRTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.InfoRTB.Enabled = false;
-            this.InfoRTB.Location = new System.Drawing.Point(118, 12);
-            this.InfoRTB.Name = "InfoRTB";
-            this.InfoRTB.Size = new System.Drawing.Size(153, 210);
-            this.InfoRTB.TabIndex = 3;
-            this.InfoRTB.Text = "";
+            this.ChrisLoginBtn.Location = new System.Drawing.Point(97, 34);
+            this.ChrisLoginBtn.Name = "ChrisLoginBtn";
+            this.ChrisLoginBtn.Size = new System.Drawing.Size(75, 23);
+            this.ChrisLoginBtn.TabIndex = 3;
+            this.ChrisLoginBtn.Text = "Chris Login";
+            this.ChrisLoginBtn.UseVisualStyleBackColor = true;
+            this.ChrisLoginBtn.Click += new System.EventHandler(this.ChrisLoginBtn_Click);
             // 
             // MainSwipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.InfoRTB);
+            this.Controls.Add(this.ChrisLoginBtn);
             this.Controls.Add(this.DoneLbl);
             this.Controls.Add(this.tableLayoutPanel1);
             this.KeyPreview = true;
@@ -140,6 +139,6 @@
         private System.Windows.Forms.Button ToUserScreenBtn;
         private System.Windows.Forms.Button ToAdminScreenBtn;
         private System.Windows.Forms.Label DoneLbl;
-        private System.Windows.Forms.RichTextBox InfoRTB;
+        private System.Windows.Forms.Button ChrisLoginBtn;
     }
 }
