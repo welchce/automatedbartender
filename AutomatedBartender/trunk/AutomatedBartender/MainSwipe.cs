@@ -58,7 +58,7 @@ namespace AutomatedBartender
             //once the suffix has been recorded, parse the information
             if (NumQuestionMarks == 3 && Suffix != "")
             {
-                InfoRTB.Text = "";
+                //InfoRTB.Text = "";
                 Swipe ThisSwipe = new Swipe();
                 string[] theReturn = ThisSwipe.InfoFromID(IDINFO, Suffix);
                 //string theReturn = "";
@@ -99,6 +99,14 @@ namespace AutomatedBartender
         {
             Form adminMainScreen = new AdminMain();
             adminMainScreen.Show();
+        }
+
+        private void ChrisLoginBtn_Click(object sender, EventArgs e)
+        {
+            Swipe ThisSwipe = new Swipe();
+            string[] theReturn = ThisSwipe.InfoFromID("%OHNORTH BEND^WELCH$CHRISTOPHER$E$^31 MUIRFIELD DR^?;6360231921525308=130619880630?%1045052      D B             1600150BROBRO                          92\"*SA     ?", "A");
+            DatabaseCalls DBC = new DatabaseCalls();
+            DBC.verifyUser(theReturn[0]);
         }
     }
 }

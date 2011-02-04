@@ -7,7 +7,7 @@ namespace AutomatedBartender
 {
     class Swipe
     {
-        public string[] InfoFromID(string IDINFO, String Suffix)
+        public string[] InfoFromID(string IDINFO, string Suffix)
         {
             //declare all variables needed
             string State = "";
