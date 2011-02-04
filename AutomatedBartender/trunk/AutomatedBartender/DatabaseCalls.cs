@@ -17,6 +17,11 @@ namespace AutomatedBartender
                                        "Trusted_Connection=yes;" +
                                        "database=Bartender; " +
                                        "connection timeout=30");
+            /*SqlConnection myConnection = new SqlConnection("user id=External;" +
+                                       "password=mattsucks;server=tcp:10.63.3.61\\SQLEXPRESS;" +
+                                       "Trusted_Connection=yes;" +
+                                       "database=Bartender; " +
+                                       "connection timeout=30");*/
 
 
             /*SqlCommand cmd = new SqlCommand("spInsertUser", myConnection);
