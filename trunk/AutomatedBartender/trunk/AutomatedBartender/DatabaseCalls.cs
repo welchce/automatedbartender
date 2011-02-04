@@ -58,13 +58,22 @@ namespace AutomatedBartender
                 string sqlCmd2 = "SELECT Admin FROM tblUsers WHERE LicenseNo = '" + LicenseNo + "'";
                 SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
                 //myConnection.Open();
-                if ((bool)cmd2.ExecuteScalar())
+                try
                 {
-                    return "Admin";
-                }else
+                    if ((bool)cmd2.ExecuteScalar())
+                    {
+                        return "Admin";
+                    }
+                    else
+                    {
+                        return "Regular";
+                    }
+                }
+                catch
                 {
                     return "Regular";
                 }
+
             }
 
             return "New";
@@ -79,9 +88,8 @@ namespace AutomatedBartender
             {
                 int id = (int)cmd.ExecuteScalar();
                 string sqlCmd2 = "UPDATE tblUsers SET Gender = '" + Gender + "', Weight = " + Weight + ", LicenseNo = '" + LicenseNo + "'WHERE   id = " + id;
-                SqlCommand cmd2 = new SqlCommand(sqlCmd, myConnection);
-                cmd2.ExecuteScalar();
-                
+                SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
+                cmd2.ExecuteNonQuery();
                 return true;
             }
             return false;
