@@ -12,11 +12,17 @@ namespace AutomatedBartender
 {
     class DatabaseCalls
     {
-            SqlConnection myConnection = new SqlConnection("user id=WELCH2400\\Administrator;" +
-                                       "password=elder01;server=WELCH2400\\SQLEXPRESS;" +
-                                       "Trusted_Connection=yes;" +
-                                       "database=Bartender; " +
-                                       "connection timeout=30");
+        SqlConnection myConnection = new SqlConnection("user id=LAPPY6400\\Christopher;" +
+                               "password=elder01;server=localhost;" +
+                               "Trusted_Connection=true;" +
+                               "database=Bartender; " +
+                               "connection timeout=30");
+        /*SqlConnection myConnection = new SqlConnection("user id=WELCH2400\\Administrator;" +
+                                   "password=elder01;server=WELCH2400\\SQLEXPRESS;" +
+                                   "Trusted_Connection=yes;" +
+                                   "database=Bartender; " +
+                                   "connection timeout=30");*/
+
             /*SqlConnection myConnection = new SqlConnection("user id=External;" +
                                        "password=mattsucks;server=tcp:10.63.3.61\\SQLEXPRESS;" +
                                        "Trusted_Connection=yes;" +
