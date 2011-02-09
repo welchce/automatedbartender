@@ -191,15 +191,7 @@ namespace AutomatedBartender
             arrayToReturn[2] = FirstName;
             return arrayToReturn;*/
             DatabaseCalls DBC = new DatabaseCalls();
-            string userType = DBC.verifyUser(DL);
-            if (userType == "New")
-            {
-                bool user = DBC.updateUser(LastName, FirstName, DL, Gender, Weight);
-            }
-            else
-            {
-            }
-            
+            string userType = DBC.verifyUser(LastName, FirstName, DL, Gender, Weight);           
         }
     }
 }
