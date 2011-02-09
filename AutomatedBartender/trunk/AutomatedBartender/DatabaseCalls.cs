@@ -61,27 +61,30 @@ namespace AutomatedBartender
             if (cmd.ExecuteScalar() != null)
             {
                 if ((bool)cmd.ExecuteScalar())
-                {
                     return "Admin";
-                }
                 else
-                {
                     return "Regular";
-                }
             }
             //SELECT TOP 1 * FROM tblUsers WHERE FirstName = 'Matt' AND LastName = 'Fuller'
-            string sqlCmd2 = "SELECT TOP 1 * FROM tblUsers WHERE FirstName = '" + FirstName + "' AND LastName = '" + LastName + "'";
+            string sqlCmd2 = "SELECT TOP 1 @ID = ID,@Admin = Admin FROM tblUsers WHERE FirstName = '" + FirstName + "' AND LastName = '" + LastName + "'";
             SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
-            int test = (int)cmd.ExecuteScalar();
-            if (cmd.ExecuteScalar() != null)
+            SqlParameter adminParameter = cmd2.Parameters.Add("@Admin",SqlDbType.Bit);
+            SqlParameter rowID = cmd2.Parameters.Add("@ID", SqlDbType.Int);
+            adminParameter.Direction = ParameterDirection.Output;
+            rowID.Direction = ParameterDirection.Output;
+            cmd2.ExecuteReader().Close();
+            if (rowID.Value.ToString() != "")
             {
-                int id = (int)cmd.ExecuteScalar();
-                string sqlCmd3 = "UPDATE tblUsers SET Gender = '" + Gender + "', Weight = " + Weight + ", LicenseNo = '" + LicenseNo + "'WHERE   id = " + id;
+                string sqlCmd3 = "UPDATE tblUsers SET Gender = '" + Gender + "', Weight = " + Weight + ", LicenseNo = '" + LicenseNo + "'WHERE   id = " + rowID.Value.ToString();
                 SqlCommand cmd3 = new SqlCommand(sqlCmd3, myConnection);
-                cmd2.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
+                if ((bool)adminParameter.Value == false)
+                    return "Regular";
+                else
+                    return "Admin";
                 //return true;
             }
-            return "Regular";
+            return "None";
         }
     }
 }
