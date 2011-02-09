@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace AutomatedBartender
 {
@@ -191,7 +192,23 @@ namespace AutomatedBartender
             arrayToReturn[2] = FirstName;
             return arrayToReturn;*/
             DatabaseCalls DBC = new DatabaseCalls();
-            string userType = DBC.verifyUser(LastName, FirstName, DL, Gender, Weight);           
+            string userType = DBC.verifyUser(LastName, FirstName, DL, Gender, Weight);
+            if (userType == "Admin")
+            {
+                Form adminMainScreen = new AdminMain();
+                adminMainScreen.Show();
+            }
+            else if (userType == "Regular")
+            {
+                Form userMainScreen = new UserMain();
+                userMainScreen.Show();
+            }
+            else
+            {
+                Form deniedScreen = new AddUser();
+                deniedScreen.Show();
+
+            }
         }
     }
 }
