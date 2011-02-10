@@ -11,10 +11,13 @@ namespace AutomatedBartender
 {
     public partial class UserMain : Form
     {
-        public UserMain()
+        string LICENSE = "";
+
+        public UserMain(string DriversLicense)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
+            setLicense(DriversLicense);
         }
 
         private void UserExitBtn_Click(object sender, EventArgs e)
@@ -24,23 +27,33 @@ namespace AutomatedBartender
 
         private void UserPersonalHistoryBtn_Click(object sender, EventArgs e)
         {
-            Form drinkHistory = new DrinkHistory(false);
+            Form drinkHistory = new DrinkHistory(false, getLicense());
             drinkHistory.Show();
             this.Close();
         }
 
         private void UserTop25Btn_Click(object sender, EventArgs e)
         {
-            Form top25 = new Top25(false);
+            Form top25 = new Top25(false, getLicense());
             top25.Show();
             this.Close();
         }
 
         private void UserAllDrinksBtn_Click(object sender, EventArgs e)
         {
-            Form allDrinks = new AllDrinks(false);
+            Form allDrinks = new AllDrinks(false, getLicense());
             allDrinks.Show();
             this.Close();
+        }
+
+        private string getLicense()
+        {
+            return LICENSE;
+        }
+
+        private void setLicense(string DL)
+        {
+            LICENSE = DL;
         }
     }
 }

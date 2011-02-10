@@ -12,24 +12,26 @@ namespace AutomatedBartender
     public partial class AllDrinks : Form
     {
         bool isAdmin = false;
-        public AllDrinks(bool admin)
+        string LICENSE = "";
+        public AllDrinks(bool admin, string DriversLicense)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setIsAdmin(admin);
+            setLicense(DriversLicense);
         }
 
         private void AllDrinksBackBtn_Click(object sender, EventArgs e)
         {
             if (getIsAdmin() == true)
             {
-                Form adminMainScreen = new AdminMain();
+                Form adminMainScreen = new AdminMain(getLicense());
                 adminMainScreen.Show();
                 this.Close();
             }
             else
             {
-                Form userMainScreen = new UserMain();
+                Form userMainScreen = new UserMain(getLicense());
                 userMainScreen.Show();
                 this.Close();
             }
@@ -43,6 +45,28 @@ namespace AutomatedBartender
         private void setIsAdmin(bool value)
         {
             isAdmin = value;
-        }       
+        }
+
+        private string getLicense()
+        {
+            return LICENSE;
+        }
+
+        private void setLicense(string DL)
+        {
+            LICENSE = DL;
+        }
+
+        private void AllDrinks_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bartenderDataSet.spAllDrinks' table. You can move, or remove it, as needed.
+            //this.spAllDrinksTableAdapter.Fill(this.bartenderDataSet.spAllDrinks);
+
+            DatabaseCalls DBC = new DatabaseCalls();
+            AllDrinksDataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            AllDrinksDataGrid.ReadOnly = true;
+            AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,Name FROM tblRecipe");
+
+        }
     }
 }

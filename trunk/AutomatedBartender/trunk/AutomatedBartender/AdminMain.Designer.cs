@@ -38,6 +38,7 @@
             this.AdminTop25Btn = new System.Windows.Forms.Button();
             this.AdminAddDrinkBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,6 +164,7 @@
             this.tableLayoutPanel1.Controls.Add(this.AdminTop25Btn, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.AdminAddDrinkBtn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -173,6 +175,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(313, 266);
             this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(107, 198);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "label2";
             // 
             // AdminMain
             // 
@@ -201,6 +212,7 @@
         private System.Windows.Forms.Button AdminAllDrinksBtn;
         private System.Windows.Forms.Button AdminTop25Btn;
         private System.Windows.Forms.Button AdminAddDrinkBtn;
+        private System.Windows.Forms.Label label2;
     }
 }
 

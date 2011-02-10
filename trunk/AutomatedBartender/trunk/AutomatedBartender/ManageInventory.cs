@@ -11,17 +11,30 @@ namespace AutomatedBartender
 {
     public partial class ManageInventory : Form
     {
-        public ManageInventory()
+        string LICENSE = "";
+
+        public ManageInventory(string DriversLicense)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
+            setLicense(DriversLicense);
         }
 
         private void manageInventoryBackbtn_Click(object sender, EventArgs e)
         {
-            Form adminMainScreen = new AdminMain();
+            Form adminMainScreen = new AdminMain(getLicense());
             adminMainScreen.Show();
             this.Close();
+        }
+
+        private string getLicense()
+        {
+            return LICENSE;
+        }
+
+        private void setLicense(string DL)
+        {
+            LICENSE = DL;
         }
     }
 }

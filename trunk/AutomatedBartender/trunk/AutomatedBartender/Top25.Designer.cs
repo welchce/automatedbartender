@@ -28,15 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.Top25SubmitBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Top25BackBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Top25DataGrid = new System.Windows.Forms.DataGridView();
+            this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
+            this.spTop25BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spTop25TableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.spTop25TableAdapter();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Top25DataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spTop25BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,9 +104,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.Top25DataGrid, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.Top25DataGrid, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -121,6 +127,21 @@
             this.Top25DataGrid.Name = "Top25DataGrid";
             this.Top25DataGrid.Size = new System.Drawing.Size(307, 180);
             this.Top25DataGrid.TabIndex = 0;
+            this.Top25DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Top25DataGrid_CellContentClick);
+            // 
+            // bartenderDataSet
+            // 
+            this.bartenderDataSet.DataSetName = "BartenderDataSet";
+            this.bartenderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // spTop25BindingSource
+            // 
+            this.spTop25BindingSource.DataMember = "spTop25";
+            this.spTop25BindingSource.DataSource = this.bartenderDataSet;
+            // 
+            // spTop25TableAdapter
+            // 
+            this.spTop25TableAdapter.ClearBeforeFill = true;
             // 
             // Top25
             // 
@@ -130,10 +151,13 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Top25";
             this.Text = "Top 25";
+            this.Load += new System.EventHandler(this.Top25_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Top25DataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spTop25BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,5 +170,8 @@
         private System.Windows.Forms.Button Top25BackBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView Top25DataGrid;
+        private BartenderDataSet bartenderDataSet;
+        private System.Windows.Forms.BindingSource spTop25BindingSource;
+        private BartenderDataSetTableAdapters.spTop25TableAdapter spTop25TableAdapter;
     }
 }

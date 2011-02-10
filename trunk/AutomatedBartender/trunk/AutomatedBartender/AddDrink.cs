@@ -12,11 +12,14 @@ namespace AutomatedBartender
     public partial class AddDrink : Form
     {
         bool isAdmin = false;
-        public AddDrink(bool admin)
+        string LICENSE = "";
+
+        public AddDrink(bool admin, string DriversLicense)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setIsAdmin(admin);
+            setLicense(DriversLicense);
         }
         private bool getIsAdmin()
         {
@@ -32,16 +35,26 @@ namespace AutomatedBartender
         {
             if (getIsAdmin() == true)
             {
-                Form adminMainScreen = new AdminMain();
+                Form adminMainScreen = new AdminMain(getLicense());
                 adminMainScreen.Show();
                 this.Close();
             }
             else
             {
-                Form userMainScreen = new UserMain();
+                Form userMainScreen = new UserMain(getLicense());
                 userMainScreen.Show();
                 this.Close();
             }
+        }
+
+        private string getLicense()
+        {
+            return LICENSE;
+        }
+
+        private void setLicense(string DL)
+        {
+            LICENSE = DL;
         }
     }
 }

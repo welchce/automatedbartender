@@ -11,15 +11,18 @@ namespace AutomatedBartender
 {
     public partial class ManageUsers : Form
     {
-        public ManageUsers()
+        string LICENSE = "";
+
+        public ManageUsers(string DriversLicense)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
+            setLicense(DriversLicense);
         }
 
         private void ManageUsersBackbtn_Click(object sender, EventArgs e)
         {
-            Form adminMainScreen = new AdminMain();
+            Form adminMainScreen = new AdminMain(getLicense());
             adminMainScreen.Show();
             this.Close();
         }
@@ -30,6 +33,16 @@ namespace AutomatedBartender
             openFD.Title = "Open an Excel File"; 
             openFD.ShowDialog();
 
+        }
+
+        private string getLicense()
+        {
+            return LICENSE;
+        }
+
+        private void setLicense(string DL)
+        {
+            LICENSE = DL;
         }
     }
 }

@@ -12,24 +12,27 @@ namespace AutomatedBartender
     public partial class DrinkHistory : Form
     {
         bool isAdmin = false;
-        public DrinkHistory(bool admin)
+        string LICENSE = "";
+
+        public DrinkHistory(bool admin, string DriversLicense)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setIsAdmin(admin);
+            setLicense(DriversLicense);
         }
 
         private void DrinkHistoryBackBtn_Click(object sender, EventArgs e)
         {
             if (getIsAdmin() == true)
             {
-                Form adminMainScreen = new AdminMain();
+                Form adminMainScreen = new AdminMain(getLicense());
                 adminMainScreen.Show();
                 this.Close();
             }
             else
             {
-                Form userMainScreen = new UserMain();
+                Form userMainScreen = new UserMain(getLicense());
                 userMainScreen.Show();
                 this.Close();
             }
@@ -43,6 +46,29 @@ namespace AutomatedBartender
         private void setIsAdmin(bool value)
         {
             isAdmin = value;
+        }
+
+        private string getLicense()
+        {
+            return LICENSE;
+        }
+
+        private void setLicense(string DL)
+        {
+            LICENSE = DL;
+        }
+
+        private void DrinkHistory_Load(object sender, EventArgs e)
+        {
+            DatabaseCalls DBC = new DatabaseCalls();
+            DrinkHistoryDataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            DrinkHistoryDataGrid.ReadOnly = true;
+            DrinkHistoryDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,RecipeID FROM tblQueue WHERE UserID = '" + getLicense() + "'");
+        }
+
+        private void DrinkHistoryDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            return;
         }
 
     }

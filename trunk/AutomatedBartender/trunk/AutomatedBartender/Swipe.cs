@@ -195,12 +195,12 @@ namespace AutomatedBartender
             string userType = DBC.verifyUser(LastName, FirstName, DL, Gender, Weight);
             if (userType == "Admin")
             {
-                Form adminMainScreen = new AdminMain();
+                Form adminMainScreen = new AdminMain(DL);
                 adminMainScreen.Show();
             }
             else if (userType == "Regular")
             {
-                Form userMainScreen = new UserMain();
+                Form userMainScreen = new UserMain(DL);
                 userMainScreen.Show();
             }
             else

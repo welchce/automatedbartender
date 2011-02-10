@@ -12,10 +12,14 @@ namespace AutomatedBartender
 {
     public partial class AdminMain : Form
     {
-        public AdminMain()
+        string LICENSE="";
+
+        public AdminMain(string DriversLicense)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
+            setLicense(DriversLicense);
+            label2.Text = getLicense();
         }
 
 
@@ -26,44 +30,54 @@ namespace AutomatedBartender
 
         private void AdminManageUsersBtn_Click(object sender, EventArgs e)
         {
-            Form manageUsersScreen = new ManageUsers();
+            Form manageUsersScreen = new ManageUsers(getLicense());
             manageUsersScreen.Show();
             this.Close();
         }
 
         private void AdminPersonalHistoryBtn_Click(object sender, EventArgs e)
         {
-            Form drinkHistory = new DrinkHistory(true);
+            Form drinkHistory = new DrinkHistory(true, getLicense());
             drinkHistory.Show();
             this.Close();
         }
 
         private void AdminTop25Btn_Click(object sender, EventArgs e)
         {
-            Form top25 = new Top25(true);
+            Form top25 = new Top25(true, getLicense());
             top25.Show();
             this.Close();
         }
 
         private void AdminManageInventoryBtn_Click(object sender, EventArgs e)
         {
-            Form manageInventory = new ManageInventory();
+            Form manageInventory = new ManageInventory(getLicense());
             manageInventory.Show();
             this.Close();
         }
 
         private void AdminAllDrinksBtn_Click(object sender, EventArgs e)
         {
-            Form allDrinks = new AllDrinks(true);
+            Form allDrinks = new AllDrinks(true, getLicense());
             allDrinks.Show();
             this.Close();
         }
 
         private void AdminAddDrinkBtn_Click(object sender, EventArgs e)
         {
-            Form addDrink = new AddDrink(true);
+            Form addDrink = new AddDrink(true, getLicense());
             addDrink.Show();
             this.Close();
+        }
+
+        private string getLicense()
+        {
+            return LICENSE;
+        }
+
+        private void setLicense(string DL)
+        {
+            LICENSE = DL;
         }
     }
 }
