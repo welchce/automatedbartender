@@ -62,6 +62,7 @@
             this.DrinkHistoryDataGrid.Name = "DrinkHistoryDataGrid";
             this.DrinkHistoryDataGrid.Size = new System.Drawing.Size(307, 180);
             this.DrinkHistoryDataGrid.TabIndex = 0;
+            this.DrinkHistoryDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DrinkHistoryDataGrid_CellContentClick);
             // 
             // tableLayoutPanel1
             // 
@@ -130,6 +131,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DrinkHistory";
             this.Text = "Drink History";
+            this.Load += new System.EventHandler(this.DrinkHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DrinkHistoryDataGrid)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

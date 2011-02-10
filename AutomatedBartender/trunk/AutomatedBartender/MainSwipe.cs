@@ -91,14 +91,14 @@ namespace AutomatedBartender
 
         private void ToUserScreenBtn_Click(object sender, EventArgs e)
         {
-            Form userMainScreen = new UserMain();
-            userMainScreen.Show();
+            //Form userMainScreen = new UserMain();
+            //userMainScreen.Show();
         }
 
         private void ToAdminScreenBtn_Click(object sender, EventArgs e)
         {
-            Form adminMainScreen = new AdminMain();
-            adminMainScreen.Show();
+            //Form adminMainScreen = new AdminMain();
+            //adminMainScreen.Show();
         }
 
         private void ChrisLoginBtn_Click(object sender, EventArgs e)

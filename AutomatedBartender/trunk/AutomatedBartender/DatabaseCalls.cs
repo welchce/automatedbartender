@@ -86,5 +86,21 @@ namespace AutomatedBartender
             }
             return "None";
         }
+
+        public BindingSource GetForDataGrid(string sqlCmd)
+        {
+            BindingSource dbBindSource = new BindingSource();
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCmd, myConnection);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+ 
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            dbBindSource.DataSource = table;
+            return dbBindSource;
+        }
     }
 }

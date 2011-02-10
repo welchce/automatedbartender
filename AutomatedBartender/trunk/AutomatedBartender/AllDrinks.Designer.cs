@@ -28,15 +28,25 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.AllDrinksDataGrid = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.AllDrinksSubmitBtn = new System.Windows.Forms.Button();
             this.AllDrinksBackBtn = new System.Windows.Forms.Button();
+            this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
+            this.spAllDrinksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spAllDrinksTableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.spAllDrinksTableAdapter();
+            this.spAllDrinksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AllDrinksDataGrid)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAllDrinksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAllDrinksBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -64,7 +74,12 @@
             this.AllDrinksDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.AllDrinksDataGrid.AutoGenerateColumns = false;
             this.AllDrinksDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AllDrinksDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn});
+            this.AllDrinksDataGrid.DataSource = this.spAllDrinksBindingSource;
             this.AllDrinksDataGrid.Location = new System.Drawing.Point(3, 39);
             this.AllDrinksDataGrid.Name = "AllDrinksDataGrid";
             this.AllDrinksDataGrid.Size = new System.Drawing.Size(270, 163);
@@ -122,6 +137,38 @@
             this.AllDrinksBackBtn.UseVisualStyleBackColor = true;
             this.AllDrinksBackBtn.Click += new System.EventHandler(this.AllDrinksBackBtn_Click);
             // 
+            // bartenderDataSet
+            // 
+            this.bartenderDataSet.DataSetName = "BartenderDataSet";
+            this.bartenderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // spAllDrinksBindingSource
+            // 
+            this.spAllDrinksBindingSource.DataMember = "spAllDrinks";
+            this.spAllDrinksBindingSource.DataSource = this.bartenderDataSet;
+            // 
+            // spAllDrinksTableAdapter
+            // 
+            this.spAllDrinksTableAdapter.ClearBeforeFill = true;
+            // 
+            // spAllDrinksBindingSource1
+            // 
+            this.spAllDrinksBindingSource1.DataMember = "spAllDrinks";
+            this.spAllDrinksBindingSource1.DataSource = this.bartenderDataSet;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
             // AllDrinks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,10 +177,14 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AllDrinks";
             this.Text = "AllDrinks";
+            this.Load += new System.EventHandler(this.AllDrinks_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AllDrinksDataGrid)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAllDrinksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAllDrinksBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -146,5 +197,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button AllDrinksSubmitBtn;
         private System.Windows.Forms.Button AllDrinksBackBtn;
+        private BartenderDataSet bartenderDataSet;
+        private System.Windows.Forms.BindingSource spAllDrinksBindingSource;
+        private BartenderDataSetTableAdapters.spAllDrinksTableAdapter spAllDrinksTableAdapter;
+        private System.Windows.Forms.BindingSource spAllDrinksBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 	}
 }
