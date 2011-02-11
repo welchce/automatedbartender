@@ -66,6 +66,7 @@
             this.Top25SubmitBtn.TabIndex = 0;
             this.Top25SubmitBtn.Text = "Submit";
             this.Top25SubmitBtn.UseVisualStyleBackColor = true;
+            this.Top25SubmitBtn.Click += new System.EventHandler(this.Top25SubmitBtn_Click);
             // 
             // tableLayoutPanel2
             // 

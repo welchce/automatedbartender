@@ -31,21 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.AllDrinksDataGrid = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spAllDrinksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.AllDrinksSubmitBtn = new System.Windows.Forms.Button();
             this.AllDrinksBackBtn = new System.Windows.Forms.Button();
-            this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
-            this.spAllDrinksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.spAllDrinksTableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.spAllDrinksTableAdapter();
             this.spAllDrinksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AllDrinksDataGrid)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAllDrinksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spAllDrinksBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +84,29 @@
             this.AllDrinksDataGrid.Name = "AllDrinksDataGrid";
             this.AllDrinksDataGrid.Size = new System.Drawing.Size(270, 163);
             this.AllDrinksDataGrid.TabIndex = 0;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // spAllDrinksBindingSource
+            // 
+            this.spAllDrinksBindingSource.DataMember = "spAllDrinks";
+            this.spAllDrinksBindingSource.DataSource = this.bartenderDataSet;
+            // 
+            // bartenderDataSet
+            // 
+            this.bartenderDataSet.DataSetName = "BartenderDataSet";
+            this.bartenderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -125,6 +148,7 @@
             this.AllDrinksSubmitBtn.TabIndex = 0;
             this.AllDrinksSubmitBtn.Text = "Submit";
             this.AllDrinksSubmitBtn.UseVisualStyleBackColor = true;
+            this.AllDrinksSubmitBtn.Click += new System.EventHandler(this.AllDrinksSubmitBtn_Click);
             // 
             // AllDrinksBackBtn
             // 
@@ -137,16 +161,6 @@
             this.AllDrinksBackBtn.UseVisualStyleBackColor = true;
             this.AllDrinksBackBtn.Click += new System.EventHandler(this.AllDrinksBackBtn_Click);
             // 
-            // bartenderDataSet
-            // 
-            this.bartenderDataSet.DataSetName = "BartenderDataSet";
-            this.bartenderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spAllDrinksBindingSource
-            // 
-            this.spAllDrinksBindingSource.DataMember = "spAllDrinks";
-            this.spAllDrinksBindingSource.DataSource = this.bartenderDataSet;
-            // 
             // spAllDrinksTableAdapter
             // 
             this.spAllDrinksTableAdapter.ClearBeforeFill = true;
@@ -155,19 +169,6 @@
             // 
             this.spAllDrinksBindingSource1.DataMember = "spAllDrinks";
             this.spAllDrinksBindingSource1.DataSource = this.bartenderDataSet;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // AllDrinks
             // 
@@ -181,9 +182,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AllDrinksDataGrid)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAllDrinksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spAllDrinksBindingSource1)).EndInit();
             this.ResumeLayout(false);
 

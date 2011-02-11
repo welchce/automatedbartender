@@ -11,7 +11,7 @@ namespace AutomatedBartender
 {
     public partial class AllDrinks : Form
     {
-        bool isAdmin = false;
+        bool isAdmin;
         string LICENSE = "";
         public AllDrinks(bool admin, string DriversLicense)
         {
@@ -67,6 +67,14 @@ namespace AutomatedBartender
             AllDrinksDataGrid.ReadOnly = true;
             AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,Name FROM tblRecipe");
 
+        }
+
+        private void AllDrinksSubmitBtn_Click(object sender, EventArgs e)
+        {
+            DatabaseCalls DBC = new DatabaseCalls();
+            int row = AllDrinksDataGrid.CurrentCellAddress.Y;
+            string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
+            DBC.AddDrinkToQueue(getLicense(), DrinkID);
         }
     }
 }
