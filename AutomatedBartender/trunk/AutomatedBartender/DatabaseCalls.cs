@@ -102,5 +102,15 @@ namespace AutomatedBartender
             dbBindSource.DataSource = table;
             return dbBindSource;
         }
+
+        public void AddDrinkToQueue(string LicenseNo, string DrinkID)
+        {
+            string sqlCmd = "INSERT INTO tblQueue VALUES ('"+LicenseNo+"','"+DrinkID+"', null, null)";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            //SqlParameter returnParameter = new SqlParameter("@LicenseNo", SqlDbType.VarChar);
+            //returnParameter.Direction = ParameterDirection.ReturnValue;
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+        }
     }
 }

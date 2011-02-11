@@ -62,13 +62,22 @@ namespace AutomatedBartender
         {
             DatabaseCalls DBC = new DatabaseCalls();
             Top25DataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            //Top25DataGrid.ReadOnly = true;
-            Top25DataGrid.DataSource = DBC.GetForDataGrid("SELECT TOP 25 * FROM tblRecipe");
+            Top25DataGrid.ReadOnly = true;
+            Top25DataGrid.DataSource = DBC.GetForDataGrid("SELECT TOP 5 * FROM tblRecipe ORDER BY numDispensed DESC");
+            //Top25DataGrid.Rows[3].Selected = true;
         }
 
         private void Top25DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Top25SubmitBtn_Click(object sender, EventArgs e)
+        {
+            DatabaseCalls DBC = new DatabaseCalls();
+            int row = Top25DataGrid.CurrentCellAddress.Y;
+            string DrinkID = Top25DataGrid[0, row].Value.ToString();
+            DBC.AddDrinkToQueue(getLicense(), DrinkID);
         }
        
     }
