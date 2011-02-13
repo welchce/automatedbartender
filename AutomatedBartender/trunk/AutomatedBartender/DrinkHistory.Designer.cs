@@ -111,6 +111,7 @@
             this.DrinkHistorySubmitBtn.TabIndex = 0;
             this.DrinkHistorySubmitBtn.Text = "Submit";
             this.DrinkHistorySubmitBtn.UseVisualStyleBackColor = true;
+            this.DrinkHistorySubmitBtn.Click += new System.EventHandler(this.DrinkHistorySubmitBtn_Click);
             // 
             // DrinkHistoryBackBtn
             // 

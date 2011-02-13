@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.manageUsersGridView1 = new System.Windows.Forms.DataGridView();
+            this.manageUsersGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ManageUsersImportbtn = new System.Windows.Forms.Button();
@@ -37,8 +37,10 @@
             this.ManageUsersRemovebtn = new System.Windows.Forms.Button();
             this.ManageUsersBackbtn = new System.Windows.Forms.Button();
             this.openFD = new System.Windows.Forms.OpenFileDialog();
+            this.FNLNRB = new System.Windows.Forms.RadioButton();
+            this.LNFNRB = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manageUsersGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageUsersGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +52,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.manageUsersGridView1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.manageUsersGridView, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 3);
@@ -64,16 +66,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(260, 238);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // manageUsersGridView1
+            // manageUsersGridView
             // 
-            this.manageUsersGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.manageUsersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.manageUsersGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.manageUsersGridView1.Location = new System.Drawing.Point(3, 61);
-            this.manageUsersGridView1.Name = "manageUsersGridView1";
-            this.manageUsersGridView1.Size = new System.Drawing.Size(254, 136);
-            this.manageUsersGridView1.TabIndex = 0;
+            this.manageUsersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.manageUsersGridView.Location = new System.Drawing.Point(3, 61);
+            this.manageUsersGridView.Name = "manageUsersGridView";
+            this.manageUsersGridView.Size = new System.Drawing.Size(254, 136);
+            this.manageUsersGridView.TabIndex = 0;
             // 
             // label1
             // 
@@ -97,6 +99,8 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Controls.Add(this.ManageUsersImportbtn, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.FNLNRB, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.LNFNRB, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 38);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -142,6 +146,7 @@
             this.ManageUsersRemovebtn.TabIndex = 0;
             this.ManageUsersRemovebtn.Text = "Remove";
             this.ManageUsersRemovebtn.UseVisualStyleBackColor = true;
+            this.ManageUsersRemovebtn.Click += new System.EventHandler(this.ManageUsersRemovebtn_Click);
             // 
             // ManageUsersBackbtn
             // 
@@ -158,6 +163,29 @@
             // 
             this.openFD.FileName = "openFileDialog1";
             // 
+            // FNLNRB
+            // 
+            this.FNLNRB.AutoSize = true;
+            this.FNLNRB.Checked = true;
+            this.FNLNRB.Location = new System.Drawing.Point(87, 3);
+            this.FNLNRB.Name = "FNLNRB";
+            this.FNLNRB.Size = new System.Drawing.Size(78, 11);
+            this.FNLNRB.TabIndex = 1;
+            this.FNLNRB.TabStop = true;
+            this.FNLNRB.Text = "First Name Last Name";
+            this.FNLNRB.UseVisualStyleBackColor = true;
+            // 
+            // LNFNRB
+            // 
+            this.LNFNRB.AutoSize = true;
+            this.LNFNRB.Location = new System.Drawing.Point(171, 3);
+            this.LNFNRB.Name = "LNFNRB";
+            this.LNFNRB.Size = new System.Drawing.Size(80, 11);
+            this.LNFNRB.TabIndex = 2;
+            this.LNFNRB.TabStop = true;
+            this.LNFNRB.Text = "Last Name First Name";
+            this.LNFNRB.UseVisualStyleBackColor = true;
+            // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,10 +194,12 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ManageUsers";
             this.Text = "Manage Users Screen";
+            this.Load += new System.EventHandler(this.ManageUsers_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manageUsersGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageUsersGridView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -178,7 +208,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView manageUsersGridView1;
+        private System.Windows.Forms.DataGridView manageUsersGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button ManageUsersImportbtn;
@@ -186,5 +216,7 @@
         private System.Windows.Forms.Button ManageUsersRemovebtn;
         private System.Windows.Forms.Button ManageUsersBackbtn;
         private System.Windows.Forms.OpenFileDialog openFD;
+        private System.Windows.Forms.RadioButton FNLNRB;
+        private System.Windows.Forms.RadioButton LNFNRB;
     }
 }

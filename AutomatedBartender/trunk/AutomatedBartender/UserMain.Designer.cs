@@ -163,7 +163,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UserMain";
             this.Text = "UserMainScreen";
-            this.TopMost = true;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
