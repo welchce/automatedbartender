@@ -112,5 +112,20 @@ namespace AutomatedBartender
             myConnection.Open();
             cmd.ExecuteNonQuery();
         }
+
+        public void AddUser(string FirstName, string LastName)
+        {
+            string sqlCmd = "INSERT INTO tblUsers VALUES ('" + FirstName + "','" + LastName + "', null, 'False', null, null)";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+        }
+        public void DeleteUser(string ID)
+        {
+            string sqlCmd = "DELETE FROM tblUsers WHERE ID = '" + ID + "'";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+        }
     }
 }

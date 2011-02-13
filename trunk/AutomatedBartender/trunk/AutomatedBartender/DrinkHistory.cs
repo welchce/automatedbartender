@@ -63,12 +63,20 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             DrinkHistoryDataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             DrinkHistoryDataGrid.ReadOnly = true;
-            DrinkHistoryDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,RecipeID FROM tblQueue WHERE UserID = '" + getLicense() + "'");
+            DrinkHistoryDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,RecipeID FROM tblQueue WHERE UserID = '" + getLicense() + "' AND Dispensed = 'True'");
         }
 
         private void DrinkHistoryDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             return;
+        }
+
+        private void DrinkHistorySubmitBtn_Click(object sender, EventArgs e)
+        {
+            DatabaseCalls DBC = new DatabaseCalls();
+            int row = DrinkHistoryDataGrid.CurrentCellAddress.Y;
+            string DrinkID = DrinkHistoryDataGrid[0, row].Value.ToString();
+            DBC.AddDrinkToQueue(getLicense(), DrinkID);
         }
 
     }
