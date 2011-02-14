@@ -12,22 +12,23 @@ namespace AutomatedBartender
 {
     class DatabaseCalls
     {
-        SqlConnection myConnection = new SqlConnection("user id=LAPPY6400\\Christopher;" +
+        /*SqlConnection myConnection = new SqlConnection("user id=LAPPY6400\\Christopher;" +
                                "password=elder01;server=localhost;" +
                                "Trusted_Connection=true;" +
                                "database=Bartender; " +
-                               "connection timeout=30");
+                               "connection timeout=30");*/
+
         /*SqlConnection myConnection = new SqlConnection("user id=WELCH2400\\Administrator;" +
                                    "password=elder01;server=WELCH2400\\SQLEXPRESS;" +
                                    "Trusted_Connection=yes;" +
                                    "database=Bartender; " +
                                    "connection timeout=30");*/
 
-            /*SqlConnection myConnection = new SqlConnection("user id=External;" +
-                                       "password=mattsucks;server=tcp:10.63.3.61\\SQLEXPRESS;" +
-                                       "Trusted_Connection=yes;" +
+            SqlConnection myConnection = new SqlConnection("user id=External;" +
+                                       "password=mattsucks;server=74.215.230.231;" +
+                                       "Trusted_Connection=false;" +
                                        "database=Bartender; " +
-                                       "connection timeout=30");*/
+                                       "connection timeout=10");
 
 
             /*SqlCommand cmd = new SqlCommand("spInsertUser", myConnection);
