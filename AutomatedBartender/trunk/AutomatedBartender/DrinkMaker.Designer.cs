@@ -48,6 +48,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DrinkMaker";
             this.Text = "DrinkMaker";
+            this.Load += new System.EventHandler(this.DrinkMaker_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

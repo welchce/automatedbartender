@@ -16,6 +16,11 @@ namespace AutomatedBartender
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
+            
+          }
+
+        private void DrinkMaker_Load(object sender, EventArgs e)
+        {
             ArduinoCalls AC = new ArduinoCalls();
             AC.StartArduinoCommunication();
             AC.TurnOnMotor1();
@@ -25,6 +30,8 @@ namespace AutomatedBartender
             AC.TurnOffMotor2();
             this.Close();
         }
+
+     
 
     }
 }
