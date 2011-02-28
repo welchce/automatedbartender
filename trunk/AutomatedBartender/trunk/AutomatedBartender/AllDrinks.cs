@@ -74,6 +74,7 @@ namespace AutomatedBartender
         {
             Form drinkMakerForm = new DrinkMaker();
             //DatabaseCalls DBC = new DatabaseCalls();
+            
             drinkMakerForm.Show();
             this.Close();
             
