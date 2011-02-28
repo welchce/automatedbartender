@@ -70,33 +70,45 @@
             // 
             // AllDrinksDataGrid
             // 
-            this.AllDrinksDataGrid.AllowDrop = true;
-            this.AllDrinksDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.AllDrinksDataGrid.AllowUserToAddRows = false;
+            this.AllDrinksDataGrid.AllowUserToDeleteRows = false;
+            this.AllDrinksDataGrid.AllowUserToResizeColumns = false;
+            this.AllDrinksDataGrid.AllowUserToResizeRows = false;
             this.AllDrinksDataGrid.AutoGenerateColumns = false;
+            this.AllDrinksDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.AllDrinksDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AllDrinksDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.AllDrinksDataGrid.DataSource = this.spAllDrinksBindingSource;
+            this.AllDrinksDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AllDrinksDataGrid.Location = new System.Drawing.Point(3, 39);
             this.AllDrinksDataGrid.Name = "AllDrinksDataGrid";
+            this.AllDrinksDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.AllDrinksDataGrid.RowHeadersVisible = false;
+            this.AllDrinksDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.AllDrinksDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.AllDrinksDataGrid.Size = new System.Drawing.Size(270, 163);
             this.AllDrinksDataGrid.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
             // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.FillWeight = 5F;
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 20F;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 700;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // spAllDrinksBindingSource
             // 

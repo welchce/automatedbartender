@@ -56,5 +56,10 @@ namespace AutomatedBartender
         {
             LICENSE = DL;
         }
+
+        private void AddDrinkAddRowBtn_Click(object sender, EventArgs e)
+        {
+            AddDrinkIngredientTable.Rows.Add();
+        }
     }
 }
