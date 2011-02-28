@@ -113,6 +113,12 @@
       <DependentUpon>BartenderDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DatabaseCalls.cs" />
+    <Compile Include="DrinkMaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrinkMaker.Designer.cs">
+      <DependentUpon>DrinkMaker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Swipe.cs" />
     <Compile Include="DrinkHistory.cs">
       <SubType>Form</SubType>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DrinkHistory.resx">
       <DependentUpon>DrinkHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrinkMaker.resx">
+      <DependentUpon>DrinkMaker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageInventory.resx">
       <DependentUpon>ManageInventory.cs</DependentUpon>

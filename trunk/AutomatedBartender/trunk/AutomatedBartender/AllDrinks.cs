@@ -72,14 +72,9 @@ namespace AutomatedBartender
 
         private void AllDrinksSubmitBtn_Click(object sender, EventArgs e)
         {
+            Form drinkMakerForm = new DrinkMaker();
             DatabaseCalls DBC = new DatabaseCalls();
-            ArduinoCalls AC = new ArduinoCalls();
-            AC.StartArduinoCommunication();
-            AC.TurnOnMotor1();
-            AC.TurnOnMotor2();
-            Thread.Sleep(5000);
-            AC.TurnOffMotor1();
-            AC.TurnOffMotor2();
+            drinkMakerForm.Show();
             this.Close();
             
             //int row = AllDrinksDataGrid.CurrentCellAddress.Y;
