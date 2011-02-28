@@ -73,7 +73,7 @@ namespace AutomatedBartender
         private void AllDrinksSubmitBtn_Click(object sender, EventArgs e)
         {
             Form drinkMakerForm = new DrinkMaker();
-            DatabaseCalls DBC = new DatabaseCalls();
+            //DatabaseCalls DBC = new DatabaseCalls();
             drinkMakerForm.Show();
             this.Close();
             
