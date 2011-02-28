@@ -106,6 +106,7 @@
     <Compile Include="AddDrink.Designer.cs">
       <DependentUpon>AddDrink.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArduinoCalls.cs" />
     <Compile Include="BartenderDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
