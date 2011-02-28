@@ -119,13 +119,16 @@
             // 
             // Top25DataGrid
             // 
-            this.Top25DataGrid.AllowDrop = true;
-            this.Top25DataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Top25DataGrid.AllowUserToAddRows = false;
+            this.Top25DataGrid.AllowUserToDeleteRows = false;
+            this.Top25DataGrid.AllowUserToResizeColumns = false;
+            this.Top25DataGrid.AllowUserToResizeRows = false;
+            this.Top25DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Top25DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Top25DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Top25DataGrid.Location = new System.Drawing.Point(3, 43);
             this.Top25DataGrid.Name = "Top25DataGrid";
+            this.Top25DataGrid.RowHeadersVisible = false;
             this.Top25DataGrid.Size = new System.Drawing.Size(307, 180);
             this.Top25DataGrid.TabIndex = 0;
             this.Top25DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Top25DataGrid_CellContentClick);

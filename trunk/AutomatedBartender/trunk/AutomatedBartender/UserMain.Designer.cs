@@ -76,6 +76,7 @@
             this.UserNewDrinkBtn.TabIndex = 0;
             this.UserNewDrinkBtn.Text = "New Drink";
             this.UserNewDrinkBtn.UseVisualStyleBackColor = true;
+            this.UserNewDrinkBtn.Click += new System.EventHandler(this.UserNewDrinkBtn_Click);
             // 
             // UserTop25Btn
             // 

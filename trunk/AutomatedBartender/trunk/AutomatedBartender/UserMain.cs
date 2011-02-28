@@ -56,5 +56,12 @@ namespace AutomatedBartender
         {
             LICENSE = DL;
         }
+
+        private void UserNewDrinkBtn_Click(object sender, EventArgs e)
+        {
+            Form newDrink = new AddDrink(false, getLicense());
+            newDrink.Show();
+            this.Close();
+        }
     }
 }
