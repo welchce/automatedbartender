@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace AutomatedBartender
 {
@@ -72,9 +73,17 @@ namespace AutomatedBartender
         private void AllDrinksSubmitBtn_Click(object sender, EventArgs e)
         {
             DatabaseCalls DBC = new DatabaseCalls();
-            int row = AllDrinksDataGrid.CurrentCellAddress.Y;
-            string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
-            DBC.AddDrinkToQueue(getLicense(), DrinkID);
+            ArduinoCalls AC = new ArduinoCalls();
+            AC.StartArduinoCommunication();
+            AC.TurnOnMotor1();
+            AC.TurnOnMotor2();
+            Thread.Sleep(5000);
+            AC.TurnOffMotor1();
+            AC.TurnOffMotor2();
+            
+            //int row = AllDrinksDataGrid.CurrentCellAddress.Y;
+            //string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
+            //DBC.AddDrinkToQueue(getLicense(), DrinkID);
         }
     }
 }
