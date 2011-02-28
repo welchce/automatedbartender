@@ -80,6 +80,7 @@ namespace AutomatedBartender
             Thread.Sleep(5000);
             AC.TurnOffMotor1();
             AC.TurnOffMotor2();
+            this.Close();
             
             //int row = AllDrinksDataGrid.CurrentCellAddress.Y;
             //string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
