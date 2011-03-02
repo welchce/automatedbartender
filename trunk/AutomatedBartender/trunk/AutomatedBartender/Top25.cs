@@ -68,10 +68,6 @@ namespace AutomatedBartender
             //Top25DataGrid.Rows[3].Selected = true;
         }
 
-        private void Top25DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void Top25SubmitBtn_Click(object sender, EventArgs e)
         {

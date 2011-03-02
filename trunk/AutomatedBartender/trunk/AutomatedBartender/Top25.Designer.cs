@@ -131,7 +131,6 @@
             this.Top25DataGrid.RowHeadersVisible = false;
             this.Top25DataGrid.Size = new System.Drawing.Size(307, 180);
             this.Top25DataGrid.TabIndex = 0;
-            this.Top25DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Top25DataGrid_CellContentClick);
             // 
             // bartenderDataSet
             // 
