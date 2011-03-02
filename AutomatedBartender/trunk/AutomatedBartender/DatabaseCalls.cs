@@ -113,6 +113,25 @@ namespace AutomatedBartender
             myConnection.Open();
             cmd.ExecuteNonQuery();
         }
+        public void GetDrinkFromQueue()
+        {
+            string sqlCmd = "SELECT TOP 1 @ID=ID, @UserID=UserID, @RecipeID=RecipeID FROM tblQueue WHERE Dispensed = 0";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            SqlParameter DrinkID = cmd.Parameters.Add("@ID", SqlDbType.Int);
+            SqlParameter UserID = cmd.Parameters.Add("@UserID", SqlDbType.Int);
+            SqlParameter RecipeID = cmd.Parameters.Add("@RecipeID", SqlDbType.Int);
+            DrinkID.Direction = ParameterDirection.Output;
+            UserID.Direction = ParameterDirection.Output;
+            RecipeID.Direction = ParameterDirection.Output;
+            cmd.ExecuteReader().Close(); 
+        }
+
+        public void UpdateDrinkInQueue(int ID)
+        {
+            string sqlCmd = "UPDATE tblQueue SET Dispensed = 1 WHERE ID=" + ID;
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            cmd.ExecuteReader().Close();
+        }
 
         public void AddUser(string FirstName, string LastName)
         {
