@@ -12,26 +12,45 @@ namespace AutomatedBartender
 {
     public partial class DrinkMaker : Form
     {
-        public DrinkMaker()
+        string LICENSE = "";
+        public DrinkMaker(string UserID)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
-            
-          }
+            setLicense(UserID);
+        }
+
+        private string getLicense()
+        {
+            return LICENSE;
+        }
+
+        private void setLicense(string DL)
+        {
+            LICENSE = DL;
+        }
 
         private void DrinkMaker_Load(object sender, EventArgs e)
         {
             ArduinoCalls AC = new ArduinoCalls();
             DatabaseCalls DBC = new DatabaseCalls();
             int DrinkID = 0; //
-            DBC.GetDrinkFromQueue();
-            // [DrinkID, UserID, RecipeID] = DBC.GetDrinkFromQueue();
+            int RecipeID = DBC.GetDrinkFromQueue(getLicense());
+            int[] ports = DBC.GetDrinkPorts(RecipeID);
             AC.StartArduinoCommunication();
-            AC.TurnOnMotor1();
-            AC.TurnOnMotor2();
+            int i = 0;
+            while (ports[i] != 0)
+            {
+                AC.TurnOnMotor(ports[i]);
+                i++;
+            }
+            i = 0;
             Thread.Sleep(5000);
-            AC.TurnOffMotor1();
-            AC.TurnOffMotor2();
+            while (ports[i] != 0)
+            {
+                AC.TurnOffMotor1(ports[i]);
+                i++;
+            }
             DBC.UpdateDrinkInQueue(DrinkID); //pass DrinkID
             this.Close();
         }
