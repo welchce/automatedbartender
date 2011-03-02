@@ -106,25 +106,43 @@ namespace AutomatedBartender
 
         public void AddDrinkToQueue(string LicenseNo, string DrinkID)
         {
-            string sqlCmd = "INSERT INTO tblQueue VALUES ('"+LicenseNo+"','"+DrinkID+"', null, null)";
+            string sqlCmd = "INSERT INTO tblQueue VALUES ('"+LicenseNo+"','"+DrinkID+"', 0, null)";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             //SqlParameter returnParameter = new SqlParameter("@LicenseNo", SqlDbType.VarChar);
             //returnParameter.Direction = ParameterDirection.ReturnValue;
             myConnection.Open();
             cmd.ExecuteNonQuery();
         }
-        public void GetDrinkFromQueue()
+        public int GetDrinkFromQueue(string UserID)
         {
-            string sqlCmd = "SELECT TOP 1 @ID=ID, @UserID=UserID, @RecipeID=RecipeID FROM tblQueue WHERE Dispensed = 0";
+            string sqlCmd = "SELECT TOP 1 @RecipeID=RecipeID FROM tblQueue WHERE Dispensed = 0 and UserID=" +UserID +"ORDER BY ID ASC";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
-            SqlParameter DrinkID = cmd.Parameters.Add("@ID", SqlDbType.Int);
-            SqlParameter UserID = cmd.Parameters.Add("@UserID", SqlDbType.Int);
             SqlParameter RecipeID = cmd.Parameters.Add("@RecipeID", SqlDbType.Int);
-            DrinkID.Direction = ParameterDirection.Output;
-            UserID.Direction = ParameterDirection.Output;
             RecipeID.Direction = ParameterDirection.Output;
-            cmd.ExecuteReader().Close(); 
-            //return [DrinkID, UserID, RecipeID]
+            myConnection.Open();
+            cmd.ExecuteReader().Close();
+            return Convert.ToInt32(RecipeID.Value);
+        }
+
+        public int[] GetDrinkPorts(int RecipeID)
+        {
+            string sqlCmd = "SELECT DISTINCT Location FROM tblRecipe R, tblInventory Inv, tblIngredients Ing WHERE R.ID = Ing.RecipeID AND Ing.LiquidID = Inv.ID AND R.ID =" + RecipeID;
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            SqlDataReader sqlReader;
+            sqlReader = cmd.ExecuteReader();
+            if (sqlReader.HasRows)
+            {
+                int[] locations = new int[10];
+                int i = 0;
+                while (sqlReader.Read())
+                {
+                    locations[i] = Convert.ToInt32(sqlReader.GetValue(0));
+                    i++;
+                }
+                return locations;
+            }
+
+            return new int[1];
         }
 
         public void UpdateDrinkInQueue(int ID)
