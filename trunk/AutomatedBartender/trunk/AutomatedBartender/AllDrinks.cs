@@ -69,6 +69,9 @@ namespace AutomatedBartender
             AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID, Name FROM tblRecipe");
             //column 0 is ID and we don't want to see it but we will need id later
             AllDrinksDataGrid.Columns[0].Visible = false;
+            if (isAdmin)
+                AllDrinksSubmitBtn.Visible = false;
+
         }
 
         private void AllDrinksSubmitBtn_Click(object sender, EventArgs e)
