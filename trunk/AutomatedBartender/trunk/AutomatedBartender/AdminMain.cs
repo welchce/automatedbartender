@@ -55,12 +55,6 @@ namespace AutomatedBartender
             this.Close();
         }
 
-        private void AdminAllDrinksBtn_Click(object sender, EventArgs e)
-        {
-            Form allDrinks = new AllDrinks(true, getLicense());
-            allDrinks.Show();
-            this.Close();
-        }
 
         private void AdminAddDrinkBtn_Click(object sender, EventArgs e)
         {
@@ -78,5 +72,13 @@ namespace AutomatedBartender
         {
             LICENSE = DL;
         }
+
+        private void AdminAllDrinksBtn_Click_1(object sender, EventArgs e)
+        {
+            Form allDrinks = new AllDrinks(true, getLicense());
+            allDrinks.Show();
+            this.Close();
+        }
+
     }
 }

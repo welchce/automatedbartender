@@ -130,6 +130,7 @@
             this.AdminAllDrinksBtn.TabIndex = 9;
             this.AdminAllDrinksBtn.Text = "All Drinks";
             this.AdminAllDrinksBtn.UseVisualStyleBackColor = true;
+            this.AdminAllDrinksBtn.Click += new System.EventHandler(this.AdminAllDrinksBtn_Click_1);
             // 
             // AdminMain
             // 
