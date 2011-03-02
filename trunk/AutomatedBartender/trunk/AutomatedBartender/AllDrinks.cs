@@ -66,8 +66,9 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             AllDrinksDataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             AllDrinksDataGrid.ReadOnly = true;
-            AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,Name FROM tblRecipe");
-
+            AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID, Name FROM tblRecipe");
+            //column 0 is ID and we don't want to see it but we will need id later
+            AllDrinksDataGrid.Columns[0].Visible = false;
         }
 
         private void AllDrinksSubmitBtn_Click(object sender, EventArgs e)
@@ -79,7 +80,6 @@ namespace AutomatedBartender
             int row = AllDrinksDataGrid.CurrentCellAddress.Y;
             string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
             DBC.AddDrinkToQueue(getLicense(), DrinkID);
-
             drinkMakerForm.Show();
             this.Close();
         }
