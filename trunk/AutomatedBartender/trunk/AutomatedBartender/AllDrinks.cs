@@ -73,14 +73,15 @@ namespace AutomatedBartender
         private void AllDrinksSubmitBtn_Click(object sender, EventArgs e)
         {
             Form drinkMakerForm = new DrinkMaker();
-            //DatabaseCalls DBC = new DatabaseCalls();
+            DatabaseCalls DBC = new DatabaseCalls();
             
+            //ADD DRINK TO QUEUE
+            int row = AllDrinksDataGrid.CurrentCellAddress.Y;
+            string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
+            DBC.AddDrinkToQueue(getLicense(), DrinkID);
+
             drinkMakerForm.Show();
             this.Close();
-            
-            //int row = AllDrinksDataGrid.CurrentCellAddress.Y;
-            //string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
-            //DBC.AddDrinkToQueue(getLicense(), DrinkID);
         }
     }
 }
