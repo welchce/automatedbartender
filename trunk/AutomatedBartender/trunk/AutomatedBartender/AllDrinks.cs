@@ -76,7 +76,7 @@ namespace AutomatedBartender
 
         private void AllDrinksSubmitBtn_Click(object sender, EventArgs e)
         {
-            Form drinkMakerForm = new DrinkMaker();
+            Form drinkMakerForm = new DrinkMaker(getLicense());
             DatabaseCalls DBC = new DatabaseCalls();
             
             //ADD DRINK TO QUEUE
