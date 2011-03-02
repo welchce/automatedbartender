@@ -114,6 +114,7 @@
             this.ChrisLoginBtn.TabIndex = 3;
             this.ChrisLoginBtn.Text = "Chris Login";
             this.ChrisLoginBtn.UseVisualStyleBackColor = true;
+            this.ChrisLoginBtn.Visible = false;
             this.ChrisLoginBtn.Click += new System.EventHandler(this.ChrisLoginBtn_Click);
             // 
             // TestLoginBtn
@@ -124,6 +125,7 @@
             this.TestLoginBtn.TabIndex = 4;
             this.TestLoginBtn.Text = "Test Login";
             this.TestLoginBtn.UseVisualStyleBackColor = true;
+            this.TestLoginBtn.Visible = false;
             this.TestLoginBtn.Click += new System.EventHandler(this.TestLoginBtn_Click);
             // 
             // MattLoginBtn
@@ -134,6 +136,7 @@
             this.MattLoginBtn.TabIndex = 5;
             this.MattLoginBtn.Text = "Matt Login";
             this.MattLoginBtn.UseVisualStyleBackColor = true;
+            this.MattLoginBtn.Visible = false;
             this.MattLoginBtn.Click += new System.EventHandler(this.MattLoginBtn_Click);
             // 
             // MainSwipe
