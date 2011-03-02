@@ -18,7 +18,6 @@ namespace AutomatedBartender
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setLicense(DriversLicense);
-            label2.Text = getLicense();
         }
 
         private void UserExitBtn_Click(object sender, EventArgs e)

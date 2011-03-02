@@ -36,7 +36,6 @@
             this.UserExitBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.UserBACLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,28 +145,17 @@
             this.UserBACLabel.Text = "BAC\r0.0%";
             this.UserBACLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(176, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
-            // 
             // UserMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UserMain";
             this.Text = "UserMainScreen";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -181,7 +169,6 @@
         private System.Windows.Forms.Button UserExitBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label UserBACLabel;
-        private System.Windows.Forms.Label label2;
 
     }
 }
