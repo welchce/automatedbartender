@@ -124,6 +124,7 @@ namespace AutomatedBartender
             UserID.Direction = ParameterDirection.Output;
             RecipeID.Direction = ParameterDirection.Output;
             cmd.ExecuteReader().Close(); 
+            //return [DrinkID, UserID, RecipeID]
         }
 
         public void UpdateDrinkInQueue(int ID)
