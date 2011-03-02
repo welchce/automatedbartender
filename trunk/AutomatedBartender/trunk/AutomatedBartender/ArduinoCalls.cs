@@ -15,6 +15,37 @@ namespace AutomatedBartender
             ArduinoPort1.Open();
         }
 
+        public void TurnOnMotor(int port)
+        {
+            if (port == 1)
+                TurnOnMotor(1);
+            else if (port == 2)
+                TurnOnMotor2();
+            else if (port == 3)
+                TurnOnMotor3();
+            else if (port == 4)
+                TurnOnMotor4();
+            else if (port == 5)
+                TurnOnMotor5();
+            else if (port == 6)
+                TurnOnMotor6();
+        }
+
+        public void TurnOffMotor(int port)
+        {
+            if (port == 1)
+                TurnOffMotor(1);
+            else if (port == 2)
+                TurnOffMotor2();
+            else if (port == 3)
+                TurnOffMotor3();
+            else if (port == 4)
+                TurnOffMotor4();
+            else if (port == 5)
+                TurnOffMotor5();
+            else if (port == 6)
+                TurnOffMotor6();
+        }
         public void TurnOnMotor1()
         {
             ArduinoPort1.Write("a");
