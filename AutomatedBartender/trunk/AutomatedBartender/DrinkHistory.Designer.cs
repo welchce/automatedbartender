@@ -54,12 +54,12 @@
             // DrinkHistoryDataGrid
             // 
             this.DrinkHistoryDataGrid.AllowDrop = true;
-            this.DrinkHistoryDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.DrinkHistoryDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DrinkHistoryDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DrinkHistoryDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DrinkHistoryDataGrid.Location = new System.Drawing.Point(3, 43);
             this.DrinkHistoryDataGrid.Name = "DrinkHistoryDataGrid";
+            this.DrinkHistoryDataGrid.RowHeadersVisible = false;
             this.DrinkHistoryDataGrid.Size = new System.Drawing.Size(307, 180);
             this.DrinkHistoryDataGrid.TabIndex = 0;
             this.DrinkHistoryDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DrinkHistoryDataGrid_CellContentClick);

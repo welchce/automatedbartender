@@ -63,7 +63,8 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             DrinkHistoryDataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             DrinkHistoryDataGrid.ReadOnly = true;
-            DrinkHistoryDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,RecipeID FROM tblQueue WHERE UserID = '" + getLicense() + "' AND Dispensed = 'True'");
+            DrinkHistoryDataGrid.DataSource = DBC.GetForDataGrid("SELECT R.ID, R.Name FROM tblQueue Q, tblRecipe R WHERE Q.UserID = '" + getLicense() + "' AND Q.Dispensed = 'True' AND R.ID = Q.ID");
+            DrinkHistoryDataGrid.Columns[0].Visible = false;
         }
 
         private void DrinkHistoryDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
