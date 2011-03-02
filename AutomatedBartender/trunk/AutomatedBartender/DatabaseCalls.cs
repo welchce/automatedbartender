@@ -115,7 +115,7 @@ namespace AutomatedBartender
         }
         public int GetDrinkFromQueue(string UserID)
         {
-            string sqlCmd = "SELECT TOP 1 @RecipeID=RecipeID FROM tblQueue WHERE Dispensed = 0 and UserID=" +UserID +"ORDER BY ID ASC";
+            string sqlCmd = "SELECT TOP 1 @RecipeID=RecipeID FROM tblQueue WHERE Dispensed = 0 and UserID=" +UserID +"ORDER BY ID DESC";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             SqlParameter RecipeID = cmd.Parameters.Add("@RecipeID", SqlDbType.Int);
             RecipeID.Direction = ParameterDirection.Output;
@@ -145,9 +145,9 @@ namespace AutomatedBartender
             return new int[1];
         }
 
-        public void UpdateDrinkInQueue(int ID)
+        public void UpdateDrinkInQueue(string UserID)
         {
-            string sqlCmd = "UPDATE tblQueue SET Dispensed = 1 WHERE ID=" + ID;
+            string sqlCmd = "UPDATE TOP 1 tblQueue SET Dispensed = 1 WHERE UserID=" + UserID;
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             cmd.ExecuteReader().Close();
         }
