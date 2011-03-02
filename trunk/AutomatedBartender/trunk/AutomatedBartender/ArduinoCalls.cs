@@ -55,5 +55,26 @@ namespace AutomatedBartender
             ArduinoPort1.Write("h");
         }
 
+        public void TurnOnMotor5()
+        {
+            ArduinoPort1.Write("i");
+        }
+
+        public void TurnOffMotor5()
+        {
+            ArduinoPort1.Write("j");
+        }
+
+        public void TurnOnMotor6()
+        {
+            ArduinoPort1.Write("k");
+        }
+
+        public void TurnOffMotor6()
+        {
+            ArduinoPort1.Write("l");
+        }
+
+
     }
 }
