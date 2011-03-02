@@ -33,8 +33,8 @@
             this.AdminManageUsersBtn = new System.Windows.Forms.Button();
             this.AdminAddDrinkBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.AdminAllDrinksBtn = new System.Windows.Forms.Button();
             this.AdminExitBtn = new System.Windows.Forms.Button();
+            this.AdminAllDrinksBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +110,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(313, 266);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
+            // AdminExitBtn
+            // 
+            this.AdminExitBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdminExitBtn.Location = new System.Drawing.Point(3, 201);
+            this.AdminExitBtn.Name = "AdminExitBtn";
+            this.AdminExitBtn.Size = new System.Drawing.Size(150, 62);
+            this.AdminExitBtn.TabIndex = 6;
+            this.AdminExitBtn.Text = "Exit";
+            this.AdminExitBtn.UseVisualStyleBackColor = true;
+            this.AdminExitBtn.Click += new System.EventHandler(this.AdminExitBtn_Click);
+            // 
             // AdminAllDrinksBtn
             // 
             this.AdminAllDrinksBtn.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -119,16 +130,6 @@
             this.AdminAllDrinksBtn.TabIndex = 9;
             this.AdminAllDrinksBtn.Text = "All Drinks";
             this.AdminAllDrinksBtn.UseVisualStyleBackColor = true;
-            // 
-            // AdminExitBtn
-            // 
-            this.AdminExitBtn.Location = new System.Drawing.Point(3, 201);
-            this.AdminExitBtn.Name = "AdminExitBtn";
-            this.AdminExitBtn.Size = new System.Drawing.Size(98, 62);
-            this.AdminExitBtn.TabIndex = 6;
-            this.AdminExitBtn.Text = "Exit";
-            this.AdminExitBtn.UseVisualStyleBackColor = true;
-            this.AdminExitBtn.Click += new System.EventHandler(this.AdminExitBtn_Click);
             // 
             // AdminMain
             // 
