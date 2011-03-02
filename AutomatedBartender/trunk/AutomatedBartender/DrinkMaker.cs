@@ -34,7 +34,6 @@ namespace AutomatedBartender
         {
             ArduinoCalls AC = new ArduinoCalls();
             DatabaseCalls DBC = new DatabaseCalls();
-            int DrinkID = 0; //
             int RecipeID = DBC.GetDrinkFromQueue(getLicense());
             int[] ports = DBC.GetDrinkPorts(RecipeID);
             AC.StartArduinoCommunication();
@@ -48,10 +47,11 @@ namespace AutomatedBartender
             Thread.Sleep(5000);
             while (ports[i] != 0)
             {
-                AC.TurnOffMotor1(ports[i]);
+                AC.TurnOffMotor(ports[i]);
                 i++;
             }
-            DBC.UpdateDrinkInQueue(DrinkID); //pass DrinkID
+            DBC.UpdateDrinkInQueue(getLicense()); //pass DrinkID
+            AC.StopArduinoCommunication();
             this.Close();
         }
 

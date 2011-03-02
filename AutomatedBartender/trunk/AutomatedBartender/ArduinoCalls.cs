@@ -15,10 +15,15 @@ namespace AutomatedBartender
             ArduinoPort1.Open();
         }
 
+        public void StopArduinoCommunication()
+        {
+            ArduinoPort1.Close();
+        }
+
         public void TurnOnMotor(int port)
         {
             if (port == 1)
-                TurnOnMotor(1);
+                TurnOnMotor1();
             else if (port == 2)
                 TurnOnMotor2();
             else if (port == 3)
@@ -34,7 +39,7 @@ namespace AutomatedBartender
         public void TurnOffMotor(int port)
         {
             if (port == 1)
-                TurnOffMotor(1);
+                TurnOffMotor1();
             else if (port == 2)
                 TurnOffMotor2();
             else if (port == 3)

@@ -139,15 +139,16 @@ namespace AutomatedBartender
                     locations[i] = Convert.ToInt32(sqlReader.GetValue(0));
                     i++;
                 }
+                sqlReader.Close();
                 return locations;
             }
-
+            sqlReader.Close();
             return new int[1];
         }
 
         public void UpdateDrinkInQueue(string UserID)
         {
-            string sqlCmd = "UPDATE TOP 1 tblQueue SET Dispensed = 1 WHERE UserID=" + UserID;
+            string sqlCmd = "UPDATE TOP (1) tblQueue SET Dispensed = 1 WHERE UserID=" + UserID;
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             cmd.ExecuteReader().Close();
         }
