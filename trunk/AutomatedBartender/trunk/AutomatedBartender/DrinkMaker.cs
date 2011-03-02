@@ -22,12 +22,17 @@ namespace AutomatedBartender
         private void DrinkMaker_Load(object sender, EventArgs e)
         {
             ArduinoCalls AC = new ArduinoCalls();
+            DatabaseCalls DBC = new DatabaseCalls();
+            int DrinkID = 0; //
+            DBC.GetDrinkFromQueue();
+            // [DrinkID, UserID, RecipeID] = DBC.GetDrinkFromQueue();
             AC.StartArduinoCommunication();
             AC.TurnOnMotor1();
             AC.TurnOnMotor2();
             Thread.Sleep(5000);
             AC.TurnOffMotor1();
             AC.TurnOffMotor2();
+            DBC.UpdateDrinkInQueue(DrinkID); //pass DrinkID
             this.Close();
         }
 
