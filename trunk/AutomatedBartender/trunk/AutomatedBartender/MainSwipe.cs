@@ -22,6 +22,7 @@ namespace AutomatedBartender
         private void MainSwipe_KeyPress(object sender, KeyPressEventArgs e)
         {
             //if the character pressed is a %
+            lblMainText.Text = "Reading";
             if (e.KeyChar == 37)
             {
                 WaitForIDInput = true;
@@ -60,16 +61,19 @@ namespace AutomatedBartender
             {
                 //InfoRTB.Text = "";
                 Swipe ThisSwipe = new Swipe();
-                ThisSwipe.InfoFromID(IDINFO, Suffix);
-                //string theReturn = "";
-                //InfoRTB.Text = theReturn;
+                if (ThisSwipe.InfoFromID(IDINFO, Suffix))
+                {
+                    lblMainText.Text = "To Begin/nPlease Swipe/nI.D.";
+                }
+                else
+                {
+                    lblMainText.Text = "Error Reading Card/nPlease Swipe/nI.D. Again";
+                }
                 WaitForIDInput = false;
                 WaitForSuffix = false;
                 NumQuestionMarks = 0;
                 IDINFO = "";
                 Suffix = "";
-                //DatabaseCalls DBC = new DatabaseCalls();
-                //DBC.verifyUser(theReturn[0]);
             }
         }
 
