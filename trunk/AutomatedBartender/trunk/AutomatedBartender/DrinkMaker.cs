@@ -32,6 +32,7 @@ namespace AutomatedBartender
 
         private void DrinkMaker_Load(object sender, EventArgs e)
         {
+            label1.Text = "OMG!!!"
             ArduinoCalls AC = new ArduinoCalls();
             DatabaseCalls DBC = new DatabaseCalls();
             int RecipeID = DBC.GetDrinkFromQueue(getLicense());

@@ -78,7 +78,6 @@ namespace AutomatedBartender
         {
             Form drinkMakerForm = new DrinkMaker(getLicense());
             DatabaseCalls DBC = new DatabaseCalls();
-            
             //ADD DRINK TO QUEUE
             int row = AllDrinksDataGrid.CurrentCellAddress.Y;
             string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
