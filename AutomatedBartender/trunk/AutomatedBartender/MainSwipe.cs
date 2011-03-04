@@ -63,11 +63,11 @@ namespace AutomatedBartender
                 Swipe ThisSwipe = new Swipe();
                 if (ThisSwipe.InfoFromID(IDINFO, Suffix))
                 {
-                    lblMainText.Text = "To Begin/nPlease Swipe/nI.D.";
+                    lblMainText.Text = "To Begin\nPlease Swipe\nI.D.";
                 }
                 else
                 {
-                    lblMainText.Text = "Error Reading Card/nPlease Swipe/nI.D. Again";
+                    lblMainText.Text = "Error Reading Card\nPlease Swipe\nI.D. Again";
                 }
                 WaitForIDInput = false;
                 WaitForSuffix = false;
