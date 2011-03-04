@@ -12,12 +12,6 @@ namespace AutomatedBartender
 {
     class DatabaseCalls
     {
-        /*SqlConnection myConnection = new SqlConnection("user id=LAPPY6400\\Christopher;" +
-                               "password=elder01;server=localhost;" +
-                               "Trusted_Connection=true;" +
-                               "database=Bartender; " +
-                               "connection timeout=30");*/
-
         /*SqlConnection myConnection = new SqlConnection("user id=WELCH2400\\Administrator;" +
                                    "password=elder01;server=WELCH2400\\SQLEXPRESS;" +
                                    "Trusted_Connection=yes;" +
@@ -31,27 +25,7 @@ namespace AutomatedBartender
                                        "connection timeout=10");
 
 
-            /*SqlCommand cmd = new SqlCommand("spInsertUser", myConnection);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@FName", SqlDbType.VarChar);
-            cmd.Parameters.Add("@LName", SqlDbType.VarChar);
-            cmd.Parameters.Add("@LicenseNo", SqlDbType.VarChar);
-            cmd.Parameters.Add("@Admin", SqlDbType.Bit);
-            cmd.Parameters.Add("@Weight", SqlDbType.VarChar);
-            cmd.Parameters.Add("@Gender", SqlDbType.VarChar);
-
-            cmd.Parameters["@FName"].Value = "Joe";
-            cmd.Parameters["@LName"].Value = "Smith";
-            cmd.Parameters["@LicenseNo"].Value = "1841297";
-            cmd.Parameters["@Admin"].Value = true;
-            cmd.Parameters["@Weight"].Value = "120";
-            cmd.Parameters["@Gender"].Value = "W";
-
-
-            myConnection.Open();
-
-            int test = cmd.ExecuteNonQuery();*/
-
+            
         public string verifyUser(string LastName, string FirstName, string LicenseNo, string Gender, int Weight)
         {
             string sqlCmd = "SELECT Admin FROM tblUsers WHERE LicenseNo = '" + LicenseNo + "'";

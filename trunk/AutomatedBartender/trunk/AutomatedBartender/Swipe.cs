@@ -177,22 +177,6 @@ namespace AutomatedBartender
                 indexEnd = indexStart + 3;
                 Weight = int.Parse(IDINFO.Substring(indexStart, indexEnd - indexStart));
 
-                /*INFOOUTPUT = INFOOUTPUT + "First Name: " + FirstName + "\n";
-                INFOOUTPUT = INFOOUTPUT + "Middle Initial: " + MI + "\n";
-                INFOOUTPUT = INFOOUTPUT + "Last Name: " + LastName + "\n";
-                INFOOUTPUT = INFOOUTPUT + "Address: " + Street + "\n";
-                INFOOUTPUT = INFOOUTPUT + "City: " + City + "\n";
-                INFOOUTPUT = INFOOUTPUT + "State: " + State + "\n";
-                INFOOUTPUT = INFOOUTPUT + "DOB: " + DOBMonth + "/" + DOBDay + "/" + DOBYear + "\n";
-                INFOOUTPUT = INFOOUTPUT + "Weight: " + Weight + " lbs\n";
-                INFOOUTPUT = INFOOUTPUT + "Gender: " + Gender + "\n";
-                INFOOUTPUT = INFOOUTPUT + "Suffix: " + Suffix + "\n";
-                //return INFOOUTPUT;
-                string[] arrayToReturn = new string[3];
-                arrayToReturn[0] = DL;
-                arrayToReturn[1] = LastName;
-                arrayToReturn[2] = FirstName;
-                return arrayToReturn;*/
                 DatabaseCalls DBC = new DatabaseCalls();
                 string userType = DBC.verifyUser(LastName, FirstName, DL, Gender, Weight);
                 if (userType == "Admin")
