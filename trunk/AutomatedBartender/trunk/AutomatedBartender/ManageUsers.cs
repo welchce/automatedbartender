@@ -102,6 +102,7 @@ namespace AutomatedBartender
         private void ManageUsers_Load(object sender, EventArgs e)
         {
             refreshUserList();
+            manageUsersGridView.Columns[0].Visible = false;
         }
         private void refreshUserList()
         {
