@@ -33,12 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ManageUsersImportbtn = new System.Windows.Forms.Button();
+            this.FNLNRB = new System.Windows.Forms.RadioButton();
+            this.LNFNRB = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ManageUsersRemovebtn = new System.Windows.Forms.Button();
             this.ManageUsersBackbtn = new System.Windows.Forms.Button();
             this.openFD = new System.Windows.Forms.OpenFileDialog();
-            this.FNLNRB = new System.Windows.Forms.RadioButton();
-            this.LNFNRB = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageUsersGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -68,9 +68,14 @@
             // 
             // manageUsersGridView
             // 
+            this.manageUsersGridView.AllowUserToAddRows = false;
+            this.manageUsersGridView.AllowUserToDeleteRows = false;
+            this.manageUsersGridView.AllowUserToResizeColumns = false;
+            this.manageUsersGridView.AllowUserToResizeRows = false;
             this.manageUsersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.manageUsersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.manageUsersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.manageUsersGridView.Location = new System.Drawing.Point(3, 61);
             this.manageUsersGridView.Name = "manageUsersGridView";
@@ -119,6 +124,29 @@
             this.ManageUsersImportbtn.UseVisualStyleBackColor = true;
             this.ManageUsersImportbtn.Click += new System.EventHandler(this.ManageUsersImportbtn_Click);
             // 
+            // FNLNRB
+            // 
+            this.FNLNRB.AutoSize = true;
+            this.FNLNRB.Checked = true;
+            this.FNLNRB.Location = new System.Drawing.Point(87, 3);
+            this.FNLNRB.Name = "FNLNRB";
+            this.FNLNRB.Size = new System.Drawing.Size(78, 11);
+            this.FNLNRB.TabIndex = 1;
+            this.FNLNRB.TabStop = true;
+            this.FNLNRB.Text = "First Name Last Name";
+            this.FNLNRB.UseVisualStyleBackColor = true;
+            // 
+            // LNFNRB
+            // 
+            this.LNFNRB.AutoSize = true;
+            this.LNFNRB.Location = new System.Drawing.Point(171, 3);
+            this.LNFNRB.Name = "LNFNRB";
+            this.LNFNRB.Size = new System.Drawing.Size(80, 11);
+            this.LNFNRB.TabIndex = 2;
+            this.LNFNRB.TabStop = true;
+            this.LNFNRB.Text = "Last Name First Name";
+            this.LNFNRB.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -162,29 +190,6 @@
             // openFD
             // 
             this.openFD.FileName = "openFileDialog1";
-            // 
-            // FNLNRB
-            // 
-            this.FNLNRB.AutoSize = true;
-            this.FNLNRB.Checked = true;
-            this.FNLNRB.Location = new System.Drawing.Point(87, 3);
-            this.FNLNRB.Name = "FNLNRB";
-            this.FNLNRB.Size = new System.Drawing.Size(78, 11);
-            this.FNLNRB.TabIndex = 1;
-            this.FNLNRB.TabStop = true;
-            this.FNLNRB.Text = "First Name Last Name";
-            this.FNLNRB.UseVisualStyleBackColor = true;
-            // 
-            // LNFNRB
-            // 
-            this.LNFNRB.AutoSize = true;
-            this.LNFNRB.Location = new System.Drawing.Point(171, 3);
-            this.LNFNRB.Name = "LNFNRB";
-            this.LNFNRB.Size = new System.Drawing.Size(80, 11);
-            this.LNFNRB.TabIndex = 2;
-            this.LNFNRB.TabStop = true;
-            this.LNFNRB.Text = "Last Name First Name";
-            this.LNFNRB.UseVisualStyleBackColor = true;
             // 
             // ManageUsers
             // 
