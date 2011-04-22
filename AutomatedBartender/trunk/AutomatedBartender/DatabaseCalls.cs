@@ -19,7 +19,7 @@ namespace AutomatedBartender
                                    "connection timeout=30");*/
 
             SqlConnection myConnection = new SqlConnection("user id=External;" +
-                                       "password=mattsucks;server=74.215.230.231;" +
+                                       "password=mattsucks;server=72.49.95.137;" +
                                        "Trusted_Connection=false;" +
                                        "database=Bartender; " +
                                        "connection timeout=10");
@@ -76,6 +76,39 @@ namespace AutomatedBartender
             dataAdapter.Fill(table);
             dbBindSource.DataSource = table;
             return dbBindSource;
+        }
+
+        public int AddDrinkRecipe(string name)
+        {
+            string sqlCmd = "INSERT INTO tblDrinks VALUES ('" + name + "'); SELECT @drinkID=drinkID FROM tblDrinks WHERE drinkID = SCOPE_IDENTITY()" ;
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            SqlParameter returnParameter = new SqlParameter("@drinkID", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.Output;
+            myConnection.Open(); 
+            cmd.ExecuteReader().Close();
+            return Convert.ToInt32(returnParameter.Value);
+        }
+
+        public void AddInventory(string name, string proof, int amount, int slot)
+        {
+            string sqlCmd = "INSERT INTO tblInventory VALUES ('" + name + "','" + proof + "','" + amount + "','" + slot + "')";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+            cmd.ExecuteReader().Close();
+        }
+
+        public void AddIngredientsToRecipe(int drinkID, string ingredient, string amount)
+        {
+            string sqlCmd = "INSERT INTO tblIngredients VALUES ('"+drinkID+"','"+ingredient+"','"+amount+"')";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+        }
+
+        public void RemoveInventory(int inventoryID)
+        {
+            string sqlCmd = "DELETE FROM tblInventory WHERE ID = '" + inventoryID + "'";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
         }
 
         public void AddDrinkToQueue(string LicenseNo, string DrinkID)

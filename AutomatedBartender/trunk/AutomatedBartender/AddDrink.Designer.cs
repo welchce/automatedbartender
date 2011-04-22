@@ -173,6 +173,7 @@
             this.AddDrinkSubmitBtn.TabIndex = 6;
             this.AddDrinkSubmitBtn.Text = "Submit";
             this.AddDrinkSubmitBtn.UseVisualStyleBackColor = true;
+            this.AddDrinkSubmitBtn.Click += new System.EventHandler(this.AddDrinkSubmitBtn_Click);
             // 
             // AddDrink
             // 

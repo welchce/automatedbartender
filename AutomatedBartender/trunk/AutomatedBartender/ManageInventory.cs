@@ -36,5 +36,38 @@ namespace AutomatedBartender
         {
             LICENSE = DL;
         }
+
+        private void manageInventoryAddBtn_Click(object sender, EventArgs e)
+        {
+            DatabaseCalls DBC = new DatabaseCalls();
+            string ingredientName = manageInventoryNameTxt.Text.ToString();
+            string ingredientProof = manageInventoryProofTxt.Text.ToString();
+            int ingredientAmount = Convert.ToInt32(manageInventoryAmountTxt.Text);
+            int ingredientSlot = Convert.ToInt32(manageInventorySlotTxt.Text);
+            DBC.AddInventory(ingredientName, ingredientProof, ingredientAmount, ingredientSlot);
+            refreshInventoryList();
+        }
+
+        private void ManageInventory_Load(object sender, EventArgs e)
+        {
+            refreshInventoryList();
+        }
+
+        private void refreshInventoryList()
+        {
+            DatabaseCalls DBC = new DatabaseCalls();
+            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name', Proof, Quantity, Location AS 'Slot' FROM tblInventory");
+            manageInventoryGridView.Columns[0].Visible = false;
+            //manageInventoryGridView.Rows[manageInventoryGridView.Rows.Count-1].Visible = false;
+        }
+
+        private void manageInventoryRemovebtn_Click(object sender, EventArgs e)
+        {
+            int row = manageInventoryGridView.CurrentCellAddress.Y;
+            int inventoryID = Convert.ToInt32(manageInventoryGridView[0, row].Value);
+            DatabaseCalls DBC = new DatabaseCalls();
+            DBC.RemoveInventory(inventoryID);
+            refreshInventoryList();
+        }
     }
 }
