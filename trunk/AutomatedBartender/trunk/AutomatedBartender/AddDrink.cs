@@ -61,5 +61,18 @@ namespace AutomatedBartender
         {
             AddDrinkIngredientTable.Rows.Add();
         }
+
+        private void AddDrinkSubmitBtn_Click(object sender, EventArgs e)
+        {
+            DatabaseCalls DBC = new DatabaseCalls();
+            DataGridViewRowCollection rows = AddDrinkIngredientTable.Rows;
+            int drinkID = DBC.AddDrinkRecipe(AddDrinkTextBox.Text);
+            foreach (DataGridViewRow row in rows)
+            {
+                string currentIngredient = AddDrinkIngredientTable.Rows[row.Index].Cells["Ingredient"].Value.ToString();
+                string currentAmount = AddDrinkIngredientTable.Rows[row.Index].Cells["Amount"].Value.ToString();
+                DBC.AddIngredientsToRecipe(drinkID, currentIngredient, currentAmount);
+            }
+        }
     }
 }

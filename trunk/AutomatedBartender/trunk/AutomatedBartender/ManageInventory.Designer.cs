@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.manageInventoryRemovebtn = new System.Windows.Forms.Button();
+            this.manageInventoryBackbtn = new System.Windows.Forms.Button();
             this.manageInventoryGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.manageInventoryNameTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.manageInventoryProofTxt = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.manageInventoryAmountTxt = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.manageInventorySlotTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.manageInventoryAddBtn = new System.Windows.Forms.Button();
-            this.manageInventorySlotCbo = new System.Windows.Forms.ComboBox();
-            this.manageInventoryNameCbo = new System.Windows.Forms.ComboBox();
-            this.manageInventoryProofTxt = new System.Windows.Forms.TextBox();
-            this.manageInventoryAmountTxt = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.manageInventoryRemovebtn = new System.Windows.Forms.Button();
-            this.manageInventoryBackbtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -79,14 +79,58 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(644, 302);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // manageInventoryGridView
+            // tableLayoutPanel7
             // 
-            this.manageInventoryGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.ColumnCount = 3;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.Controls.Add(this.manageInventoryRemovebtn, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.manageInventoryBackbtn, 2, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 259);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(638, 40);
+            this.tableLayoutPanel7.TabIndex = 4;
+            // 
+            // manageInventoryRemovebtn
+            // 
+            this.manageInventoryRemovebtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageInventoryRemovebtn.Location = new System.Drawing.Point(322, 3);
+            this.manageInventoryRemovebtn.Name = "manageInventoryRemovebtn";
+            this.manageInventoryRemovebtn.Size = new System.Drawing.Size(153, 34);
+            this.manageInventoryRemovebtn.TabIndex = 0;
+            this.manageInventoryRemovebtn.Text = "Remove";
+            this.manageInventoryRemovebtn.UseVisualStyleBackColor = true;
+            this.manageInventoryRemovebtn.Click += new System.EventHandler(this.manageInventoryRemovebtn_Click);
+            // 
+            // manageInventoryBackbtn
+            // 
+            this.manageInventoryBackbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageInventoryBackbtn.Location = new System.Drawing.Point(481, 3);
+            this.manageInventoryBackbtn.Name = "manageInventoryBackbtn";
+            this.manageInventoryBackbtn.Size = new System.Drawing.Size(154, 34);
+            this.manageInventoryBackbtn.TabIndex = 1;
+            this.manageInventoryBackbtn.Text = "Back";
+            this.manageInventoryBackbtn.UseVisualStyleBackColor = true;
+            this.manageInventoryBackbtn.Click += new System.EventHandler(this.manageInventoryBackbtn_Click);
+            // 
+            // manageInventoryGridView
+            // 
+            this.manageInventoryGridView.AllowDrop = true;
+            this.manageInventoryGridView.AllowUserToAddRows = false;
+            this.manageInventoryGridView.AllowUserToDeleteRows = false;
+            this.manageInventoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.manageInventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.manageInventoryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageInventoryGridView.Location = new System.Drawing.Point(3, 108);
             this.manageInventoryGridView.Name = "manageInventoryGridView";
+            this.manageInventoryGridView.ReadOnly = true;
+            this.manageInventoryGridView.RowHeadersVisible = false;
             this.manageInventoryGridView.Size = new System.Drawing.Size(638, 145);
             this.manageInventoryGridView.TabIndex = 1;
             // 
@@ -130,8 +174,8 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.manageInventoryNameTxt, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.manageInventoryNameCbo, 0, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -139,6 +183,26 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(100, 48);
             this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // manageInventoryNameTxt
+            // 
+            this.manageInventoryNameTxt.Location = new System.Drawing.Point(3, 27);
+            this.manageInventoryNameTxt.Name = "manageInventoryNameTxt";
+            this.manageInventoryNameTxt.Size = new System.Drawing.Size(94, 20);
+            this.manageInventoryNameTxt.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Name";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // tableLayoutPanel4
             // 
@@ -154,6 +218,26 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(100, 48);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 24);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Proof";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // manageInventoryProofTxt
+            // 
+            this.manageInventoryProofTxt.Location = new System.Drawing.Point(3, 27);
+            this.manageInventoryProofTxt.Name = "manageInventoryProofTxt";
+            this.manageInventoryProofTxt.Size = new System.Drawing.Size(94, 20);
+            this.manageInventoryProofTxt.TabIndex = 1;
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
@@ -168,46 +252,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(100, 48);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.manageInventorySlotCbo, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(321, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(100, 48);
-            this.tableLayoutPanel6.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Name";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Proof";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -220,6 +264,34 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Amount (oz)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // manageInventoryAmountTxt
+            // 
+            this.manageInventoryAmountTxt.Location = new System.Drawing.Point(3, 27);
+            this.manageInventoryAmountTxt.Name = "manageInventoryAmountTxt";
+            this.manageInventoryAmountTxt.Size = new System.Drawing.Size(94, 20);
+            this.manageInventoryAmountTxt.TabIndex = 1;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.manageInventorySlotTxt, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(321, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(100, 48);
+            this.tableLayoutPanel6.TabIndex = 3;
+            // 
+            // manageInventorySlotTxt
+            // 
+            this.manageInventorySlotTxt.Location = new System.Drawing.Point(3, 27);
+            this.manageInventorySlotTxt.Name = "manageInventorySlotTxt";
+            this.manageInventorySlotTxt.Size = new System.Drawing.Size(94, 20);
+            this.manageInventorySlotTxt.TabIndex = 2;
             // 
             // label5
             // 
@@ -243,75 +315,7 @@
             this.manageInventoryAddBtn.TabIndex = 4;
             this.manageInventoryAddBtn.Text = "Add";
             this.manageInventoryAddBtn.UseVisualStyleBackColor = true;
-            // 
-            // manageInventorySlotCbo
-            // 
-            this.manageInventorySlotCbo.FormattingEnabled = true;
-            this.manageInventorySlotCbo.Location = new System.Drawing.Point(3, 27);
-            this.manageInventorySlotCbo.Name = "manageInventorySlotCbo";
-            this.manageInventorySlotCbo.Size = new System.Drawing.Size(94, 21);
-            this.manageInventorySlotCbo.TabIndex = 1;
-            // 
-            // manageInventoryNameCbo
-            // 
-            this.manageInventoryNameCbo.FormattingEnabled = true;
-            this.manageInventoryNameCbo.Location = new System.Drawing.Point(3, 27);
-            this.manageInventoryNameCbo.Name = "manageInventoryNameCbo";
-            this.manageInventoryNameCbo.Size = new System.Drawing.Size(94, 21);
-            this.manageInventoryNameCbo.TabIndex = 1;
-            // 
-            // manageInventoryProofTxt
-            // 
-            this.manageInventoryProofTxt.Location = new System.Drawing.Point(3, 27);
-            this.manageInventoryProofTxt.Name = "manageInventoryProofTxt";
-            this.manageInventoryProofTxt.Size = new System.Drawing.Size(94, 20);
-            this.manageInventoryProofTxt.TabIndex = 1;
-            // 
-            // manageInventoryAmountTxt
-            // 
-            this.manageInventoryAmountTxt.Location = new System.Drawing.Point(3, 27);
-            this.manageInventoryAmountTxt.Name = "manageInventoryAmountTxt";
-            this.manageInventoryAmountTxt.Size = new System.Drawing.Size(94, 20);
-            this.manageInventoryAmountTxt.TabIndex = 1;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.ColumnCount = 3;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.Controls.Add(this.manageInventoryRemovebtn, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.manageInventoryBackbtn, 2, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 259);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(638, 40);
-            this.tableLayoutPanel7.TabIndex = 4;
-            // 
-            // manageInventoryRemovebtn
-            // 
-            this.manageInventoryRemovebtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manageInventoryRemovebtn.Location = new System.Drawing.Point(322, 3);
-            this.manageInventoryRemovebtn.Name = "manageInventoryRemovebtn";
-            this.manageInventoryRemovebtn.Size = new System.Drawing.Size(153, 34);
-            this.manageInventoryRemovebtn.TabIndex = 0;
-            this.manageInventoryRemovebtn.Text = "Remove";
-            this.manageInventoryRemovebtn.UseVisualStyleBackColor = true;
-            // 
-            // manageInventoryBackbtn
-            // 
-            this.manageInventoryBackbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manageInventoryBackbtn.Location = new System.Drawing.Point(481, 3);
-            this.manageInventoryBackbtn.Name = "manageInventoryBackbtn";
-            this.manageInventoryBackbtn.Size = new System.Drawing.Size(154, 34);
-            this.manageInventoryBackbtn.TabIndex = 1;
-            this.manageInventoryBackbtn.Text = "Back";
-            this.manageInventoryBackbtn.UseVisualStyleBackColor = true;
-            this.manageInventoryBackbtn.Click += new System.EventHandler(this.manageInventoryBackbtn_Click);
+            this.manageInventoryAddBtn.Click += new System.EventHandler(this.manageInventoryAddBtn_Click);
             // 
             // ManageInventory
             // 
@@ -321,8 +325,10 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ManageInventory";
             this.Text = "ManageInventory";
+            this.Load += new System.EventHandler(this.ManageInventory_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -333,7 +339,6 @@
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -352,13 +357,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox manageInventorySlotCbo;
         private System.Windows.Forms.Button manageInventoryAddBtn;
-        private System.Windows.Forms.ComboBox manageInventoryNameCbo;
         private System.Windows.Forms.TextBox manageInventoryProofTxt;
         private System.Windows.Forms.TextBox manageInventoryAmountTxt;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Button manageInventoryRemovebtn;
         private System.Windows.Forms.Button manageInventoryBackbtn;
+        private System.Windows.Forms.TextBox manageInventoryNameTxt;
+        private System.Windows.Forms.TextBox manageInventorySlotTxt;
     }
 }
