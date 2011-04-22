@@ -66,7 +66,7 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             AllDrinksDataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             AllDrinksDataGrid.ReadOnly = true;
-            AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID, Name FROM tblRecipe");
+            AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,NAME FROM tblRecipe WHERE ID IN (SELECT RecipeID FROM tblIngredients t	WHERE t.LiquidID NOT IN (SELECT ID FROM tblInventory i WHERE i.Location=null))");
             //column 0 is ID and we don't want to see it but we will need id later
             AllDrinksDataGrid.Columns[0].Visible = false;
             if (isAdmin)

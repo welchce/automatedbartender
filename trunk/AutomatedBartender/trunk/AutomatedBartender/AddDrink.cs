@@ -64,7 +64,7 @@ namespace AutomatedBartender
 
         private void AddDrinkSubmitBtn_Click(object sender, EventArgs e)
         {
-            if (AddDrinkTextBox.Text != null)
+            if (AddDrinkTextBox.Text != "" && AddDrinkIngredientTable.Rows[0].Cells["Ingredient"].Value != null && AddDrinkIngredientTable.Rows[0].Cells["Amount"].Value != null)
             {
                 DatabaseCalls DBC = new DatabaseCalls();
                 DataGridViewRowCollection rows = AddDrinkIngredientTable.Rows;
@@ -78,18 +78,18 @@ namespace AutomatedBartender
                         DBC.AddIngredientsToRecipe(drinkID, currentIngredient, currentAmount);
                     }
                 }
-            }
-            if (getIsAdmin() == true)
-            {
-                Form adminMainScreen = new AdminMain(getLicense());
-                adminMainScreen.Show();
-                this.Close();
-            }
-            else
-            {
-                Form userMainScreen = new UserMain(getLicense());
-                userMainScreen.Show();
-                this.Close();
+                if (getIsAdmin() == true)
+                {
+                    Form adminMainScreen = new AdminMain(getLicense());
+                    adminMainScreen.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Form userMainScreen = new UserMain(getLicense());
+                    userMainScreen.Show();
+                    this.Close();
+                }
             }
         }
 
@@ -100,7 +100,7 @@ namespace AutomatedBartender
             DataGridViewComboBoxColumn amountColumn = new DataGridViewComboBoxColumn();
             ingredientsColumn.Name = "Ingredient";
             amountColumn.Name = "Amount";
-            ingredientsColumn.DataSource = DBC.GetForDataGrid("SELECT LiquidName From tblLiquid");
+            ingredientsColumn.DataSource = DBC.GetForDataGrid("SELECT LiquidName From tblInventory");
             ingredientsColumn.ValueMember = "LiquidName";
             amountColumn.DataSource = DBC.GetForDataGrid("SELECT Name from tblAmount");
             amountColumn.ValueMember = "Name";
