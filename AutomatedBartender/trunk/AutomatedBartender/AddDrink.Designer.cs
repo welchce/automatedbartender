@@ -32,13 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.AddDrinkTextBox = new System.Windows.Forms.TextBox();
-            this.AddDrinkIngredientTable = new System.Windows.Forms.DataGridView();
-            this.Ingredient = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.AddDrinkAddRowBtn = new System.Windows.Forms.Button();
             this.AddDrinkBackBtn = new System.Windows.Forms.Button();
             this.AddDrinkSubmitBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.AddDrinkIngredientTable = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddDrinkIngredientTable)).BeginInit();
             this.SuspendLayout();
@@ -111,37 +109,6 @@
             this.AddDrinkTextBox.Size = new System.Drawing.Size(397, 45);
             this.AddDrinkTextBox.TabIndex = 2;
             // 
-            // AddDrinkIngredientTable
-            // 
-            this.AddDrinkIngredientTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddDrinkIngredientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AddDrinkIngredientTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Ingredient,
-            this.Amount});
-            this.tableLayoutPanel1.SetColumnSpan(this.AddDrinkIngredientTable, 3);
-            this.AddDrinkIngredientTable.Location = new System.Drawing.Point(3, 181);
-            this.AddDrinkIngredientTable.Name = "AddDrinkIngredientTable";
-            this.AddDrinkIngredientTable.RowHeadersVisible = false;
-            this.tableLayoutPanel1.SetRowSpan(this.AddDrinkIngredientTable, 2);
-            this.AddDrinkIngredientTable.Size = new System.Drawing.Size(397, 78);
-            this.AddDrinkIngredientTable.TabIndex = 3;
-            // 
-            // Ingredient
-            // 
-            this.Ingredient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ingredient.FillWeight = 175F;
-            this.Ingredient.HeaderText = "Ingredient";
-            this.Ingredient.Name = "Ingredient";
-            // 
-            // Amount
-            // 
-            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Amount.FillWeight = 175F;
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            // 
             // AddDrinkAddRowBtn
             // 
             this.AddDrinkAddRowBtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -175,6 +142,25 @@
             this.AddDrinkSubmitBtn.UseVisualStyleBackColor = true;
             this.AddDrinkSubmitBtn.Click += new System.EventHandler(this.AddDrinkSubmitBtn_Click);
             // 
+            // AddDrinkIngredientTable
+            // 
+            this.AddDrinkIngredientTable.AllowUserToDeleteRows = false;
+            this.AddDrinkIngredientTable.AllowUserToResizeColumns = false;
+            this.AddDrinkIngredientTable.AllowUserToResizeRows = false;
+            this.AddDrinkIngredientTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddDrinkIngredientTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.AddDrinkIngredientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.AddDrinkIngredientTable, 3);
+            this.AddDrinkIngredientTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.AddDrinkIngredientTable.Location = new System.Drawing.Point(3, 181);
+            this.AddDrinkIngredientTable.Name = "AddDrinkIngredientTable";
+            this.AddDrinkIngredientTable.RowHeadersVisible = false;
+            this.tableLayoutPanel1.SetRowSpan(this.AddDrinkIngredientTable, 2);
+            this.AddDrinkIngredientTable.Size = new System.Drawing.Size(397, 78);
+            this.AddDrinkIngredientTable.TabIndex = 3;
+            // 
             // AddDrink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +169,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddDrink";
             this.Text = "AddDrink";
+            this.Load += new System.EventHandler(this.AddDrink_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddDrinkIngredientTable)).EndInit();
@@ -196,13 +183,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox AddDrinkTextBox;
-        private System.Windows.Forms.DataGridView AddDrinkIngredientTable;
         private System.Windows.Forms.Button AddDrinkAddRowBtn;
         private System.Windows.Forms.Button AddDrinkBackBtn;
         private System.Windows.Forms.Button AddDrinkSubmitBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Ingredient;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Amount;
+        private System.Windows.Forms.DataGridView AddDrinkIngredientTable;
 
     }
 }

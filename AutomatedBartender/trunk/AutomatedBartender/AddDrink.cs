@@ -64,15 +64,49 @@ namespace AutomatedBartender
 
         private void AddDrinkSubmitBtn_Click(object sender, EventArgs e)
         {
-            DatabaseCalls DBC = new DatabaseCalls();
-            DataGridViewRowCollection rows = AddDrinkIngredientTable.Rows;
-            int drinkID = DBC.AddDrinkRecipe(AddDrinkTextBox.Text);
-            foreach (DataGridViewRow row in rows)
+            if (AddDrinkTextBox.Text != null)
             {
-                string currentIngredient = AddDrinkIngredientTable.Rows[row.Index].Cells["Ingredient"].Value.ToString();
-                string currentAmount = AddDrinkIngredientTable.Rows[row.Index].Cells["Amount"].Value.ToString();
-                DBC.AddIngredientsToRecipe(drinkID, currentIngredient, currentAmount);
+                DatabaseCalls DBC = new DatabaseCalls();
+                DataGridViewRowCollection rows = AddDrinkIngredientTable.Rows;
+                int drinkID = DBC.AddDrinkRecipe(AddDrinkTextBox.Text);
+                foreach (DataGridViewRow row in rows)
+                {
+                    if (AddDrinkIngredientTable.Rows[row.Index].Cells["Ingredient"].Value != null && AddDrinkIngredientTable.Rows[row.Index].Cells["Amount"].Value != null)
+                    {
+                        string currentIngredient = AddDrinkIngredientTable.Rows[row.Index].Cells["Ingredient"].Value.ToString();
+                        string currentAmount = AddDrinkIngredientTable.Rows[row.Index].Cells["Amount"].Value.ToString();
+                        DBC.AddIngredientsToRecipe(drinkID, currentIngredient, currentAmount);
+                    }
+                }
+            }
+            if (getIsAdmin() == true)
+            {
+                Form adminMainScreen = new AdminMain(getLicense());
+                adminMainScreen.Show();
+                this.Close();
+            }
+            else
+            {
+                Form userMainScreen = new UserMain(getLicense());
+                userMainScreen.Show();
+                this.Close();
             }
         }
+
+        private void AddDrink_Load(object sender, EventArgs e)
+        {
+            DatabaseCalls DBC = new DatabaseCalls();
+            DataGridViewComboBoxColumn ingredientsColumn = new DataGridViewComboBoxColumn();
+            DataGridViewComboBoxColumn amountColumn = new DataGridViewComboBoxColumn();
+            ingredientsColumn.Name = "Ingredient";
+            amountColumn.Name = "Amount";
+            ingredientsColumn.DataSource = DBC.GetForDataGrid("SELECT LiquidName From tblLiquid");
+            ingredientsColumn.ValueMember = "LiquidName";
+            amountColumn.DataSource = DBC.GetForDataGrid("SELECT Name from tblAmount");
+            amountColumn.ValueMember = "Name";
+            AddDrinkIngredientTable.Columns.Add(ingredientsColumn);
+            AddDrinkIngredientTable.Columns.Add(amountColumn);
+        }
+
     }
 }

@@ -75,14 +75,15 @@ namespace AutomatedBartender
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
             dbBindSource.DataSource = table;
+            myConnection.Close();
             return dbBindSource;
         }
 
         public int AddDrinkRecipe(string name)
         {
-            string sqlCmd = "INSERT INTO tblDrinks VALUES ('" + name + "'); SELECT @drinkID=drinkID FROM tblDrinks WHERE drinkID = SCOPE_IDENTITY()" ;
+            string sqlCmd = "INSERT INTO tblRecipe VALUES ('" + name + "',0); SELECT @ID=ID FROM tblRecipe WHERE ID = SCOPE_IDENTITY()" ;
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
-            SqlParameter returnParameter = new SqlParameter("@drinkID", SqlDbType.Int);
+            SqlParameter returnParameter = cmd.Parameters.Add("@ID", SqlDbType.Int);
             returnParameter.Direction = ParameterDirection.Output;
             myConnection.Open(); 
             cmd.ExecuteReader().Close();
