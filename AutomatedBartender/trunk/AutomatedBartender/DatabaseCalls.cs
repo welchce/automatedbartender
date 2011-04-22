@@ -100,8 +100,14 @@ namespace AutomatedBartender
 
         public void AddIngredientsToRecipe(int drinkID, string ingredient, string amount)
         {
-            string sqlCmd = "INSERT INTO tblIngredients VALUES ('"+drinkID+"','"+ingredient+"','"+amount+"')";
+            string sqlCmd = "SELECT @AmountID=ID FROM tblAmount WHERE Name = '" + amount + "'";
+            SqlParameter amountID = new SqlParameter("@AmountID", DbType.String);
+            amountID.Direction = ParameterDirection.Output;
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            cmd.ExecuteNonQuery();
+            sqlCmd = "INSERT INTO tblIngredients VALUES ('"+drinkID+"','"+ingredient+"','"+amountID+"')";
+            cmd.ExecuteNonQuery();
+            myConnection.Close();
         }
 
         public void RemoveInventory(int inventoryID)
@@ -110,6 +116,7 @@ namespace AutomatedBartender
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
             cmd.ExecuteNonQuery();
+            myConnection.Close();
         }
 
         public void AddDrinkToQueue(string LicenseNo, string DrinkID)
@@ -120,6 +127,7 @@ namespace AutomatedBartender
             //returnParameter.Direction = ParameterDirection.ReturnValue;
             myConnection.Open();
             cmd.ExecuteNonQuery();
+            myConnection.Close();
         }
         public int GetDrinkFromQueue(string UserID)
         {
@@ -167,6 +175,7 @@ namespace AutomatedBartender
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
             cmd.ExecuteNonQuery();
+            myConnection.Close();
         }
         public void DeleteUser(string ID)
         {
@@ -174,6 +183,7 @@ namespace AutomatedBartender
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
             cmd.ExecuteNonQuery();
+            myConnection.Close();
         }
     }
 }
