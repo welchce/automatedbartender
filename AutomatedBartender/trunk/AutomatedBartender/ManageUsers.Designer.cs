@@ -86,10 +86,11 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(48, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 35);
+            this.label1.Size = new System.Drawing.Size(163, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "Manage Users";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,19 +116,25 @@
             // 
             // ManageUsersImportbtn
             // 
+            this.ManageUsersImportbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ManageUsersImportbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ManageUsersImportbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ManageUsersImportbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.ManageUsersImportbtn.ForeColor = System.Drawing.Color.White;
             this.ManageUsersImportbtn.Location = new System.Drawing.Point(3, 3);
             this.ManageUsersImportbtn.Name = "ManageUsersImportbtn";
             this.ManageUsersImportbtn.Size = new System.Drawing.Size(78, 11);
             this.ManageUsersImportbtn.TabIndex = 0;
             this.ManageUsersImportbtn.Text = "ImportUsers";
-            this.ManageUsersImportbtn.UseVisualStyleBackColor = true;
+            this.ManageUsersImportbtn.UseVisualStyleBackColor = false;
             this.ManageUsersImportbtn.Click += new System.EventHandler(this.ManageUsersImportbtn_Click);
             // 
             // FNLNRB
             // 
             this.FNLNRB.AutoSize = true;
             this.FNLNRB.Checked = true;
+            this.FNLNRB.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.FNLNRB.ForeColor = System.Drawing.Color.White;
             this.FNLNRB.Location = new System.Drawing.Point(87, 3);
             this.FNLNRB.Name = "FNLNRB";
             this.FNLNRB.Size = new System.Drawing.Size(78, 11);
@@ -139,6 +146,8 @@
             // LNFNRB
             // 
             this.LNFNRB.AutoSize = true;
+            this.LNFNRB.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.LNFNRB.ForeColor = System.Drawing.Color.White;
             this.LNFNRB.Location = new System.Drawing.Point(171, 3);
             this.LNFNRB.Name = "LNFNRB";
             this.LNFNRB.Size = new System.Drawing.Size(80, 11);
@@ -167,24 +176,32 @@
             // 
             // ManageUsersRemovebtn
             // 
+            this.ManageUsersRemovebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ManageUsersRemovebtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ManageUsersRemovebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ManageUsersRemovebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.ManageUsersRemovebtn.ForeColor = System.Drawing.Color.White;
             this.ManageUsersRemovebtn.Location = new System.Drawing.Point(130, 3);
             this.ManageUsersRemovebtn.Name = "ManageUsersRemovebtn";
             this.ManageUsersRemovebtn.Size = new System.Drawing.Size(57, 26);
             this.ManageUsersRemovebtn.TabIndex = 0;
             this.ManageUsersRemovebtn.Text = "Remove";
-            this.ManageUsersRemovebtn.UseVisualStyleBackColor = true;
+            this.ManageUsersRemovebtn.UseVisualStyleBackColor = false;
             this.ManageUsersRemovebtn.Click += new System.EventHandler(this.ManageUsersRemovebtn_Click);
             // 
             // ManageUsersBackbtn
             // 
+            this.ManageUsersBackbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ManageUsersBackbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ManageUsersBackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ManageUsersBackbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.ManageUsersBackbtn.ForeColor = System.Drawing.Color.White;
             this.ManageUsersBackbtn.Location = new System.Drawing.Point(193, 3);
             this.ManageUsersBackbtn.Name = "ManageUsersBackbtn";
             this.ManageUsersBackbtn.Size = new System.Drawing.Size(58, 26);
             this.ManageUsersBackbtn.TabIndex = 1;
             this.ManageUsersBackbtn.Text = "Back";
-            this.ManageUsersBackbtn.UseVisualStyleBackColor = true;
+            this.ManageUsersBackbtn.UseVisualStyleBackColor = false;
             this.ManageUsersBackbtn.Click += new System.EventHandler(this.ManageUsersBackbtn_Click);
             // 
             // openFD
@@ -195,6 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ManageUsers";

@@ -65,6 +65,8 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMainText.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lblMainText, 2);
+            this.lblMainText.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.lblMainText.ForeColor = System.Drawing.Color.White;
             this.lblMainText.Location = new System.Drawing.Point(3, 0);
             this.lblMainText.Name = "lblMainText";
             this.lblMainText.Size = new System.Drawing.Size(253, 159);
@@ -140,6 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.MattLoginBtn);
             this.Controls.Add(this.TestLoginBtn);

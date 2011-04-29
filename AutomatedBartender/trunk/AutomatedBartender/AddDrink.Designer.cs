@@ -32,11 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.AddDrinkTextBox = new System.Windows.Forms.TextBox();
+            this.AddDrinkIngredientTable = new System.Windows.Forms.DataGridView();
             this.AddDrinkAddRowBtn = new System.Windows.Forms.Button();
             this.AddDrinkBackBtn = new System.Windows.Forms.Button();
             this.AddDrinkSubmitBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.AddDrinkIngredientTable = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddDrinkIngredientTable)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +77,8 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 3);
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(397, 76);
@@ -90,10 +91,11 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.label2, 2);
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(3, 103);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 24);
+            this.label2.Size = new System.Drawing.Size(232, 37);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name of Drink:";
             // 
@@ -104,43 +106,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.AddDrinkTextBox, 3);
             this.AddDrinkTextBox.Location = new System.Drawing.Point(3, 130);
-            this.AddDrinkTextBox.Multiline = true;
             this.AddDrinkTextBox.Name = "AddDrinkTextBox";
-            this.AddDrinkTextBox.Size = new System.Drawing.Size(397, 45);
+            this.AddDrinkTextBox.Size = new System.Drawing.Size(397, 20);
             this.AddDrinkTextBox.TabIndex = 2;
-            // 
-            // AddDrinkAddRowBtn
-            // 
-            this.AddDrinkAddRowBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AddDrinkAddRowBtn.Location = new System.Drawing.Point(271, 265);
-            this.AddDrinkAddRowBtn.Name = "AddDrinkAddRowBtn";
-            this.AddDrinkAddRowBtn.Size = new System.Drawing.Size(129, 23);
-            this.AddDrinkAddRowBtn.TabIndex = 4;
-            this.AddDrinkAddRowBtn.Text = "Add Row";
-            this.AddDrinkAddRowBtn.UseVisualStyleBackColor = true;
-            this.AddDrinkAddRowBtn.Click += new System.EventHandler(this.AddDrinkAddRowBtn_Click);
-            // 
-            // AddDrinkBackBtn
-            // 
-            this.AddDrinkBackBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddDrinkBackBtn.Location = new System.Drawing.Point(271, 307);
-            this.AddDrinkBackBtn.Name = "AddDrinkBackBtn";
-            this.AddDrinkBackBtn.Size = new System.Drawing.Size(129, 32);
-            this.AddDrinkBackBtn.TabIndex = 5;
-            this.AddDrinkBackBtn.Text = "Back";
-            this.AddDrinkBackBtn.UseVisualStyleBackColor = true;
-            this.AddDrinkBackBtn.Click += new System.EventHandler(this.AddDrinkBackBtn_Click);
-            // 
-            // AddDrinkSubmitBtn
-            // 
-            this.AddDrinkSubmitBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddDrinkSubmitBtn.Location = new System.Drawing.Point(137, 307);
-            this.AddDrinkSubmitBtn.Name = "AddDrinkSubmitBtn";
-            this.AddDrinkSubmitBtn.Size = new System.Drawing.Size(128, 32);
-            this.AddDrinkSubmitBtn.TabIndex = 6;
-            this.AddDrinkSubmitBtn.Text = "Submit";
-            this.AddDrinkSubmitBtn.UseVisualStyleBackColor = true;
-            this.AddDrinkSubmitBtn.Click += new System.EventHandler(this.AddDrinkSubmitBtn_Click);
             // 
             // AddDrinkIngredientTable
             // 
@@ -161,10 +129,59 @@
             this.AddDrinkIngredientTable.Size = new System.Drawing.Size(397, 78);
             this.AddDrinkIngredientTable.TabIndex = 3;
             // 
+            // AddDrinkAddRowBtn
+            // 
+            this.AddDrinkAddRowBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AddDrinkAddRowBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AddDrinkAddRowBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.AddDrinkAddRowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AddDrinkAddRowBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.AddDrinkAddRowBtn.ForeColor = System.Drawing.Color.White;
+            this.AddDrinkAddRowBtn.Location = new System.Drawing.Point(271, 265);
+            this.AddDrinkAddRowBtn.Name = "AddDrinkAddRowBtn";
+            this.AddDrinkAddRowBtn.Size = new System.Drawing.Size(129, 23);
+            this.AddDrinkAddRowBtn.TabIndex = 4;
+            this.AddDrinkAddRowBtn.Text = "Add Row";
+            this.AddDrinkAddRowBtn.UseVisualStyleBackColor = false;
+            this.AddDrinkAddRowBtn.Click += new System.EventHandler(this.AddDrinkAddRowBtn_Click);
+            // 
+            // AddDrinkBackBtn
+            // 
+            this.AddDrinkBackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AddDrinkBackBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddDrinkBackBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.AddDrinkBackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AddDrinkBackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.AddDrinkBackBtn.ForeColor = System.Drawing.Color.White;
+            this.AddDrinkBackBtn.Location = new System.Drawing.Point(271, 307);
+            this.AddDrinkBackBtn.Name = "AddDrinkBackBtn";
+            this.AddDrinkBackBtn.Size = new System.Drawing.Size(129, 32);
+            this.AddDrinkBackBtn.TabIndex = 5;
+            this.AddDrinkBackBtn.Text = "Back";
+            this.AddDrinkBackBtn.UseVisualStyleBackColor = false;
+            this.AddDrinkBackBtn.Click += new System.EventHandler(this.AddDrinkBackBtn_Click);
+            // 
+            // AddDrinkSubmitBtn
+            // 
+            this.AddDrinkSubmitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AddDrinkSubmitBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddDrinkSubmitBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.AddDrinkSubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AddDrinkSubmitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.AddDrinkSubmitBtn.ForeColor = System.Drawing.Color.White;
+            this.AddDrinkSubmitBtn.Location = new System.Drawing.Point(137, 307);
+            this.AddDrinkSubmitBtn.Name = "AddDrinkSubmitBtn";
+            this.AddDrinkSubmitBtn.Size = new System.Drawing.Size(128, 32);
+            this.AddDrinkSubmitBtn.TabIndex = 6;
+            this.AddDrinkSubmitBtn.Text = "Submit";
+            this.AddDrinkSubmitBtn.UseVisualStyleBackColor = false;
+            this.AddDrinkSubmitBtn.Click += new System.EventHandler(this.AddDrinkSubmitBtn_Click);
+            // 
             // AddDrink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(427, 366);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddDrink";

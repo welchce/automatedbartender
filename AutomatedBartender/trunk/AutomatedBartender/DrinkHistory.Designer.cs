@@ -43,10 +43,11 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(99, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(32, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 40);
+            this.label1.Size = new System.Drawing.Size(249, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "Drink History";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,30 +105,39 @@
             // 
             // DrinkHistorySubmitBtn
             // 
+            this.DrinkHistorySubmitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DrinkHistorySubmitBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DrinkHistorySubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DrinkHistorySubmitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.DrinkHistorySubmitBtn.ForeColor = System.Drawing.Color.White;
             this.DrinkHistorySubmitBtn.Location = new System.Drawing.Point(155, 3);
             this.DrinkHistorySubmitBtn.Name = "DrinkHistorySubmitBtn";
             this.DrinkHistorySubmitBtn.Size = new System.Drawing.Size(70, 29);
             this.DrinkHistorySubmitBtn.TabIndex = 0;
             this.DrinkHistorySubmitBtn.Text = "Submit";
-            this.DrinkHistorySubmitBtn.UseVisualStyleBackColor = true;
+            this.DrinkHistorySubmitBtn.UseVisualStyleBackColor = false;
             this.DrinkHistorySubmitBtn.Click += new System.EventHandler(this.DrinkHistorySubmitBtn_Click);
             // 
             // DrinkHistoryBackBtn
             // 
+            this.DrinkHistoryBackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DrinkHistoryBackBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DrinkHistoryBackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DrinkHistoryBackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.DrinkHistoryBackBtn.ForeColor = System.Drawing.Color.White;
             this.DrinkHistoryBackBtn.Location = new System.Drawing.Point(231, 3);
             this.DrinkHistoryBackBtn.Name = "DrinkHistoryBackBtn";
             this.DrinkHistoryBackBtn.Size = new System.Drawing.Size(73, 29);
             this.DrinkHistoryBackBtn.TabIndex = 1;
             this.DrinkHistoryBackBtn.Text = "Back";
-            this.DrinkHistoryBackBtn.UseVisualStyleBackColor = true;
+            this.DrinkHistoryBackBtn.UseVisualStyleBackColor = false;
             this.DrinkHistoryBackBtn.Click += new System.EventHandler(this.DrinkHistoryBackBtn_Click);
             // 
             // DrinkHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(337, 291);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DrinkHistory";

@@ -13,8 +13,9 @@ namespace AutomatedBartender
     {
         string LICENSE = "";
 
-        public UserMain(string DriversLicense)
+        public UserMain()//string DriversLicense)
         {
+            string DriversLicense = "32242424242";
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setLicense(DriversLicense);

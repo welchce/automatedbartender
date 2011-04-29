@@ -49,23 +49,28 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(122, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(84, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 40);
+            this.label1.Size = new System.Drawing.Size(144, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "Top 25";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Top25SubmitBtn
             // 
+            this.Top25SubmitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Top25SubmitBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Top25SubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Top25SubmitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.Top25SubmitBtn.ForeColor = System.Drawing.Color.White;
             this.Top25SubmitBtn.Location = new System.Drawing.Point(155, 3);
             this.Top25SubmitBtn.Name = "Top25SubmitBtn";
             this.Top25SubmitBtn.Size = new System.Drawing.Size(70, 29);
             this.Top25SubmitBtn.TabIndex = 0;
             this.Top25SubmitBtn.Text = "Submit";
-            this.Top25SubmitBtn.UseVisualStyleBackColor = true;
+            this.Top25SubmitBtn.UseVisualStyleBackColor = false;
             this.Top25SubmitBtn.Click += new System.EventHandler(this.Top25SubmitBtn_Click);
             // 
             // tableLayoutPanel2
@@ -89,13 +94,17 @@
             // 
             // Top25BackBtn
             // 
+            this.Top25BackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Top25BackBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Top25BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Top25BackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.Top25BackBtn.ForeColor = System.Drawing.Color.White;
             this.Top25BackBtn.Location = new System.Drawing.Point(231, 3);
             this.Top25BackBtn.Name = "Top25BackBtn";
             this.Top25BackBtn.Size = new System.Drawing.Size(73, 29);
             this.Top25BackBtn.TabIndex = 1;
             this.Top25BackBtn.Text = "Back";
-            this.Top25BackBtn.UseVisualStyleBackColor = true;
+            this.Top25BackBtn.UseVisualStyleBackColor = false;
             this.Top25BackBtn.Click += new System.EventHandler(this.Top25BackBtn_Click);
             // 
             // tableLayoutPanel1
@@ -150,6 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(337, 291);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Top25";
