@@ -85,8 +85,9 @@ namespace AutomatedBartender
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             SqlParameter returnParameter = cmd.Parameters.Add("@ID", SqlDbType.Int);
             returnParameter.Direction = ParameterDirection.Output;
-            myConnection.Open(); 
-            cmd.ExecuteReader().Close();
+            myConnection.Open();
+            cmd.ExecuteReader();
+            myConnection.Close();
             return Convert.ToInt32(returnParameter.Value);
         }
 
@@ -98,14 +99,23 @@ namespace AutomatedBartender
             cmd.ExecuteReader().Close();
         }
 
-        public void AddIngredientsToRecipe(int drinkID, string ingredient, string amount)
+        public void AddIngredientsToRecipe(int drinkID, string inventory, string amount)
         {
+            myConnection.Open();
             string sqlCmd = "SELECT @AmountID=ID FROM tblAmount WHERE Name = '" + amount + "'";
-            SqlParameter amountID = new SqlParameter("@AmountID", DbType.String);
-            amountID.Direction = ParameterDirection.Output;
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            SqlParameter amountID = cmd.Parameters.Add("@AmountID", DbType.String);
+            amountID.Direction = ParameterDirection.Output;
             cmd.ExecuteNonQuery();
-            sqlCmd = "INSERT INTO tblIngredients VALUES ('"+drinkID+"','"+ingredient+"','"+amountID+"')";
+
+            sqlCmd = "SELECT @InventoryID=ID FROM tblInventory WHERE LiquidName = '" + inventory + "'";
+            cmd = new SqlCommand(sqlCmd, myConnection);
+            SqlParameter inventoryID = cmd.Parameters.Add("@InventoryID", DbType.String);
+            inventoryID.Direction = ParameterDirection.Output;
+            cmd.ExecuteNonQuery();
+
+            sqlCmd = "INSERT INTO tblIngredients VALUES ('" + drinkID + "','" + inventoryID.Value + "','" + amountID.Value + "')";
+            cmd = new SqlCommand(sqlCmd, myConnection);
             cmd.ExecuteNonQuery();
             myConnection.Close();
         }
