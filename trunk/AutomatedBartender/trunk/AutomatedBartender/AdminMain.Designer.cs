@@ -40,13 +40,17 @@
             // 
             // AdminManageInventoryBtn
             // 
+            this.AdminManageInventoryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AdminManageInventoryBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdminManageInventoryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AdminManageInventoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.AdminManageInventoryBtn.ForeColor = System.Drawing.Color.White;
             this.AdminManageInventoryBtn.Location = new System.Drawing.Point(159, 135);
             this.AdminManageInventoryBtn.Name = "AdminManageInventoryBtn";
             this.AdminManageInventoryBtn.Size = new System.Drawing.Size(151, 60);
             this.AdminManageInventoryBtn.TabIndex = 5;
             this.AdminManageInventoryBtn.Text = "Manage Inventory";
-            this.AdminManageInventoryBtn.UseVisualStyleBackColor = true;
+            this.AdminManageInventoryBtn.UseVisualStyleBackColor = false;
             this.AdminManageInventoryBtn.Click += new System.EventHandler(this.AdminManageInventoryBtn_Click);
             // 
             // label1
@@ -54,34 +58,43 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 3);
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(41, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 66);
+            this.label1.Size = new System.Drawing.Size(230, 66);
             this.label1.TabIndex = 8;
             this.label1.Text = "Admin Main Screen";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AdminManageUsersBtn
             // 
+            this.AdminManageUsersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AdminManageUsersBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdminManageUsersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AdminManageUsersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.AdminManageUsersBtn.ForeColor = System.Drawing.Color.White;
             this.AdminManageUsersBtn.Location = new System.Drawing.Point(159, 69);
             this.AdminManageUsersBtn.Name = "AdminManageUsersBtn";
             this.AdminManageUsersBtn.Size = new System.Drawing.Size(151, 60);
             this.AdminManageUsersBtn.TabIndex = 4;
             this.AdminManageUsersBtn.Text = "Manage Users";
-            this.AdminManageUsersBtn.UseVisualStyleBackColor = true;
+            this.AdminManageUsersBtn.UseVisualStyleBackColor = false;
             this.AdminManageUsersBtn.Click += new System.EventHandler(this.AdminManageUsersBtn_Click);
             // 
             // AdminAddDrinkBtn
             // 
+            this.AdminAddDrinkBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AdminAddDrinkBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdminAddDrinkBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AdminAddDrinkBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.AdminAddDrinkBtn.ForeColor = System.Drawing.Color.White;
             this.AdminAddDrinkBtn.Location = new System.Drawing.Point(3, 69);
             this.AdminAddDrinkBtn.Name = "AdminAddDrinkBtn";
             this.AdminAddDrinkBtn.Size = new System.Drawing.Size(150, 60);
             this.AdminAddDrinkBtn.TabIndex = 0;
             this.AdminAddDrinkBtn.Text = "Add Drink";
-            this.AdminAddDrinkBtn.UseVisualStyleBackColor = true;
+            this.AdminAddDrinkBtn.UseVisualStyleBackColor = false;
             this.AdminAddDrinkBtn.Click += new System.EventHandler(this.AdminAddDrinkBtn_Click);
             // 
             // tableLayoutPanel1
@@ -112,30 +125,39 @@
             // 
             // AdminExitBtn
             // 
+            this.AdminExitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AdminExitBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdminExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AdminExitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.AdminExitBtn.ForeColor = System.Drawing.Color.White;
             this.AdminExitBtn.Location = new System.Drawing.Point(3, 201);
             this.AdminExitBtn.Name = "AdminExitBtn";
             this.AdminExitBtn.Size = new System.Drawing.Size(150, 62);
             this.AdminExitBtn.TabIndex = 6;
             this.AdminExitBtn.Text = "Exit";
-            this.AdminExitBtn.UseVisualStyleBackColor = true;
+            this.AdminExitBtn.UseVisualStyleBackColor = false;
             this.AdminExitBtn.Click += new System.EventHandler(this.AdminExitBtn_Click);
             // 
             // AdminAllDrinksBtn
             // 
+            this.AdminAllDrinksBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AdminAllDrinksBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdminAllDrinksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AdminAllDrinksBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.AdminAllDrinksBtn.ForeColor = System.Drawing.Color.White;
             this.AdminAllDrinksBtn.Location = new System.Drawing.Point(3, 135);
             this.AdminAllDrinksBtn.Name = "AdminAllDrinksBtn";
             this.AdminAllDrinksBtn.Size = new System.Drawing.Size(150, 60);
             this.AdminAllDrinksBtn.TabIndex = 9;
             this.AdminAllDrinksBtn.Text = "All Drinks";
-            this.AdminAllDrinksBtn.UseVisualStyleBackColor = true;
+            this.AdminAllDrinksBtn.UseVisualStyleBackColor = false;
             this.AdminAllDrinksBtn.Click += new System.EventHandler(this.AdminAllDrinksBtn_Click_1);
             // 
             // AdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(337, 291);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminMain";

@@ -41,8 +41,8 @@ namespace AutomatedBartender
             }
             else
             {
-                Form userMainScreen = new UserMain(getLicense());
-                userMainScreen.Show();
+                //Form userMainScreen = new UserMain(getLicense());
+                //userMainScreen.Show();
                 this.Close();
             }
         }
@@ -86,8 +86,8 @@ namespace AutomatedBartender
                 }
                 else
                 {
-                    Form userMainScreen = new UserMain(getLicense());
-                    userMainScreen.Show();
+                    //Form userMainScreen = new UserMain(getLicense());
+                    //userMainScreen.Show();
                     this.Close();
                 }
             }
