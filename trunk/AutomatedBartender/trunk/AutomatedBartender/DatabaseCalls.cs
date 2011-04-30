@@ -200,7 +200,7 @@ namespace AutomatedBartender
         }
         public void DispensedDrink(string drinkID)
         {
-            string sqlCmd = "UPDATE dbo.tblRecipe SET numDispensed=numDispensed+1 WHERE ID='"+drinkID+"'";
+            string sqlCmd = "UPDATE dbo.tblRecipe SET numDispensed=numDispensed+1 WHERE ID='" + drinkID + "'";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
             cmd.ExecuteNonQuery();
@@ -236,9 +236,32 @@ namespace AutomatedBartender
                 i++;
                 sqlReader3.Close();
             }
-
             sqlReader.Close();
+            string sqlCmd4 = "SELECT TOP 1 @Quantity=Quantity FROM tblInventory WHERE Quantity < 100 AND Location > 0";
+            SqlCommand cmd4 = new SqlCommand(sqlCmd4, myConnection);
+            SqlParameter quantity = cmd4.Parameters.Add("@Quantity", SqlDbType.Int);
+            quantity.Direction = ParameterDirection.Output;
+            cmd4.ExecuteNonQuery();
+
+            if (quantity.Value != DBNull.Value)
+            {
+                System.Windows.Forms.MessageBox.Show("Please contact a system adminstrator");
+            }
+
             myConnection.Close();
+        }
+
+        public DateTime getStartDrinkTime(string UserID)
+        {
+            string sqlCmd = "SELECT @TimeStarted=TimeStarted FROM tblUsers WHERE UserID = '" + UserID + "'";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            SqlParameter time = cmd.Parameters.Add("@Quantity", SqlDbType.DateTime);
+            time.Direction = ParameterDirection.Output;
+            cmd.ExecuteNonQuery();
+            if (time.Value != DBNull.Value)
+                return Convert.ToDateTime(time.Value);
+            else
+                return Convert.ToDateTime(null);
         }
     }
 }

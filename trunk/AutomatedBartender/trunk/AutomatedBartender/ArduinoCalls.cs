@@ -11,13 +11,13 @@ namespace AutomatedBartender
         SerialPort ArduinoPort1;
         public void StartArduinoCommunication()
         {
-            //ArduinoPort1 = new SerialPort("COM5", 9600, Parity.None, 8, StopBits.One);
-            //ArduinoPort1.Open();
+            ArduinoPort1 = new SerialPort("COM5", 9600, Parity.None, 8, StopBits.One);
+            ArduinoPort1.Open();
         }
 
         public void StopArduinoCommunication()
         {
-            //ArduinoPort1.Close();
+            ArduinoPort1.Close();
         }
 
         public void TurnOnMotor(int port)
