@@ -75,14 +75,14 @@ namespace AutomatedBartender
             int[] ports = DBC.GetDrinkPorts(Convert.ToInt32(GloRecipeID));
             AC.StartArduinoCommunication();
             int i = 0;
-            while (ports[i] != 0)
+            while (i <= 10)
             {
                 AC.TurnOnMotor(ports[i]);
                 i++;
             }
             i = 0;
             Thread.Sleep(5000);
-            while (ports[i] != 0)
+            while (i <= 10)
             {
                 AC.TurnOffMotor(ports[i]);
                 i++;
