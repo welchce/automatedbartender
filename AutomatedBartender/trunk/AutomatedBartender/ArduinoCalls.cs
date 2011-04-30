@@ -30,10 +30,8 @@ namespace AutomatedBartender
                 TurnOnMotor3();
             else if (port == 4)
                 TurnOnMotor4();
-            else if (port == 5)
-                TurnOnMotor5();
-            else if (port == 6)
-                TurnOnMotor6();
+            else
+                System.Windows.Forms.MessageBox.Show("fail on motor turn on");
         }
 
         public void TurnOffMotor(int port)
@@ -46,10 +44,8 @@ namespace AutomatedBartender
                 TurnOffMotor3();
             else if (port == 4)
                 TurnOffMotor4();
-            else if (port == 5)
-                TurnOffMotor5();
-            else if (port == 6)
-                TurnOffMotor6();
+            else
+                System.Windows.Forms.MessageBox.Show("fail on motor shut down");
         }
         public void TurnOnMotor1()
         {
@@ -90,27 +86,5 @@ namespace AutomatedBartender
         {
             ArduinoPort1.Write("h");
         }
-
-        public void TurnOnMotor5()
-        {
-            ArduinoPort1.Write("i");
-        }
-
-        public void TurnOffMotor5()
-        {
-            ArduinoPort1.Write("j");
-        }
-
-        public void TurnOnMotor6()
-        {
-            ArduinoPort1.Write("k");
-        }
-
-        public void TurnOffMotor6()
-        {
-            ArduinoPort1.Write("l");
-        }
-
-
     }
 }
