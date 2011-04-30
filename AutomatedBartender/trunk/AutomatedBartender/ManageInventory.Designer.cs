@@ -133,6 +133,7 @@
             this.manageInventoryGridView.AllowUserToAddRows = false;
             this.manageInventoryGridView.AllowUserToDeleteRows = false;
             this.manageInventoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.manageInventoryGridView.BackgroundColor = System.Drawing.Color.Black;
             this.manageInventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.manageInventoryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageInventoryGridView.Location = new System.Drawing.Point(3, 108);
@@ -206,7 +207,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
@@ -235,7 +236,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
@@ -271,7 +272,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
@@ -314,7 +315,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
@@ -326,7 +327,6 @@
             // manageInventoryAddBtn
             // 
             this.manageInventoryAddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.manageInventoryAddBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageInventoryAddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.manageInventoryAddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.manageInventoryAddBtn.ForeColor = System.Drawing.Color.White;

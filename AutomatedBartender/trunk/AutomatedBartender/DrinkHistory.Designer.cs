@@ -32,7 +32,6 @@
             this.DrinkHistoryDataGrid = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.DrinkHistorySubmitBtn = new System.Windows.Forms.Button();
             this.DrinkHistoryBackBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DrinkHistoryDataGrid)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -54,8 +53,8 @@
             // 
             // DrinkHistoryDataGrid
             // 
-            this.DrinkHistoryDataGrid.AllowDrop = true;
             this.DrinkHistoryDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DrinkHistoryDataGrid.BackgroundColor = System.Drawing.Color.Black;
             this.DrinkHistoryDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DrinkHistoryDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DrinkHistoryDataGrid.Location = new System.Drawing.Point(3, 43);
@@ -94,7 +93,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.DrinkHistorySubmitBtn, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.DrinkHistoryBackBtn, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 229);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -102,21 +100,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(307, 35);
             this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // DrinkHistorySubmitBtn
-            // 
-            this.DrinkHistorySubmitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DrinkHistorySubmitBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DrinkHistorySubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.DrinkHistorySubmitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.DrinkHistorySubmitBtn.ForeColor = System.Drawing.Color.White;
-            this.DrinkHistorySubmitBtn.Location = new System.Drawing.Point(155, 3);
-            this.DrinkHistorySubmitBtn.Name = "DrinkHistorySubmitBtn";
-            this.DrinkHistorySubmitBtn.Size = new System.Drawing.Size(70, 29);
-            this.DrinkHistorySubmitBtn.TabIndex = 0;
-            this.DrinkHistorySubmitBtn.Text = "Submit";
-            this.DrinkHistorySubmitBtn.UseVisualStyleBackColor = false;
-            this.DrinkHistorySubmitBtn.Click += new System.EventHandler(this.DrinkHistorySubmitBtn_Click);
             // 
             // DrinkHistoryBackBtn
             // 
@@ -157,7 +140,6 @@
         private System.Windows.Forms.DataGridView DrinkHistoryDataGrid;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button DrinkHistorySubmitBtn;
         private System.Windows.Forms.Button DrinkHistoryBackBtn;
     }
 }

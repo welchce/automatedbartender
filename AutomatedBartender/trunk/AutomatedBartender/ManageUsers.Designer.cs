@@ -76,6 +76,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.manageUsersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.manageUsersGridView.BackgroundColor = System.Drawing.Color.Black;
             this.manageUsersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.manageUsersGridView.Location = new System.Drawing.Point(3, 61);
             this.manageUsersGridView.Name = "manageUsersGridView";

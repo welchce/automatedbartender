@@ -49,19 +49,22 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(268, 247);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // NoUserbtn
             // 
             this.NoUserbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.NoUserbtn.AutoSize = true;
             this.NoUserbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.NoUserbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NoUserbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.NoUserbtn.ForeColor = System.Drawing.Color.White;
             this.NoUserbtn.Location = new System.Drawing.Point(84, 167);
             this.NoUserbtn.Name = "NoUserbtn";
-            this.NoUserbtn.Size = new System.Drawing.Size(100, 77);
+            this.NoUserbtn.Size = new System.Drawing.Size(100, 47);
             this.NoUserbtn.TabIndex = 1;
             this.NoUserbtn.Text = "Ok";
             this.NoUserbtn.UseVisualStyleBackColor = false;

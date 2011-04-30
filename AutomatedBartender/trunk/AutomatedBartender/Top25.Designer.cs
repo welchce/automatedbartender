@@ -133,6 +133,7 @@
             this.Top25DataGrid.AllowUserToResizeColumns = false;
             this.Top25DataGrid.AllowUserToResizeRows = false;
             this.Top25DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Top25DataGrid.BackgroundColor = System.Drawing.Color.Black;
             this.Top25DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Top25DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Top25DataGrid.Location = new System.Drawing.Point(3, 43);

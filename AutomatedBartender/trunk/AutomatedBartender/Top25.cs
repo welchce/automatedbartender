@@ -71,12 +71,12 @@ namespace AutomatedBartender
 
         private void Top25SubmitBtn_Click(object sender, EventArgs e)
         {
-            Form drinkMakerForm = new DrinkMaker(getLicense());
-            DatabaseCalls DBC = new DatabaseCalls();
-            //ADD DRINK TO QUEUE
             int row = Top25DataGrid.CurrentCellAddress.Y;
             string DrinkID = Top25DataGrid[0, row].Value.ToString();
-            DBC.AddDrinkToQueue(getLicense(), DrinkID);
+            Form drinkMakerForm = new DrinkMaker(getLicense(), DrinkID);
+            DatabaseCalls DBC = new DatabaseCalls();
+            //ADD DRINK TO QUEUE
+            DBC.AddDrinkToHistory(getLicense(), DrinkID);
             drinkMakerForm.Show();
             this.Close();
         }

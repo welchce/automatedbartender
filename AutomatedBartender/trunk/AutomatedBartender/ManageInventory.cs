@@ -42,10 +42,22 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             string ingredientName = manageInventoryNameTxt.Text.ToString();
             string ingredientProof = manageInventoryProofTxt.Text.ToString();
-            int ingredientAmount = Convert.ToInt32(manageInventoryAmountTxt.Text);
-            int ingredientSlot = Convert.ToInt32(manageInventorySlotTxt.Text);
-            DBC.AddInventory(ingredientName, ingredientProof, ingredientAmount, ingredientSlot);
-            refreshInventoryList();
+            string ingredientAmount = manageInventoryAmountTxt.Text.ToString();
+            string ingredientSlot = manageInventorySlotTxt.Text.ToString();
+            if (ingredientName != "" && ingredientProof != "" && ingredientSlot != "" && ingredientAmount != "" )
+            {
+                try
+                {
+                    DBC.AddInventory(ingredientName, Convert.ToInt32(ingredientProof), Convert.ToInt32(ingredientAmount), Convert.ToInt32(ingredientSlot));
+                    refreshInventoryList();
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("Check your damn inputs, faggot");
+                }
+
+            }
+
         }
 
         private void ManageInventory_Load(object sender, EventArgs e)
@@ -69,5 +81,6 @@ namespace AutomatedBartender
             DBC.RemoveInventory(inventoryID);
             refreshInventoryList();
         }
+
     }
 }
