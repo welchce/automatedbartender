@@ -81,7 +81,7 @@ namespace AutomatedBartender
                 i++;
             }
             i = 0;
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
             while (i < 10)
             {
                 AC.TurnOffMotor(ports[i]);
