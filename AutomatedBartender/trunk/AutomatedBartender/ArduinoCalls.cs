@@ -30,8 +30,7 @@ namespace AutomatedBartender
                 TurnOnMotor3();
             else if (port == 4)
                 TurnOnMotor4();
-            else
-                System.Windows.Forms.MessageBox.Show("fail on motor turn on");
+                
         }
 
         public void TurnOffMotor(int port)
@@ -44,8 +43,6 @@ namespace AutomatedBartender
                 TurnOffMotor3();
             else if (port == 4)
                 TurnOffMotor4();
-            else
-                System.Windows.Forms.MessageBox.Show("fail on motor shut down");
         }
         public void TurnOnMotor1()
         {
