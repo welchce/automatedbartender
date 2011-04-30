@@ -130,7 +130,7 @@ namespace AutomatedBartender
         }
 
         public void AddDrinkToQueue(string LicenseNo, string DrinkID)
-        {
+        { //JRL
             string sqlCmd = "INSERT INTO tblQueue VALUES ('"+LicenseNo+"','"+DrinkID+"', 0, null)";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             //SqlParameter returnParameter = new SqlParameter("@LicenseNo", SqlDbType.VarChar);
@@ -140,7 +140,7 @@ namespace AutomatedBartender
             myConnection.Close();
         }
         public int GetDrinkFromQueue(string UserID)
-        {
+        { //JRL
             string sqlCmd = "SELECT TOP 1 @RecipeID=RecipeID FROM tblQueue WHERE Dispensed = 0 and UserID=" +UserID +"ORDER BY ID DESC";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             SqlParameter RecipeID = cmd.Parameters.Add("@RecipeID", SqlDbType.Int);
@@ -173,7 +173,7 @@ namespace AutomatedBartender
         }
 
         public void UpdateDrinkInQueue(string UserID)
-        {
+        { //JRL
             string sqlCmd = "UPDATE TOP (1) tblQueue SET Dispensed = 1 WHERE UserID=" + UserID;
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             cmd.ExecuteReader().Close();
@@ -193,6 +193,48 @@ namespace AutomatedBartender
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
             cmd.ExecuteNonQuery();
+            myConnection.Close();
+        }
+        public void DispensedDrink(string drinkID)
+        {
+            string sqlCmd = "UPDATE dbo.tblRecipe SET numDispensed=numDispensed+1 WHERE ID='"+drinkID+"'";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+            myConnection.Close();
+
+            string sqlCmd2 = "SELECT DISTINCT Inv.ID FROM tblRecipe R, tblInventory Inv, tblIngredients Ing WHERE R.ID = Ing.RecipeID AND Ing.LiquidID = Inv.ID AND R.ID =" + drinkID;
+            SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
+            SqlDataReader sqlReader;
+            myConnection.Open();
+            sqlReader = cmd2.ExecuteReader();
+            int[] IDs = new int[10];
+            int i = 0;
+
+            if (sqlReader.HasRows)
+            {
+                while (sqlReader.Read())
+                {
+                    IDs[i] = Convert.ToInt32(sqlReader.GetValue(0));
+                    i++;
+                }
+                sqlReader.Close();
+            }
+
+            i = 0;
+            string sqlCmd3;
+            SqlCommand cmd3;
+            SqlDataReader sqlReader3;
+            while (IDs[i] != 0)
+            {
+                sqlCmd3 = "UPDATE dbo.tblInventory SET Quantity=Quantity-35 WHERE ID='" + Convert.ToString(IDs[i]) + "' AND Proof<>0";
+                cmd3 = new SqlCommand(sqlCmd3, myConnection);
+                sqlReader3 = cmd3.ExecuteReader();
+                i++;
+                sqlReader3.Close();
+            }
+
+            sqlReader.Close();
             myConnection.Close();
         }
     }

@@ -32,8 +32,8 @@ namespace AutomatedBartender
             }
             else
             {
-                //Form userMainScreen = new UserMain(getLicense());
-                //userMainScreen.Show();
+                Form userMainScreen = new UserMain(getLicense());
+                userMainScreen.Show();
                 this.Close();
             }
         }
@@ -66,7 +66,7 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             AllDrinksDataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             AllDrinksDataGrid.ReadOnly = true;
-            AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,NAME FROM tblRecipe WHERE ID NOT IN (SELECT RecipeID FROM tblIngredients t	WHERE t.LiquidID IN (SELECT ID FROM tblInventory i WHERE i.Location=0))");
+            AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,NAME FROM tblRecipe WHERE ID NOT IN (SELECT RecipeID FROM tblIngredients t WHERE t.LiquidID IN (SELECT ID FROM tblInventory i WHERE i.Location=0 AND i.Proof<>0))");
             //column 0 is ID and we don't want to see it but we will need id later
             AllDrinksDataGrid.Columns[0].Visible = false;
             if (isAdmin)
@@ -82,6 +82,7 @@ namespace AutomatedBartender
             int row = AllDrinksDataGrid.CurrentCellAddress.Y;
             string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
             DBC.AddDrinkToQueue(getLicense(), DrinkID);
+            DBC.DispensedDrink(DrinkID);
             drinkMakerForm.Show();
             this.Close();
         }

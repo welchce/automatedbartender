@@ -186,8 +186,8 @@ namespace AutomatedBartender
                 }
                 else if (userType == "Regular")
                 {
-                    //Form userMainScreen = new UserMain(DL);
-                    //userMainScreen.Show();
+                    Form userMainScreen = new UserMain(DL);
+                    userMainScreen.Show();
                 }
                 else
                 {

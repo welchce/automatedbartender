@@ -32,9 +32,9 @@ namespace AutomatedBartender
             }
             else
             {
-                //Form userMainScreen = new UserMain(getLicense());
-                //userMainScreen.Show();
-                //this.Close();
+                Form userMainScreen = new UserMain(getLicense());
+                userMainScreen.Show();
+                this.Close();
             }
         }
         
