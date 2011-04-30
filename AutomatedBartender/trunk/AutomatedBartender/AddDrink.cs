@@ -41,8 +41,8 @@ namespace AutomatedBartender
             }
             else
             {
-                //Form userMainScreen = new UserMain(getLicense());
-                //userMainScreen.Show();
+                Form userMainScreen = new UserMain(getLicense());
+                userMainScreen.Show();
                 this.Close();
             }
         }
@@ -55,11 +55,6 @@ namespace AutomatedBartender
         private void setLicense(string DL)
         {
             LICENSE = DL;
-        }
-
-        private void AddDrinkAddRowBtn_Click(object sender, EventArgs e)
-        {
-            AddDrinkIngredientTable.Rows.Add();
         }
 
         private void AddDrinkSubmitBtn_Click(object sender, EventArgs e)
@@ -86,8 +81,8 @@ namespace AutomatedBartender
                 }
                 else
                 {
-                    //Form userMainScreen = new UserMain(getLicense());
-                    //userMainScreen.Show();
+                    Form userMainScreen = new UserMain(getLicense());
+                    userMainScreen.Show();
                     this.Close();
                 }
             }

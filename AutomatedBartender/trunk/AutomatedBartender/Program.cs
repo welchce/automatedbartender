@@ -15,7 +15,7 @@ namespace AutomatedBartender
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserMain());
+            Application.Run(new MainSwipe());
         }
     }
 }
