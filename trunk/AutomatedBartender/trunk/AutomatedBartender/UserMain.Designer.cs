@@ -161,11 +161,13 @@
             // 
             this.UserBACLabel.AutoSize = true;
             this.UserBACLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserBACLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.UserBACLabel.ForeColor = System.Drawing.Color.White;
             this.UserBACLabel.Location = new System.Drawing.Point(133, 177);
             this.UserBACLabel.Name = "UserBACLabel";
             this.UserBACLabel.Size = new System.Drawing.Size(124, 61);
             this.UserBACLabel.TabIndex = 7;
-            this.UserBACLabel.Text = "BAC\r0.0%";
+            this.UserBACLabel.Text = "BAC\r1.2%";
             this.UserBACLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserMain

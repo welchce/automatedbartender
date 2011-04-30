@@ -117,6 +117,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.AddDrinkIngredientTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.AddDrinkIngredientTable.BackgroundColor = System.Drawing.Color.Black;
             this.AddDrinkIngredientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.AddDrinkIngredientTable, 3);
             this.AddDrinkIngredientTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;

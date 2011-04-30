@@ -91,7 +91,7 @@ namespace AutomatedBartender
             return Convert.ToInt32(returnParameter.Value);
         }
 
-        public void AddInventory(string name, string proof, int amount, int slot)
+        public void AddInventory(string name, int proof, int amount, int slot)
         {
             string sqlCmd = "INSERT INTO tblInventory VALUES ('" + name + "','" + proof + "','" + amount + "','" + slot + "')";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
@@ -129,25 +129,33 @@ namespace AutomatedBartender
             myConnection.Close();
         }
 
-        public void AddDrinkToQueue(string LicenseNo, string DrinkID)
-        { //JRL
-            string sqlCmd = "INSERT INTO tblQueue VALUES ('"+LicenseNo+"','"+DrinkID+"', 0, null)";
+        public void AddDrinkToHistory(string LicenseNo, string DrinkID)
+        {
+            string sqlCmd = "SELECT TOP 1 @numDispensed=numDispensed FROM tblHistory WHERE UserID=" + LicenseNo + " and RecipeID =" + DrinkID;
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
-            //SqlParameter returnParameter = new SqlParameter("@LicenseNo", SqlDbType.VarChar);
-            //returnParameter.Direction = ParameterDirection.ReturnValue;
-            myConnection.Open();
-            cmd.ExecuteNonQuery();
-            myConnection.Close();
-        }
-        public int GetDrinkFromQueue(string UserID)
-        { //JRL
-            string sqlCmd = "SELECT TOP 1 @RecipeID=RecipeID FROM tblQueue WHERE Dispensed = 0 and UserID=" +UserID +"ORDER BY ID DESC";
-            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
-            SqlParameter RecipeID = cmd.Parameters.Add("@RecipeID", SqlDbType.Int);
-            RecipeID.Direction = ParameterDirection.Output;
+            SqlParameter numDispensed = cmd.Parameters.Add("@numDispensed", SqlDbType.Int);
+            int value;
+            numDispensed.Direction = ParameterDirection.Output;
             myConnection.Open();
             cmd.ExecuteReader().Close();
-            return Convert.ToInt32(RecipeID.Value);
+
+            try
+            {
+                value = Convert.ToInt32(numDispensed.Value);
+                string sqlCmd2 = "UPDATE tblHistory SET numDispensed = numDispensed+1 WHERE UserID=" + LicenseNo + "AND RecipeID = " + DrinkID;
+                SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
+                cmd2.ExecuteReader().Close();
+            }
+            catch (Exception e)
+            {
+                if (e.Message.Contains ("DBNull"))
+                {
+                    string sqlCmd3 = "INSERT INTO tblHistory VALUES ('" + LicenseNo + "','" + DrinkID + "', 1)";
+                    SqlCommand cmd3 = new SqlCommand(sqlCmd3, myConnection);
+                    cmd3.ExecuteNonQuery();
+                }
+            }
+            myConnection.Close();
         }
 
         public int[] GetDrinkPorts(int RecipeID)
@@ -155,6 +163,7 @@ namespace AutomatedBartender
             string sqlCmd = "SELECT DISTINCT Location FROM tblRecipe R, tblInventory Inv, tblIngredients Ing WHERE R.ID = Ing.RecipeID AND Ing.LiquidID = Inv.ID AND R.ID =" + RecipeID;
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             SqlDataReader sqlReader;
+            myConnection.Open();
             sqlReader = cmd.ExecuteReader();
             if (sqlReader.HasRows)
             {
@@ -169,14 +178,8 @@ namespace AutomatedBartender
                 return locations;
             }
             sqlReader.Close();
+            myConnection.Close();
             return new int[1];
-        }
-
-        public void UpdateDrinkInQueue(string UserID)
-        { //JRL
-            string sqlCmd = "UPDATE TOP (1) tblQueue SET Dispensed = 1 WHERE UserID=" + UserID;
-            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
-            cmd.ExecuteReader().Close();
         }
 
         public void AddUser(string FirstName, string LastName)

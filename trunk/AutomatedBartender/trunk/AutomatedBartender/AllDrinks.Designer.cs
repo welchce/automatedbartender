@@ -76,6 +76,7 @@
             this.AllDrinksDataGrid.AllowUserToResizeRows = false;
             this.AllDrinksDataGrid.AutoGenerateColumns = false;
             this.AllDrinksDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.AllDrinksDataGrid.BackgroundColor = System.Drawing.Color.Black;
             this.AllDrinksDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AllDrinksDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
