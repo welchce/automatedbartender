@@ -18,6 +18,14 @@ namespace AutomatedBartender
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setLicense(DriversLicense);
+
+           // DatabaseCalls DBC = new DatabaseCalls();
+           // DateTime startTime = DBC.getStartDrinkTime(LICENSE);
+           // if (startTime != Convert.ToDateTime(null))
+           // {
+           // }
+           // else
+           //     UserBACLabel.Text = "BAC \n 0.00%";
         }
 
         private void UserExitBtn_Click(object sender, EventArgs e)
@@ -62,5 +70,6 @@ namespace AutomatedBartender
             newDrink.Show();
             this.Close();
         }
+
     }
 }
