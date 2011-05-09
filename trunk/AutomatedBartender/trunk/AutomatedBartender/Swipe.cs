@@ -186,7 +186,7 @@ namespace AutomatedBartender
                 }
                 else if (userType == "Regular")
                 {
-                    Form userMainScreen = new UserMain(DL);
+                    Form userMainScreen = new UserMain(DL,Gender,Weight);
                     userMainScreen.Show();
                 }
                 else
@@ -196,7 +196,7 @@ namespace AutomatedBartender
 
                 }
             }
-            catch
+            catch (Exception e)
             {
                 return false;
             }
