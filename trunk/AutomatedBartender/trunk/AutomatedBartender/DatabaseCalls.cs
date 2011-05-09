@@ -93,10 +93,18 @@ namespace AutomatedBartender
 
         public void AddInventory(string name, int proof, int amount, int slot)
         {
-            string sqlCmd = "INSERT INTO tblInventory VALUES ('" + name + "','" + proof + "','" + amount + "','" + slot + "')";
+            string sqlCmd = "UPDATE tblInventory SET Location=-1,Quantity=0 WHERE Location=" + slot; 
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
-            cmd.ExecuteReader().Close();
+            cmd.ExecuteNonQuery();
+            myConnection.Close();
+
+            string sqlCmd2 = "UPDATE tblInventory SET Proof=" + proof + ", Quantity=" + amount + ", Location=" + slot + "WHERE LiquidName='" + name + "'";
+            cmd = new SqlCommand(sqlCmd2, myConnection);
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+            myConnection.Close();
+        
         }
 
         public void AddIngredientsToRecipe(int drinkID, string inventory, string amount)

@@ -37,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.manageInventoryNameTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
             this.tblInventoryTableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.tblInventoryTableAdapter();
             this.SlotComboBox = new System.Windows.Forms.ComboBox();
+            this.NameComboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).BeginInit();
@@ -189,8 +189,8 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.manageInventoryNameTxt, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.NameComboBox, 0, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -198,13 +198,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(100, 48);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // manageInventoryNameTxt
-            // 
-            this.manageInventoryNameTxt.Location = new System.Drawing.Point(3, 27);
-            this.manageInventoryNameTxt.Name = "manageInventoryNameTxt";
-            this.manageInventoryNameTxt.Size = new System.Drawing.Size(94, 20);
-            this.manageInventoryNameTxt.TabIndex = 2;
             // 
             // label2
             // 
@@ -332,7 +325,7 @@
             this.manageInventoryAddBtn.Name = "manageInventoryAddBtn";
             this.manageInventoryAddBtn.Size = new System.Drawing.Size(132, 48);
             this.manageInventoryAddBtn.TabIndex = 4;
-            this.manageInventoryAddBtn.Text = "Add";
+            this.manageInventoryAddBtn.Text = "Update";
             this.manageInventoryAddBtn.UseVisualStyleBackColor = false;
             this.manageInventoryAddBtn.Click += new System.EventHandler(this.manageInventoryAddBtn_Click);
             // 
@@ -359,6 +352,14 @@
             this.SlotComboBox.Name = "SlotComboBox";
             this.SlotComboBox.Size = new System.Drawing.Size(92, 21);
             this.SlotComboBox.TabIndex = 1;
+            // 
+            // NameComboBox
+            // 
+            this.NameComboBox.FormattingEnabled = true;
+            this.NameComboBox.Location = new System.Drawing.Point(3, 27);
+            this.NameComboBox.Name = "NameComboBox";
+            this.NameComboBox.Size = new System.Drawing.Size(94, 21);
+            this.NameComboBox.TabIndex = 1;
             // 
             // ManageInventory
             // 
@@ -409,10 +410,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Button manageInventoryRemovebtn;
         private System.Windows.Forms.Button manageInventoryBackbtn;
-        private System.Windows.Forms.TextBox manageInventoryNameTxt;
         private BartenderDataSet bartenderDataSet;
         private System.Windows.Forms.BindingSource tblInventoryBindingSource;
         private BartenderDataSetTableAdapters.tblInventoryTableAdapter tblInventoryTableAdapter;
         private System.Windows.Forms.ComboBox SlotComboBox;
+        private System.Windows.Forms.ComboBox NameComboBox;
     }
 }
