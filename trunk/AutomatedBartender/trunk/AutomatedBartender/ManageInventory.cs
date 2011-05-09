@@ -22,6 +22,16 @@ namespace AutomatedBartender
 
         private void manageInventoryBackbtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.tblInventoryTableAdapter.Update(this.bartenderDataSet.tblInventory);
+                // sqlDataAdapter.Update(dataTable);
+            }
+            catch (Exception exceptionObj)
+            {
+                MessageBox.Show(exceptionObj.Message.ToString());
+            }
+
             Form adminMainScreen = new AdminMain(getLicense());
             adminMainScreen.Show();
             this.Close();
@@ -62,14 +72,16 @@ namespace AutomatedBartender
 
         private void ManageInventory_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bartenderDataSet.tblInventory' table. You can move, or remove it, as needed.
+            this.tblInventoryTableAdapter.Fill(this.bartenderDataSet.tblInventory);
             refreshInventoryList();
         }
 
         private void refreshInventoryList()
         {
-            DatabaseCalls DBC = new DatabaseCalls();
-            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name', Proof, Quantity, Location AS 'Slot' FROM tblInventory");
-            manageInventoryGridView.Columns[0].Visible = false;
+            //DatabaseCalls DBC = new DatabaseCalls();
+            //manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name', Proof, Quantity, Location AS 'Slot' FROM tblInventory");
+            //manageInventoryGridView.Columns[0].Visible = false;
             //manageInventoryGridView.Rows[manageInventoryGridView.Rows.Count-1].Visible = false;
         }
 

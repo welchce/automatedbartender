@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.manageInventoryRemovebtn = new System.Windows.Forms.Button();
             this.manageInventoryBackbtn = new System.Windows.Forms.Button();
             this.manageInventoryGridView = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proofDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,9 +54,12 @@
             this.manageInventorySlotTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.manageInventoryAddBtn = new System.Windows.Forms.Button();
+            this.tblInventoryTableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.tblInventoryTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblInventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -132,15 +141,50 @@
             this.manageInventoryGridView.AllowDrop = true;
             this.manageInventoryGridView.AllowUserToAddRows = false;
             this.manageInventoryGridView.AllowUserToDeleteRows = false;
+            this.manageInventoryGridView.AutoGenerateColumns = false;
             this.manageInventoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.manageInventoryGridView.BackgroundColor = System.Drawing.Color.Black;
             this.manageInventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.manageInventoryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.proofDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn});
+            this.manageInventoryGridView.DataSource = this.tblInventoryBindingSource;
             this.manageInventoryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageInventoryGridView.Location = new System.Drawing.Point(3, 108);
             this.manageInventoryGridView.Name = "manageInventoryGridView";
             this.manageInventoryGridView.RowHeadersVisible = false;
             this.manageInventoryGridView.Size = new System.Drawing.Size(638, 145);
             this.manageInventoryGridView.TabIndex = 1;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // proofDataGridViewTextBoxColumn
+            // 
+            this.proofDataGridViewTextBoxColumn.DataPropertyName = "Proof";
+            this.proofDataGridViewTextBoxColumn.HeaderText = "Proof";
+            this.proofDataGridViewTextBoxColumn.Name = "proofDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // tblInventoryBindingSource
+            // 
+            this.tblInventoryBindingSource.DataMember = "tblInventory";
+            this.tblInventoryBindingSource.DataSource = this.bartenderDataSet;
+            // 
+            // bartenderDataSet
+            // 
+            this.bartenderDataSet.DataSetName = "BartenderDataSet";
+            this.bartenderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -337,6 +381,10 @@
             this.manageInventoryAddBtn.UseVisualStyleBackColor = false;
             this.manageInventoryAddBtn.Click += new System.EventHandler(this.manageInventoryAddBtn_Click);
             // 
+            // tblInventoryTableAdapter
+            // 
+            this.tblInventoryTableAdapter.ClearBeforeFill = true;
+            // 
             // ManageInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +399,8 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblInventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -386,5 +436,11 @@
         private System.Windows.Forms.Button manageInventoryBackbtn;
         private System.Windows.Forms.TextBox manageInventoryNameTxt;
         private System.Windows.Forms.TextBox manageInventorySlotTxt;
+        private BartenderDataSet bartenderDataSet;
+        private System.Windows.Forms.BindingSource tblInventoryBindingSource;
+        private BartenderDataSetTableAdapters.tblInventoryTableAdapter tblInventoryTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proofDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
     }
 }
