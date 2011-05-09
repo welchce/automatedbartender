@@ -13,12 +13,18 @@ namespace AutomatedBartender
     public partial class DrinkMaker : Form
     {
         string LICENSE = "";
+        string GENDER = "";
+        int WEIGHT = 0;
+
         string GloRecipeID = "";
-        public DrinkMaker(string UserID, String RecipeID)
+        public DrinkMaker(string UserID, String RecipeID, string Gender, int Weight)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setLicense(UserID);
+            setGender(Gender);
+            setWeight(Weight);
+
             GloRecipeID = RecipeID;
             DatabaseCalls DBC = new DatabaseCalls();
             DrinkMixerInfoTbl.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -35,6 +41,26 @@ namespace AutomatedBartender
         private void setLicense(string DL)
         {
             LICENSE = DL;
+        }
+
+        private string getGender()
+        {
+            return GENDER;
+        }
+
+        private void setGender(string Gender)
+        {
+            GENDER = Gender;
+        }
+
+        private int getWeight()
+        {
+            return WEIGHT;
+        }
+
+        private void setWeight(int Weight)
+        {
+            WEIGHT = Weight;
         }
 
         private void DrinkMaker_Load(object sender, EventArgs e)
@@ -93,7 +119,7 @@ namespace AutomatedBartender
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form userMainScreen = new UserMain(LICENSE);
+            Form userMainScreen = new UserMain(LICENSE,GENDER,WEIGHT);
             userMainScreen.Show();
             this.Close();
         }
