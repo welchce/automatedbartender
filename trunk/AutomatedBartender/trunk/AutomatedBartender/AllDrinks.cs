@@ -14,12 +14,17 @@ namespace AutomatedBartender
     {
         bool isAdmin;
         string LICENSE = "";
-        public AllDrinks(bool admin, string DriversLicense)
+        string GENDER = "";
+        int WEIGHT = 0;
+
+        public AllDrinks(bool admin, string DriversLicense, string Gender, int Weight)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setIsAdmin(admin);
             setLicense(DriversLicense);
+            setGender(Gender);
+            setWeight(Weight);
         }
 
         private void AllDrinksBackBtn_Click(object sender, EventArgs e)
@@ -32,7 +37,7 @@ namespace AutomatedBartender
             }
             else
             {
-                Form userMainScreen = new UserMain(getLicense());
+                Form userMainScreen = new UserMain(getLicense(), getGender(), getWeight());
                 userMainScreen.Show();
                 this.Close();
             }
@@ -58,6 +63,26 @@ namespace AutomatedBartender
             LICENSE = DL;
         }
 
+        private string getGender()
+        {
+            return GENDER;
+        }
+
+        private void setGender(string Gender)
+        {
+            GENDER = Gender;
+        }
+
+        private int getWeight()
+        {
+            return WEIGHT;
+        }
+
+        private void setWeight(int Weight)
+        {
+            WEIGHT = Weight;
+        }
+
         private void AllDrinks_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bartenderDataSet.spAllDrinks' table. You can move, or remove it, as needed.
@@ -78,7 +103,7 @@ namespace AutomatedBartender
         {
             int row = AllDrinksDataGrid.CurrentCellAddress.Y;
             string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
-            Form drinkMakerForm = new DrinkMaker(getLicense(), DrinkID);
+            Form drinkMakerForm = new DrinkMaker(getLicense(), DrinkID,getGender(),getWeight());
             //DatabaseCalls DBC = new DatabaseCalls();
             //ADD DRINK TO QUEUE
             //DBC.AddDrinkToHistory(getLicense(), DrinkID);
