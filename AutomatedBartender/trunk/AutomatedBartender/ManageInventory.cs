@@ -50,7 +50,7 @@ namespace AutomatedBartender
         private void manageInventoryAddBtn_Click(object sender, EventArgs e)
         {
             DatabaseCalls DBC = new DatabaseCalls();
-            string ingredientName = manageInventoryNameTxt.Text.ToString();
+            string ingredientName = NameComboBox.Text.ToString();
             string ingredientProof = manageInventoryProofTxt.Text.ToString();
             string ingredientAmount = manageInventoryAmountTxt.Text.ToString();
             string ingredientSlot = SlotComboBox.Text.ToString();
@@ -66,6 +66,8 @@ namespace AutomatedBartender
                     System.Windows.Forms.MessageBox.Show("Check your inputs");
                 }
 
+                manageInventoryProofTxt.ResetText();
+                manageInventoryAmountTxt.ResetText();
             }
 
         }
@@ -76,7 +78,10 @@ namespace AutomatedBartender
             this.tblInventoryTableAdapter.Fill(this.bartenderDataSet.tblInventory);
             refreshInventoryList();
             DatabaseCalls DBC = new DatabaseCalls();
-            SlotComboBox.DataSource = DBC.GetForDataGrid("SELECT L.Location FROM tblLocations L WHERE L.Location NOT IN (SELECT I.Location FROM tblInventory I WHERE I.Location > 0 )");
+            NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE NOT Location = -2 AND NOT Location = 0");
+            NameComboBox.DisplayMember = "LiquidName";
+            NameComboBox.ValueMember = "LiquidName";
+            SlotComboBox.DataSource = DBC.GetForDataGrid("SELECT Location FROM tblLocations");
             SlotComboBox.DisplayMember = "Location";
             SlotComboBox.ValueMember = "Location";
         }
