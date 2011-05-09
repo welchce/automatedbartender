@@ -34,11 +34,6 @@
             this.manageInventoryRemovebtn = new System.Windows.Forms.Button();
             this.manageInventoryBackbtn = new System.Windows.Forms.Button();
             this.manageInventoryGridView = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proofDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,17 +49,19 @@
             this.manageInventorySlotTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.manageInventoryAddBtn = new System.Windows.Forms.Button();
+            this.tblInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
             this.tblInventoryTableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.tblInventoryTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblInventoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblInventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -141,50 +138,15 @@
             this.manageInventoryGridView.AllowDrop = true;
             this.manageInventoryGridView.AllowUserToAddRows = false;
             this.manageInventoryGridView.AllowUserToDeleteRows = false;
-            this.manageInventoryGridView.AutoGenerateColumns = false;
             this.manageInventoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.manageInventoryGridView.BackgroundColor = System.Drawing.Color.Black;
             this.manageInventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.manageInventoryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.proofDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn});
-            this.manageInventoryGridView.DataSource = this.tblInventoryBindingSource;
             this.manageInventoryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageInventoryGridView.Location = new System.Drawing.Point(3, 108);
             this.manageInventoryGridView.Name = "manageInventoryGridView";
             this.manageInventoryGridView.RowHeadersVisible = false;
             this.manageInventoryGridView.Size = new System.Drawing.Size(638, 145);
             this.manageInventoryGridView.TabIndex = 1;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // proofDataGridViewTextBoxColumn
-            // 
-            this.proofDataGridViewTextBoxColumn.DataPropertyName = "Proof";
-            this.proofDataGridViewTextBoxColumn.HeaderText = "Proof";
-            this.proofDataGridViewTextBoxColumn.Name = "proofDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // tblInventoryBindingSource
-            // 
-            this.tblInventoryBindingSource.DataMember = "tblInventory";
-            this.tblInventoryBindingSource.DataSource = this.bartenderDataSet;
-            // 
-            // bartenderDataSet
-            // 
-            this.bartenderDataSet.DataSetName = "BartenderDataSet";
-            this.bartenderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -207,10 +169,10 @@
             this.tableLayoutPanel2.ColumnCount = 6;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.51097F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.30094F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.63009F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.015674F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
@@ -306,7 +268,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(100, 48);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(144, 48);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // label4
@@ -319,9 +281,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 24);
+            this.label4.Size = new System.Drawing.Size(138, 24);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Amount (oz)";
+            this.label4.Text = "Amount(mL)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // manageInventoryAmountTxt
@@ -337,19 +299,19 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.manageInventorySlotTxt, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(321, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(365, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(100, 48);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(98, 48);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // manageInventorySlotTxt
             // 
             this.manageInventorySlotTxt.Location = new System.Drawing.Point(3, 27);
             this.manageInventorySlotTxt.Name = "manageInventorySlotTxt";
-            this.manageInventorySlotTxt.Size = new System.Drawing.Size(94, 20);
+            this.manageInventorySlotTxt.Size = new System.Drawing.Size(92, 20);
             this.manageInventorySlotTxt.TabIndex = 2;
             // 
             // label5
@@ -362,7 +324,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 24);
+            this.label5.Size = new System.Drawing.Size(92, 24);
             this.label5.TabIndex = 0;
             this.label5.Text = "Slot";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -373,13 +335,23 @@
             this.manageInventoryAddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.manageInventoryAddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.manageInventoryAddBtn.ForeColor = System.Drawing.Color.White;
-            this.manageInventoryAddBtn.Location = new System.Drawing.Point(427, 3);
+            this.manageInventoryAddBtn.Location = new System.Drawing.Point(469, 3);
             this.manageInventoryAddBtn.Name = "manageInventoryAddBtn";
-            this.manageInventoryAddBtn.Size = new System.Drawing.Size(100, 48);
+            this.manageInventoryAddBtn.Size = new System.Drawing.Size(132, 48);
             this.manageInventoryAddBtn.TabIndex = 4;
             this.manageInventoryAddBtn.Text = "Add";
             this.manageInventoryAddBtn.UseVisualStyleBackColor = false;
             this.manageInventoryAddBtn.Click += new System.EventHandler(this.manageInventoryAddBtn_Click);
+            // 
+            // tblInventoryBindingSource
+            // 
+            this.tblInventoryBindingSource.DataMember = "tblInventory";
+            this.tblInventoryBindingSource.DataSource = this.bartenderDataSet;
+            // 
+            // bartenderDataSet
+            // 
+            this.bartenderDataSet.DataSetName = "BartenderDataSet";
+            this.bartenderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tblInventoryTableAdapter
             // 
@@ -399,8 +371,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblInventoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -410,6 +380,8 @@
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblInventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bartenderDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,8 +411,5 @@
         private BartenderDataSet bartenderDataSet;
         private System.Windows.Forms.BindingSource tblInventoryBindingSource;
         private BartenderDataSetTableAdapters.tblInventoryTableAdapter tblInventoryTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proofDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
     }
 }
