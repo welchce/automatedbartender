@@ -13,13 +13,17 @@ namespace AutomatedBartender
     {
         bool isAdmin = false;
         string LICENSE = "";
+        string GENDER = "";
+        int WEIGHT = 0;
 
-        public DrinkHistory(bool admin, string DriversLicense)
+        public DrinkHistory(bool admin, string DriversLicense, string Gender, int Weight)
         {
             InitializeComponent();
             AutomatedBartender.WindowProperties.resizeScreen(this);
             setIsAdmin(admin);
             setLicense(DriversLicense);
+            setGender(Gender);
+            setWeight(Weight);
         }
 
         private void DrinkHistoryBackBtn_Click(object sender, EventArgs e)
@@ -32,7 +36,7 @@ namespace AutomatedBartender
             }
             else
             {
-                Form userMainScreen = new UserMain(getLicense());
+                Form userMainScreen = new UserMain(getLicense(), getGender(), getWeight());
                 userMainScreen.Show();
                 this.Close();
             }
@@ -56,6 +60,26 @@ namespace AutomatedBartender
         private void setLicense(string DL)
         {
             LICENSE = DL;
+        }
+        
+        private string getGender()
+        {
+            return GENDER;
+        }
+
+        private void setGender(string Gender)
+        {
+            GENDER = Gender;
+        }
+
+        private int getWeight()
+        {
+            return WEIGHT;
+        }
+
+        private void setWeight(int Weight)
+        {
+            WEIGHT = Weight;
         }
 
         private void DrinkHistory_Load(object sender, EventArgs e)
