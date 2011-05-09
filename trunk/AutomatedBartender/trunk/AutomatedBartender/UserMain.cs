@@ -25,16 +25,16 @@ namespace AutomatedBartender
 
             DatabaseCalls DBC = new DatabaseCalls();
             DateTime startTime = DBC.getStartDrinkTime(LICENSE);
-            int hours = 5;
+            int hours = 1;
             if (hours != 0)
             {
-                double ounces = 15 ;
+                double ounces = .6;
                 double calculatedBAC = 0;
 
-                if (GENDER == "W")
-                    calculatedBAC = (ounces * 5.14 / WEIGHT * .66) - .015 * 5;
+                if (GENDER == "F")
+                    calculatedBAC = (ounces * 5.14 / WEIGHT * .66) - .015 * hours;
                 else
-                    calculatedBAC = (ounces * 5.14 / WEIGHT * .73) - .015 * 5;
+                    calculatedBAC = (ounces * 5.14 / WEIGHT * .73) - .015 * hours;
  
                 UserBACLabel.Text = "BAC \n" + calculatedBAC + "%";
             }
