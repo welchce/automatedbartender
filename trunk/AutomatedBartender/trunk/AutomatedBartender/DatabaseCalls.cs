@@ -253,11 +253,13 @@ namespace AutomatedBartender
 
         public DateTime getStartDrinkTime(string UserID)
         {
-            string sqlCmd = "SELECT @TimeStarted=TimeStarted FROM tblUsers WHERE UserID = '" + UserID + "'";
+            string sqlCmd = "SELECT @TimeStarted=TimeStarted FROM tblUsers WHERE LicenseNo = '" + UserID + "'";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
-            SqlParameter time = cmd.Parameters.Add("@Quantity", SqlDbType.DateTime);
+            SqlParameter time = cmd.Parameters.Add("@TimeStarted", SqlDbType.DateTime);
             time.Direction = ParameterDirection.Output;
+            myConnection.Open();
             cmd.ExecuteNonQuery();
+            myConnection.Close();
             if (time.Value != DBNull.Value)
                 return Convert.ToDateTime(time.Value);
             else
