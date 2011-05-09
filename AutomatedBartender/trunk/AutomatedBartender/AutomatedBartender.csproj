@@ -107,6 +107,9 @@
       <DependentUpon>AddDrink.cs</DependentUpon>
     </Compile>
     <Compile Include="ArduinoCalls.cs" />
+    <Compile Include="BartenderDataSet.cs">
+      <DependentUpon>BartenderDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BartenderDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,6 +121,12 @@
     </Compile>
     <Compile Include="DrinkMaker.Designer.cs">
       <DependentUpon>DrinkMaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinderzForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinderzForm.Designer.cs">
+      <DependentUpon>WinderzForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Swipe.cs" />
     <Compile Include="DrinkHistory.cs">
@@ -200,6 +209,9 @@
     </Compile>
     <EmbeddedResource Include="UserMain.resx">
       <DependentUpon>UserMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinderzForm.resx">
+      <DependentUpon>WinderzForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="AutomatedBartender_TemporaryKey.pfx" />
