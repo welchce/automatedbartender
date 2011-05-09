@@ -80,5 +80,12 @@ namespace AutomatedBartender
             this.Close();
         }
 
+        private void manageMixersBtn_Click(object sender, EventArgs e)
+        {
+            Form manageMixers = new ManageMixers(getLicense());
+            manageMixers.Show();
+            this.Close();
+        }
+
     }
 }
