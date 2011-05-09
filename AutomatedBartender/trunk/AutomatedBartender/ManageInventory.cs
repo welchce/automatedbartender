@@ -53,7 +53,7 @@ namespace AutomatedBartender
             string ingredientName = manageInventoryNameTxt.Text.ToString();
             string ingredientProof = manageInventoryProofTxt.Text.ToString();
             string ingredientAmount = manageInventoryAmountTxt.Text.ToString();
-            string ingredientSlot = manageInventorySlotTxt.Text.ToString();
+            string ingredientSlot = SlotComboBox.Text.ToString();
             if (ingredientName != "" && ingredientProof != "" && ingredientSlot != "" && ingredientAmount != "" )
             {
                 try
@@ -63,7 +63,7 @@ namespace AutomatedBartender
                 }
                 catch
                 {
-                    System.Windows.Forms.MessageBox.Show("Check your damn inputs, faggot");
+                    System.Windows.Forms.MessageBox.Show("Check your inputs");
                 }
 
             }
@@ -75,15 +75,17 @@ namespace AutomatedBartender
             // TODO: This line of code loads data into the 'bartenderDataSet.tblInventory' table. You can move, or remove it, as needed.
             this.tblInventoryTableAdapter.Fill(this.bartenderDataSet.tblInventory);
             refreshInventoryList();
+            DatabaseCalls DBC = new DatabaseCalls();
+            SlotComboBox.DataSource = DBC.GetForDataGrid("SELECT L.Location FROM tblLocations L WHERE L.Location NOT IN (SELECT I.Location FROM tblInventory I WHERE I.Location > 0 )");
+            SlotComboBox.DisplayMember = "Location";
+            SlotComboBox.ValueMember = "Location";
         }
 
         private void refreshInventoryList()
         {
             DatabaseCalls DBC = new DatabaseCalls();
-            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name', Proof, Quantity, Location AS 'Slot' FROM tblInventory WHERE NOT Location = 0");
+            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name', Proof, Quantity, Location AS 'Slot' FROM tblInventory WHERE NOT Location = -1 AND NOT Location = -2 AND NOT Location = 0");
             manageInventoryGridView.Columns[0].Visible = false;
-            if (manageInventoryGridView.Rows.Count > 1)
-                manageInventoryGridView.Rows[manageInventoryGridView.Rows.Count-1].Visible = false;
         }
 
         private void manageInventoryRemovebtn_Click(object sender, EventArgs e)
