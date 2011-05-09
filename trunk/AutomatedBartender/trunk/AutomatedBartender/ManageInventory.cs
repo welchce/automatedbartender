@@ -68,6 +68,7 @@ namespace AutomatedBartender
 
                 manageInventoryProofTxt.ResetText();
                 manageInventoryAmountTxt.ResetText();
+
             }
 
         }

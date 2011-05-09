@@ -35,6 +35,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.AdminExitBtn = new System.Windows.Forms.Button();
             this.AdminAllDrinksBtn = new System.Windows.Forms.Button();
+            this.manageMixersBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.AdminManageInventoryBtn.Name = "AdminManageInventoryBtn";
             this.AdminManageInventoryBtn.Size = new System.Drawing.Size(151, 60);
             this.AdminManageInventoryBtn.TabIndex = 5;
-            this.AdminManageInventoryBtn.Text = "Manage Inventory";
+            this.AdminManageInventoryBtn.Text = "Manage Liquor Inventory";
             this.AdminManageInventoryBtn.UseVisualStyleBackColor = false;
             this.AdminManageInventoryBtn.Click += new System.EventHandler(this.AdminManageInventoryBtn_Click);
             // 
@@ -106,6 +107,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.manageMixersBtn, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.AdminExitBtn, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.AdminManageInventoryBtn, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.AdminAddDrinkBtn, 0, 1);
@@ -114,7 +116,7 @@
             this.tableLayoutPanel1.Controls.Add(this.AdminManageUsersBtn, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -130,9 +132,9 @@
             this.AdminExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AdminExitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.AdminExitBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminExitBtn.Location = new System.Drawing.Point(3, 201);
+            this.AdminExitBtn.Location = new System.Drawing.Point(159, 201);
             this.AdminExitBtn.Name = "AdminExitBtn";
-            this.AdminExitBtn.Size = new System.Drawing.Size(150, 62);
+            this.AdminExitBtn.Size = new System.Drawing.Size(151, 62);
             this.AdminExitBtn.TabIndex = 6;
             this.AdminExitBtn.Text = "Exit";
             this.AdminExitBtn.UseVisualStyleBackColor = false;
@@ -152,6 +154,21 @@
             this.AdminAllDrinksBtn.Text = "All Drinks";
             this.AdminAllDrinksBtn.UseVisualStyleBackColor = false;
             this.AdminAllDrinksBtn.Click += new System.EventHandler(this.AdminAllDrinksBtn_Click_1);
+            // 
+            // manageMixersBtn
+            // 
+            this.manageMixersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.manageMixersBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageMixersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.manageMixersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.manageMixersBtn.ForeColor = System.Drawing.Color.White;
+            this.manageMixersBtn.Location = new System.Drawing.Point(3, 201);
+            this.manageMixersBtn.Name = "manageMixersBtn";
+            this.manageMixersBtn.Size = new System.Drawing.Size(150, 62);
+            this.manageMixersBtn.TabIndex = 10;
+            this.manageMixersBtn.Text = "Manage Mixers Inventory";
+            this.manageMixersBtn.UseVisualStyleBackColor = false;
+            this.manageMixersBtn.Click += new System.EventHandler(this.manageMixersBtn_Click);
             // 
             // AdminMain
             // 
@@ -178,6 +195,7 @@
         private System.Windows.Forms.Button AdminAddDrinkBtn;
         private System.Windows.Forms.Button AdminAllDrinksBtn;
         private System.Windows.Forms.Button AdminExitBtn;
+        private System.Windows.Forms.Button manageMixersBtn;
     }
 }
 
