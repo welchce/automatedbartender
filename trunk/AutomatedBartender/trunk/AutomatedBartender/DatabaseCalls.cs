@@ -122,7 +122,7 @@ namespace AutomatedBartender
 
         public void RemoveInventory(int inventoryID)
         {
-            string sqlCmd = "DELETE FROM tblInventory WHERE ID = '" + inventoryID + "'";
+            string sqlCmd = "UPDATE tblInventory SET Location = -1, Quantity = 0 WHERE ID = '" + inventoryID + "'";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
             cmd.ExecuteNonQuery();

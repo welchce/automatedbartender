@@ -46,12 +46,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.manageInventoryAmountTxt = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.manageInventorySlotTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.manageInventoryAddBtn = new System.Windows.Forms.Button();
             this.tblInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
             this.tblInventoryTableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.tblInventoryTableAdapter();
+            this.SlotComboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).BeginInit();
@@ -297,8 +297,8 @@
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.manageInventorySlotTxt, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.SlotComboBox, 0, 1);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(365, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
@@ -306,13 +306,6 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(98, 48);
             this.tableLayoutPanel6.TabIndex = 3;
-            // 
-            // manageInventorySlotTxt
-            // 
-            this.manageInventorySlotTxt.Location = new System.Drawing.Point(3, 27);
-            this.manageInventorySlotTxt.Name = "manageInventorySlotTxt";
-            this.manageInventorySlotTxt.Size = new System.Drawing.Size(92, 20);
-            this.manageInventorySlotTxt.TabIndex = 2;
             // 
             // label5
             // 
@@ -356,6 +349,16 @@
             // tblInventoryTableAdapter
             // 
             this.tblInventoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // SlotComboBox
+            // 
+            this.SlotComboBox.FormattingEnabled = true;
+            this.SlotComboBox.Items.AddRange(new object[] {
+            "0"});
+            this.SlotComboBox.Location = new System.Drawing.Point(3, 27);
+            this.SlotComboBox.Name = "SlotComboBox";
+            this.SlotComboBox.Size = new System.Drawing.Size(92, 21);
+            this.SlotComboBox.TabIndex = 1;
             // 
             // ManageInventory
             // 
@@ -407,9 +410,9 @@
         private System.Windows.Forms.Button manageInventoryRemovebtn;
         private System.Windows.Forms.Button manageInventoryBackbtn;
         private System.Windows.Forms.TextBox manageInventoryNameTxt;
-        private System.Windows.Forms.TextBox manageInventorySlotTxt;
         private BartenderDataSet bartenderDataSet;
         private System.Windows.Forms.BindingSource tblInventoryBindingSource;
         private BartenderDataSetTableAdapters.tblInventoryTableAdapter tblInventoryTableAdapter;
+        private System.Windows.Forms.ComboBox SlotComboBox;
     }
 }
