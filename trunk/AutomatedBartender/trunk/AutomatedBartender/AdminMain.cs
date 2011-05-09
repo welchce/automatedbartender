@@ -36,14 +36,14 @@ namespace AutomatedBartender
 
         private void AdminPersonalHistoryBtn_Click(object sender, EventArgs e)
         {
-            Form drinkHistory = new DrinkHistory(true, getLicense());
+            Form drinkHistory = new DrinkHistory(true, getLicense(),"",0);
             drinkHistory.Show();
             this.Close();
         }
 
         private void AdminTop25Btn_Click(object sender, EventArgs e)
         {
-            Form top25 = new Top25(true, getLicense());
+            Form top25 = new Top25(true, getLicense(),"",0);
             top25.Show();
             this.Close();
         }
@@ -58,7 +58,7 @@ namespace AutomatedBartender
 
         private void AdminAddDrinkBtn_Click(object sender, EventArgs e)
         {
-            Form addDrink = new AddDrink(true, getLicense());
+            Form addDrink = new AddDrink(true, getLicense(),"",0);
             addDrink.Show();
             this.Close();
         }
@@ -75,7 +75,7 @@ namespace AutomatedBartender
 
         private void AdminAllDrinksBtn_Click_1(object sender, EventArgs e)
         {
-            Form allDrinks = new AllDrinks(true, getLicense());
+            Form allDrinks = new AllDrinks(true, getLicense(),"",0);
             allDrinks.Show();
             this.Close();
         }
