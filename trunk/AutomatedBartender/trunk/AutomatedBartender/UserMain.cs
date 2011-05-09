@@ -25,10 +25,20 @@ namespace AutomatedBartender
 
             DatabaseCalls DBC = new DatabaseCalls();
             DateTime startTime = DBC.getStartDrinkTime(LICENSE);
-            int hours = 1;
+
+            int hours = 0;
+            if (startTime != Convert.ToDateTime(null))
+            {
+                DateTime nowTime = DateTime.Now;
+                System.TimeSpan diff = startTime - nowTime;
+                hours = diff.Hours;
+            }
+            else
+                hours = 0;
+
             if (hours != 0)
             {
-                double ounces = .6;
+                double ounces = DBC.getUserAlcoholicOunces(LICENSE);
                 double calculatedBAC = 0;
 
                 if (GENDER == "F")

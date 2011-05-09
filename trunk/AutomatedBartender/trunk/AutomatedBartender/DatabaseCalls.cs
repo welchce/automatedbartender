@@ -184,7 +184,7 @@ namespace AutomatedBartender
 
         public void AddUser(string FirstName, string LastName)
         {
-            string sqlCmd = "INSERT INTO tblUsers VALUES ('" + FirstName + "','" + LastName + "', null, 'False', null, null)";
+            string sqlCmd = "INSERT INTO tblUsers VALUES ('" + FirstName + "','" + LastName + "', null, 'False', null, null, null)";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
             cmd.ExecuteNonQuery();
@@ -249,6 +249,21 @@ namespace AutomatedBartender
             }
 
             myConnection.Close();
+        }
+
+        public double getUserAlcoholicOunces(string UserID)
+        {
+            string sqlCmd = "SELECT @AlcoholicOunces=AlcoholicOunces FROM tblUsers WHERE LicenseNo = '" + UserID + "'";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            SqlParameter ounces = cmd.Parameters.Add("@AlcoholicOunces", SqlDbType.Float);
+            ounces.Direction = ParameterDirection.Output;
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+            myConnection.Close();
+            if (ounces.Value != DBNull.Value)
+                return Convert.ToDouble(ounces.Value);
+            else
+                return 0;
         }
 
         public DateTime getStartDrinkTime(string UserID)
