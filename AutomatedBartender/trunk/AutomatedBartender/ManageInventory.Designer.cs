@@ -138,7 +138,6 @@
             this.manageInventoryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageInventoryGridView.Location = new System.Drawing.Point(3, 108);
             this.manageInventoryGridView.Name = "manageInventoryGridView";
-            this.manageInventoryGridView.ReadOnly = true;
             this.manageInventoryGridView.RowHeadersVisible = false;
             this.manageInventoryGridView.Size = new System.Drawing.Size(638, 145);
             this.manageInventoryGridView.TabIndex = 1;
