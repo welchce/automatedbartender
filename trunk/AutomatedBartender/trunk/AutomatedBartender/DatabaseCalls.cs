@@ -107,6 +107,33 @@ namespace AutomatedBartender
         
         }
 
+        public void AddMixer(string name)
+        {
+            string sqlCmd = "INSERT INTO tblInventory VALUES ('"+name+"',0,0,0)";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+            myConnection.Close();
+        }
+
+        public void UpdateMixer(string name)
+        {
+            string sqlCmd = "UPDATE tblInventory SET Location=0 WHERE LiquidName='" + name + "'";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+            myConnection.Close();
+        }
+
+        public void RemoveMixer(int inventoryID)
+        {
+            string sqlCmd = "UPDATE tblInventory SET Location=-2 WHERE ID=" + inventoryID;
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+            myConnection.Close();
+        }
+
         public void AddIngredientsToRecipe(int drinkID, string inventory, string amount)
         {
             myConnection.Open();
