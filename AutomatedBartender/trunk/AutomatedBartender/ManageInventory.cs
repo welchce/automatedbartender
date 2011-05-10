@@ -22,16 +22,6 @@ namespace AutomatedBartender
 
         private void manageInventoryBackbtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.tblInventoryTableAdapter.Update(this.bartenderDataSet.tblInventory);
-                // sqlDataAdapter.Update(dataTable);
-            }
-            catch (Exception exceptionObj)
-            {
-                MessageBox.Show(exceptionObj.Message.ToString());
-            }
-
             Form adminMainScreen = new AdminMain(getLicense());
             adminMainScreen.Show();
             this.Close();
