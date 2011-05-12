@@ -93,15 +93,15 @@ namespace AutomatedBartender
 
         public void AddInventory(string name, int proof, int amount, int slot)
         {
-            string sqlCmd3 = "SELECT @LiquidName=LiquidName FROM tblInventory WHERE LiquidName = '" + name + "' AND Location > 0";
+            string sqlCmd3 = "SELECT @LocationNumber=Location FROM tblInventory WHERE LiquidName = '" + name + "' AND Location > 0";
             SqlCommand cmd3 = new SqlCommand(sqlCmd3, myConnection);
-            SqlParameter liquid = cmd3.Parameters.Add("@LiquidName", SqlDbType.VarChar, 50);
-            liquid.Direction = ParameterDirection.Output;
+            SqlParameter locationNumber = cmd3.Parameters.Add("@LocationNumber", SqlDbType.Int);
+            locationNumber.Direction = ParameterDirection.Output;
             myConnection.Open();
             cmd3.ExecuteNonQuery();
             myConnection.Close();
 
-            if (liquid.Value == DBNull.Value)
+            if (locationNumber.Value == DBNull.Value || Convert.ToInt32(locationNumber.Value) == slot)
             {
                 string sqlCmd = "UPDATE tblInventory SET Location=-1,Quantity=0 WHERE Location=" + slot;
                 SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
@@ -116,7 +116,9 @@ namespace AutomatedBartender
                 myConnection.Close();
             }
             else
+            {
                 System.Windows.Forms.MessageBox.Show(liquid.Value + " already exists in the system");
+            }
         }
 
         public void AddMixer(string name)
