@@ -120,5 +120,12 @@ namespace AutomatedBartender
             DBC.DeleteUser(UserID);
             refreshUserList();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DatabaseCalls DBC = new DatabaseCalls();
+            DBC.AddUser(textBox1.Text.ToUpper(), textBox2.Text.ToUpper());
+            refreshUserList();
+        }
     }
 }

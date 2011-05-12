@@ -29,8 +29,7 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             DrinkMixerInfoTbl.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             DrinkMixerInfoTbl.ReadOnly = true;
-            DrinkMixerInfoTbl.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE ID IN (SELECT LiquidID FROM tblIngredients WHERE RecipeID = '" + RecipeID + "') AND Proof = 0"); 
-            DrinkMixerInfoTbl.Columns[0].Visible = false;
+            DrinkMixerInfoTbl.DataSource = DBC.GetForDataGrid("SELECT LiquidName AS 'Name', Name AS Amount FROM tblAmount A, tblInventory I, tblIngredients tI WHERE I.ID IN (SELECT LiquidID FROM tblIngredients WHERE RecipeID = "+ RecipeID + " ) AND Proof = 0 AND tI.AmountID = A.ID AND RecipeID = " + RecipeID + " AND I.ID = tI.LiquidID"); 
         }
 
         private string getLicense()
