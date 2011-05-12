@@ -76,7 +76,7 @@ namespace AutomatedBartender
             DBC.DispensedDrink(GloRecipeID, LICENSE);
             DBC.getNotificationForAdmin();
 
-            /*ArduinoCalls AC = new ArduinoCalls();
+            ArduinoCalls AC = new ArduinoCalls();
             int[] ports = DBC.GetDrinkPorts(Convert.ToInt32(GloRecipeID));
             AC.StartArduinoCommunication();
             int i = 0;
@@ -92,7 +92,7 @@ namespace AutomatedBartender
                 AC.TurnOffMotor(ports[i]);
                 i++;
             }
-            AC.StopArduinoCommunication();*/
+            AC.StopArduinoCommunication();
             this.Close();
         }
 
