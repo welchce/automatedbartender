@@ -247,7 +247,7 @@ namespace AutomatedBartender
 
         public void AddUser(string FirstName, string LastName)
         {
-            string sqlCmd = "INSERT INTO tblUsers VALUES ('" + FirstName + "','" + LastName + "', null, 'False', null, null, null, null)";
+            string sqlCmd = "INSERT INTO tblUsers VALUES ('" + FirstName + "','" + LastName + "', null, 'False', null, null, null, 0)";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
             cmd.ExecuteNonQuery();
