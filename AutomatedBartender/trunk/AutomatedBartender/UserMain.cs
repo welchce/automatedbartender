@@ -31,7 +31,7 @@ namespace AutomatedBartender
             {
                 DateTime nowTime = DateTime.Now;
                 System.TimeSpan diff = nowTime - startTime;
-                hours = Convert.ToDouble(diff.Seconds)/3600.0;
+                hours = Convert.ToDouble(diff.TotalHours);
             }
             else
                 hours = 0;
@@ -47,7 +47,7 @@ namespace AutomatedBartender
                     calculatedBAC = (ounces * 5.14 / WEIGHT * .73) - .015 * hours;
 
                 if (calculatedBAC > 0)
-                    UserBACLabel.Text = "BAC \n" + calculatedBAC + "%";
+                    UserBACLabel.Text = "BAC \n" + Math.Round(calculatedBAC,2) + "%";
                 else
                 {
                     UserBACLabel.Text = "BAC \n 0.00%";
@@ -125,6 +125,8 @@ namespace AutomatedBartender
             newDrink.Show();
             this.Close();
         }
+
+
 
     }
 }
