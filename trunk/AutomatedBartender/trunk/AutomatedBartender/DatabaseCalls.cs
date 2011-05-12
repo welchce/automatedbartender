@@ -93,18 +93,30 @@ namespace AutomatedBartender
 
         public void AddInventory(string name, int proof, int amount, int slot)
         {
-            string sqlCmd = "UPDATE tblInventory SET Location=-1,Quantity=0 WHERE Location=" + slot; 
-            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            string sqlCmd3 = "SELECT @LiquidName=LiquidName FROM tblInventory WHERE LiquidName = '" + name + "' AND Location > 0";
+            SqlCommand cmd3 = new SqlCommand(sqlCmd3, myConnection);
+            SqlParameter liquid = cmd3.Parameters.Add("@LiquidName", SqlDbType.VarChar, 50);
+            liquid.Direction = ParameterDirection.Output;
             myConnection.Open();
-            cmd.ExecuteNonQuery();
+            cmd3.ExecuteNonQuery();
             myConnection.Close();
 
-            string sqlCmd2 = "UPDATE tblInventory SET Proof=" + proof + ", Quantity=" + amount + ", Location=" + slot + "WHERE LiquidName='" + name + "'";
-            cmd = new SqlCommand(sqlCmd2, myConnection);
-            myConnection.Open();
-            cmd.ExecuteNonQuery();
-            myConnection.Close();
-        
+            if (liquid.Value == DBNull.Value)
+            {
+                string sqlCmd = "UPDATE tblInventory SET Location=-1,Quantity=0 WHERE Location=" + slot;
+                SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+                myConnection.Open();
+                cmd.ExecuteNonQuery();
+                myConnection.Close();
+
+                string sqlCmd2 = "UPDATE tblInventory SET Proof=" + proof + ", Quantity=" + amount + ", Location=" + slot + "WHERE LiquidName='" + name + "'";
+                cmd = new SqlCommand(sqlCmd2, myConnection);
+                myConnection.Open();
+                cmd.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            else
+                System.Windows.Forms.MessageBox.Show(liquid.Value + " already exists in the system");
         }
 
         public void AddMixer(string name)
@@ -302,19 +314,42 @@ namespace AutomatedBartender
         }
         public void getNotificationForAdmin()
         {
-            string sqlCmd4 = "SELECT TOP 1 @Quantity=Quantity FROM tblInventory WHERE Quantity < 100 AND Location > 0";
-            SqlCommand cmd4 = new SqlCommand(sqlCmd4, myConnection);
-            SqlParameter quantity = cmd4.Parameters.Add("@Quantity", SqlDbType.Int);
-            quantity.Direction = ParameterDirection.Output;
+
+            string sqlCmd = "SELECT LiquidName, Location, Quantity FROM tblInventory WHERE Quantity < 100 AND (Location > 0 OR Location = -3) ORDER BY Location ASC";
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            SqlDataReader sqlReader;
             myConnection.Open();
-            cmd4.ExecuteNonQuery();
-            myConnection.Close();
+            sqlReader = cmd.ExecuteReader();
+            string[] IDs = new string[10];
+            int i = 0;
 
-            if (quantity.Value != DBNull.Value)
+            if (sqlReader.HasRows)
             {
-                System.Windows.Forms.MessageBox.Show("Please contact a system adminstrator, the following drinks are running low: \n\n");
+                while (sqlReader.Read())
+                {
+                    if (Convert.ToString(sqlReader.GetValue(1)) == "-3")
+                        IDs[i] = Convert.ToString(sqlReader.GetValue(0)) +" : " +  Convert.ToString(sqlReader.GetValue(2)) + "mL remaining";
+                    else
+                        IDs[i] = Convert.ToString(sqlReader.GetValue(0)) +" - Slot " + Convert.ToString(sqlReader.GetValue(1)) + " : " +  Convert.ToString(sqlReader.GetValue(2)) + "mL remaining";
+                    i++;
+                }
+                sqlReader.Close();
             }
+            myConnection.Close();
+            i = 0;
+            string warningMessage = "";
+            while (IDs[i] != null)
+            {
+                warningMessage = warningMessage + IDs[i] + '\n';
+                i++;
+            }
+            if (warningMessage != "")
+                System.Windows.Forms.MessageBox.Show("Please contact a system adminstrator, the following drinks are running low: \n\n" + warningMessage);    
 
+            string sqlCmd2 = "UPDATE tblInventory SET Location=-3, Quantity = 0 WHERE Quantity < 0 AND Proof <> 0";
+            SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
+            myConnection.Open();
+            cmd2.ExecuteNonQuery();
             myConnection.Close();
         }
         public double getUserAlcoholicOunces(string UserID)
