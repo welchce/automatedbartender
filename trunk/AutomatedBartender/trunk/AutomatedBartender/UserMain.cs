@@ -26,12 +26,12 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             DateTime startTime = DBC.getStartDrinkTime(LICENSE);
 
-            int hours = 0;
+            double hours = 0;
             if (startTime != Convert.ToDateTime(null))
             {
                 DateTime nowTime = DateTime.Now;
-                System.TimeSpan diff = startTime - nowTime;
-                hours = diff.Hours;
+                System.TimeSpan diff = nowTime - startTime;
+                hours = Convert.ToDouble(diff.Seconds)/3600.0;
             }
             else
                 hours = 0;
@@ -45,11 +45,20 @@ namespace AutomatedBartender
                     calculatedBAC = (ounces * 5.14 / WEIGHT * .66) - .015 * hours;
                 else
                     calculatedBAC = (ounces * 5.14 / WEIGHT * .73) - .015 * hours;
- 
-                UserBACLabel.Text = "BAC \n" + calculatedBAC + "%";
+
+                if (calculatedBAC > 0)
+                    UserBACLabel.Text = "BAC \n" + calculatedBAC + "%";
+                else
+                {
+                    UserBACLabel.Text = "BAC \n 0.00%";
+                    DBC.resetOuncesandStartTime(LICENSE);
+                }
             }
             else
+            {
                 UserBACLabel.Text = "BAC \n 0.00%";
+                DBC.resetOuncesandStartTime(LICENSE);
+            }
         
                
         }
