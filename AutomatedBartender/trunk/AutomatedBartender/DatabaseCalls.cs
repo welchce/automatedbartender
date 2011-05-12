@@ -117,7 +117,7 @@ namespace AutomatedBartender
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show(liquid.Value + " already exists in the system");
+                System.Windows.Forms.MessageBox.Show(name + " already exists in the system");
             }
         }
 
