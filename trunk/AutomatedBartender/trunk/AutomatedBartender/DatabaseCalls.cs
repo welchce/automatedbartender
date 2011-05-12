@@ -348,7 +348,7 @@ namespace AutomatedBartender
             if (warningMessage != "")
                 System.Windows.Forms.MessageBox.Show("Please contact a system adminstrator, the following drinks are running low: \n\n" + warningMessage);    
 
-            string sqlCmd2 = "UPDATE tblInventory SET Location=-3, Quantity = 0 WHERE Quantity < 0 AND Proof <> 0";
+            string sqlCmd2 = "UPDATE tblInventory SET Location=-3, Quantity = 0 WHERE Quantity < 35 AND Proof <> 0";
             SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
             myConnection.Open();
             cmd2.ExecuteNonQuery();
