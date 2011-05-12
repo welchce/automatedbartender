@@ -80,7 +80,7 @@ namespace AutomatedBartender
         private void refreshInventoryList()
         {
             DatabaseCalls DBC = new DatabaseCalls();
-            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name', Proof, Quantity, Location AS 'Slot' FROM tblInventory WHERE NOT Location = -1 AND NOT Location = -2 AND NOT Location = 0");
+            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name', Proof, Quantity, Location AS 'Slot' FROM tblInventory WHERE NOT Location = -1 AND NOT Location = -2 AND NOT Location = 0 ORDER BY Location ASC");
             manageInventoryGridView.Columns[0].Visible = false;
         }
 

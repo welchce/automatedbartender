@@ -64,29 +64,7 @@ namespace AutomatedBartender
         }
 
         private void DrinkMaker_Load(object sender, EventArgs e)
-        {/*
-            //label1.Text = "OMG!!!";
-            ArduinoCalls AC = new ArduinoCalls();
-            DatabaseCalls DBC = new DatabaseCalls();
-            int RecipeID = DBC.GetDrinkFromQueue(getLicense());
-            int[] ports = DBC.GetDrinkPorts(RecipeID);
-            AC.StartArduinoCommunication();
-            int i = 0;
-            while (ports[i] != 0)
-            {
-                AC.TurnOnMotor(ports[i]);
-                i++;
-            }
-            i = 0;
-            Thread.Sleep(5000);
-            while (ports[i] != 0)
-            {
-                AC.TurnOffMotor(ports[i]);
-                i++;
-            }
-            DBC.UpdateDrinkInQueue(getLicense()); //pass DrinkID
-            AC.StopArduinoCommunication();*/
-            //this.Close();
+        {
         }
 
         private void NoUserbtn_Click(object sender, EventArgs e)
@@ -95,9 +73,10 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             //ADD DRINK TO QUEUE
             DBC.AddDrinkToHistory(LICENSE, GloRecipeID);
-            DBC.DispensedDrink(GloRecipeID);
+            DBC.DispensedDrink(GloRecipeID, LICENSE);
+            DBC.getNotificationForAdmin();
 
-            ArduinoCalls AC = new ArduinoCalls();
+            /*ArduinoCalls AC = new ArduinoCalls();
             int[] ports = DBC.GetDrinkPorts(Convert.ToInt32(GloRecipeID));
             AC.StartArduinoCommunication();
             int i = 0;
@@ -113,7 +92,7 @@ namespace AutomatedBartender
                 AC.TurnOffMotor(ports[i]);
                 i++;
             }
-            AC.StopArduinoCommunication();
+            AC.StopArduinoCommunication();*/
             this.Close();
         }
 

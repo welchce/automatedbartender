@@ -172,14 +172,17 @@ namespace AutomatedBartender
             int value;
             numDispensed.Direction = ParameterDirection.Output;
             myConnection.Open();
-            cmd.ExecuteReader().Close();
+            cmd.ExecuteReader();
+            myConnection.Close();
 
             try
             {
                 value = Convert.ToInt32(numDispensed.Value);
                 string sqlCmd2 = "UPDATE tblHistory SET numDispensed = numDispensed+1 WHERE UserID=" + LicenseNo + "AND RecipeID = " + DrinkID;
                 SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
-                cmd2.ExecuteReader().Close();
+                myConnection.Open();
+                cmd2.ExecuteReader();
+                myConnection.Close();
             }
             catch (Exception e)
             {
@@ -187,10 +190,21 @@ namespace AutomatedBartender
                 {
                     string sqlCmd3 = "INSERT INTO tblHistory VALUES ('" + LicenseNo + "','" + DrinkID + "', 1)";
                     SqlCommand cmd3 = new SqlCommand(sqlCmd3, myConnection);
+                    myConnection.Open();
                     cmd3.ExecuteNonQuery();
+                    myConnection.Close();
                 }
             }
-            myConnection.Close();
+
+            DateTime userStartTime = getStartDrinkTime(LicenseNo);
+            if (userStartTime == Convert.ToDateTime(null))
+            {
+                string sqlCmd4 = "UPDATE tblUsers SET TimeStarted ='" + System.DateTime.Now + "' WHERE LicenseNo = " + LicenseNo;
+                SqlCommand cmd4 = new SqlCommand(sqlCmd4, myConnection);
+                myConnection.Open();
+                cmd4.ExecuteNonQuery();
+                myConnection.Close();
+            }
         }
 
         public int[] GetDrinkPorts(int RecipeID)
@@ -233,7 +247,7 @@ namespace AutomatedBartender
             cmd.ExecuteNonQuery();
             myConnection.Close();
         }
-        public void DispensedDrink(string drinkID)
+        public void DispensedDrink(string drinkID, string LicenseNo)
         {
             string sqlCmd = "UPDATE dbo.tblRecipe SET numDispensed=numDispensed+1 WHERE ID='" + drinkID + "'";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
@@ -258,34 +272,51 @@ namespace AutomatedBartender
                 }
                 sqlReader.Close();
             }
-
+            myConnection.Close();
             i = 0;
             string sqlCmd3;
             SqlCommand cmd3;
             SqlDataReader sqlReader3;
+            myConnection.Open();
             while (IDs[i] != 0)
             {
                 sqlCmd3 = "UPDATE dbo.tblInventory SET Quantity=Quantity-35 WHERE ID='" + Convert.ToString(IDs[i]) + "' AND Proof<>0";
                 cmd3 = new SqlCommand(sqlCmd3, myConnection);
                 sqlReader3 = cmd3.ExecuteReader();
-                i++;
                 sqlReader3.Close();
+                string sqlCmd5 = "SELECT @Proof=Proof FROM tblInventory WHERE ID = '" + Convert.ToString(IDs[i]) + "'";
+                SqlCommand cmd5 = new SqlCommand(sqlCmd5, myConnection);
+                SqlParameter proof = cmd5.Parameters.Add("@Proof", SqlDbType.Int);
+                proof.Direction = ParameterDirection.Output;
+                cmd5.ExecuteNonQuery();
+                double convertedOunces = 1.18349079 * Convert.ToDouble(proof.Value);
+                convertedOunces = convertedOunces / 200;
+                string sqlCmd6 = "UPDATE tblUsers SET AlcoholicOunces = AlcoholicOunces+" + convertedOunces + " WHERE LicenseNo = '" + LicenseNo + "'";
+                SqlCommand cmd6 = new SqlCommand(sqlCmd6, myConnection);
+                cmd6.ExecuteNonQuery();
+                i++;
             }
             sqlReader.Close();
+            myConnection.Close();
+           
+        }
+        public void getNotificationForAdmin()
+        {
             string sqlCmd4 = "SELECT TOP 1 @Quantity=Quantity FROM tblInventory WHERE Quantity < 100 AND Location > 0";
             SqlCommand cmd4 = new SqlCommand(sqlCmd4, myConnection);
             SqlParameter quantity = cmd4.Parameters.Add("@Quantity", SqlDbType.Int);
             quantity.Direction = ParameterDirection.Output;
+            myConnection.Open();
             cmd4.ExecuteNonQuery();
+            myConnection.Close();
 
             if (quantity.Value != DBNull.Value)
             {
-                System.Windows.Forms.MessageBox.Show("Please contact a system adminstrator");
+                System.Windows.Forms.MessageBox.Show("Please contact a system adminstrator, the following drinks are running low: \n\n");
             }
 
             myConnection.Close();
         }
-
         public double getUserAlcoholicOunces(string UserID)
         {
             string sqlCmd = "SELECT @AlcoholicOunces=AlcoholicOunces FROM tblUsers WHERE LicenseNo = '" + UserID + "'";
@@ -314,6 +345,15 @@ namespace AutomatedBartender
                 return Convert.ToDateTime(time.Value);
             else
                 return Convert.ToDateTime(null);
+        }
+
+        public void resetOuncesandStartTime(string LICENSE)
+        {
+            string sqlCmd = "UPDATE tblUsers SET AlcoholicOunces=0, TimeStarted = NULL WHERE LicenseNo = " + LICENSE;
+            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            myConnection.Open();
+            cmd.ExecuteNonQuery();
+            myConnection.Close();
         }
     }
 }

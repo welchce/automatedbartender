@@ -38,6 +38,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.NameComboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.manageInventoryProofTxt = new System.Windows.Forms.TextBox();
@@ -46,12 +47,11 @@
             this.manageInventoryAmountTxt = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
+            this.SlotComboBox = new System.Windows.Forms.ComboBox();
             this.manageInventoryAddBtn = new System.Windows.Forms.Button();
             this.tblInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
             this.tblInventoryTableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.tblInventoryTableAdapter();
-            this.SlotComboBox = new System.Windows.Forms.ComboBox();
-            this.NameComboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).BeginInit();
@@ -214,6 +214,14 @@
             this.label2.Text = "Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // NameComboBox
+            // 
+            this.NameComboBox.FormattingEnabled = true;
+            this.NameComboBox.Location = new System.Drawing.Point(3, 27);
+            this.NameComboBox.Name = "NameComboBox";
+            this.NameComboBox.Size = new System.Drawing.Size(94, 21);
+            this.NameComboBox.TabIndex = 1;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -315,6 +323,16 @@
             this.label5.Text = "Slot";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // SlotComboBox
+            // 
+            this.SlotComboBox.FormattingEnabled = true;
+            this.SlotComboBox.Items.AddRange(new object[] {
+            "0"});
+            this.SlotComboBox.Location = new System.Drawing.Point(3, 27);
+            this.SlotComboBox.Name = "SlotComboBox";
+            this.SlotComboBox.Size = new System.Drawing.Size(92, 21);
+            this.SlotComboBox.TabIndex = 1;
+            // 
             // manageInventoryAddBtn
             // 
             this.manageInventoryAddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -342,24 +360,6 @@
             // tblInventoryTableAdapter
             // 
             this.tblInventoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // SlotComboBox
-            // 
-            this.SlotComboBox.FormattingEnabled = true;
-            this.SlotComboBox.Items.AddRange(new object[] {
-            "0"});
-            this.SlotComboBox.Location = new System.Drawing.Point(3, 27);
-            this.SlotComboBox.Name = "SlotComboBox";
-            this.SlotComboBox.Size = new System.Drawing.Size(92, 21);
-            this.SlotComboBox.TabIndex = 1;
-            // 
-            // NameComboBox
-            // 
-            this.NameComboBox.FormattingEnabled = true;
-            this.NameComboBox.Location = new System.Drawing.Point(3, 27);
-            this.NameComboBox.Name = "NameComboBox";
-            this.NameComboBox.Size = new System.Drawing.Size(94, 21);
-            this.NameComboBox.TabIndex = 1;
             // 
             // ManageInventory
             // 
