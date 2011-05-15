@@ -72,11 +72,11 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             //ADD DRINK TO QUEUE
             DBC.AddDrinkToHistory(LICENSE, GloRecipeID);
+            int[] ports = DBC.GetDrinkPorts(Convert.ToInt32(GloRecipeID));
             DBC.DispensedDrink(GloRecipeID, LICENSE);
             DBC.getNotificationForAdmin();
 
             ArduinoCalls AC = new ArduinoCalls();
-            int[] ports = DBC.GetDrinkPorts(Convert.ToInt32(GloRecipeID));
             AC.StartArduinoCommunication();
             int i = 0;
             while (i < 10)
