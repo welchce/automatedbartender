@@ -109,7 +109,7 @@ namespace AutomatedBartender
                 cmd.ExecuteNonQuery();
                 myConnection.Close();
 
-                string sqlCmd2 = "INSERT INTO tblInventory VALUES (" + name + "," + proof + "," + amount + "," + slot + ")";
+                string sqlCmd2 = "INSERT INTO tblInventory VALUES ('" + name + "'," + proof + "," + amount + "," + slot + ")";
                 cmd = new SqlCommand(sqlCmd2, myConnection);
                 myConnection.Open();
                 cmd.ExecuteNonQuery();
