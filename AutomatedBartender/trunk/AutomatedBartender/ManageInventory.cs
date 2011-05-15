@@ -39,28 +39,53 @@ namespace AutomatedBartender
 
         private void manageInventoryAddBtn_Click(object sender, EventArgs e)
         {
-            DatabaseCalls DBC = new DatabaseCalls();
-            string ingredientName = NameComboBox.Text.ToString();
-            string ingredientProof = manageInventoryProofTxt.Text.ToString();
-            string ingredientAmount = manageInventoryAmountTxt.Text.ToString();
-            string ingredientSlot = SlotComboBox.Text.ToString();
-            if (ingredientName != "" && ingredientProof != "" && ingredientSlot != "" && ingredientAmount != "" )
+            if (checkBox1.Checked == false)
             {
-                try
+                DatabaseCalls DBC = new DatabaseCalls();
+                string ingredientName = NameComboBox.Text.ToString();
+                string ingredientProof = manageInventoryProofTxt.Text.ToString();
+                string ingredientAmount = manageInventoryAmountTxt.Text.ToString();
+                string ingredientSlot = SlotComboBox.Text.ToString();
+                if (ingredientName != "" && ingredientProof != "" && ingredientSlot != "" && ingredientAmount != "")
                 {
-                    DBC.AddInventory(ingredientName, Convert.ToInt32(ingredientProof), Convert.ToInt32(ingredientAmount), Convert.ToInt32(ingredientSlot));
-                    refreshInventoryList();
-                }
-                catch
-                {
-                    System.Windows.Forms.MessageBox.Show("Check your inputs");
-                }
+                    try
+                    {
+                        DBC.UpdateInventory(ingredientName, Convert.ToInt32(ingredientProof), Convert.ToInt32(ingredientAmount), Convert.ToInt32(ingredientSlot));
+                        refreshInventoryList();
+                    }
+                    catch
+                    {
+                        System.Windows.Forms.MessageBox.Show("Check your inputs");
+                    }
 
-                manageInventoryProofTxt.ResetText();
-                manageInventoryAmountTxt.ResetText();
+                    manageInventoryProofTxt.ResetText();
+                    manageInventoryAmountTxt.ResetText();
 
+                }
             }
+            else
+            {
+                DatabaseCalls DBC = new DatabaseCalls();
+                string ingredientName = NameComboBox.Text.ToString();
+                string ingredientProof = manageInventoryProofTxt.Text.ToString();
+                string ingredientAmount = manageInventoryAmountTxt.Text.ToString();
+                string ingredientSlot = SlotComboBox.Text.ToString();
+                if (ingredientName != "" && ingredientProof != "" && ingredientSlot != "" && ingredientAmount != "")
+                {
+                    try
+                    {
+                        DBC.AddInventory(ingredientName, Convert.ToInt32(ingredientProof), Convert.ToInt32(ingredientAmount), Convert.ToInt32(ingredientSlot));
+                        refreshInventoryList();
+                    }
+                    catch
+                    {
+                        System.Windows.Forms.MessageBox.Show("Check your inputs");
+                    }
 
+                    manageInventoryProofTxt.ResetText();
+                    manageInventoryAmountTxt.ResetText();
+                }
+            }
         }
 
         private void ManageInventory_Load(object sender, EventArgs e)
@@ -91,6 +116,22 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             DBC.RemoveInventory(inventoryID);
             refreshInventoryList();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                NameComboBox.Enabled = false;
+                nameTextBox.Enabled = true;
+                manageInventoryAddBtn.Text = "Add";
+            }
+            else
+            {
+                NameComboBox.Enabled = true;
+                nameTextBox.Enabled = false;
+                manageInventoryAddBtn.Text = "Update";
+            }
         }
 
     }

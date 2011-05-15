@@ -93,6 +93,36 @@ namespace AutomatedBartender
 
         public void AddInventory(string name, int proof, int amount, int slot)
         {
+            string sqlCmd3 = "SELECT @LiquidName=LiquidName FROM tblInventory WHERE LiquidName = '" + name + "'";
+            SqlCommand cmd3 = new SqlCommand(sqlCmd3, myConnection);
+            SqlParameter liquidName = cmd3.Parameters.Add("@LiquidName",SqlDbType.VarChar,50);
+            liquidName.Direction = ParameterDirection.Output;
+            myConnection.Open();
+            cmd3.ExecuteNonQuery();
+            myConnection.Close();
+
+            if (liquidName.Value == DBNull.Value)
+            {
+                string sqlCmd = "UPDATE tblInventory SET Location=-1,Quantity=0 WHERE Location=" + slot;
+                SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+                myConnection.Open();
+                cmd.ExecuteNonQuery();
+                myConnection.Close();
+
+                string sqlCmd2 = "INSERT INTO tblInventory VALUES (" + name + "," + proof + "," + amount + "," + slot + ")";
+                cmd = new SqlCommand(sqlCmd2, myConnection);
+                myConnection.Open();
+                cmd.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show(name + " already exists in the system");
+            }
+        }
+
+        public void UpdateInventory(string name, int proof, int amount, int slot)
+        {
             string sqlCmd3 = "SELECT @LocationNumber=Location FROM tblInventory WHERE LiquidName = '" + name + "' AND Location > 0";
             SqlCommand cmd3 = new SqlCommand(sqlCmd3, myConnection);
             SqlParameter locationNumber = cmd3.Parameters.Add("@LocationNumber", SqlDbType.Int);
