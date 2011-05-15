@@ -109,7 +109,7 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             manageUsersGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             manageUsersGridView.ReadOnly = true;
-            manageUsersGridView.DataSource = DBC.GetForDataGrid("SELECT * FROM tblUsers ORDER BY LastName ASC");
+            manageUsersGridView.DataSource = DBC.GetForDataGrid("SELECT * FROM tblUsers ORDER BY Admin DESC, LastName ASC");
         }
 
         private void ManageUsersRemovebtn_Click(object sender, EventArgs e)
