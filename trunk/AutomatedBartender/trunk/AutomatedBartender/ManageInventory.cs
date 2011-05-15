@@ -60,7 +60,6 @@ namespace AutomatedBartender
 
                     manageInventoryProofTxt.ResetText();
                     manageInventoryAmountTxt.ResetText();
-
                 }
             }
             else
@@ -84,6 +83,13 @@ namespace AutomatedBartender
 
                     manageInventoryProofTxt.ResetText();
                     manageInventoryAmountTxt.ResetText();
+                    NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE NOT Location = -2 AND NOT Location = 0 ORDER BY LiquidName ASC");
+                    NameComboBox.DisplayMember = "LiquidName";
+                    NameComboBox.ValueMember = "LiquidName";
+                    checkBox1.Checked = false;
+                    NameComboBox.Enabled = true;
+                    nameTextBox.Enabled = false;
+                    manageInventoryAddBtn.Text = "Update";
                 }
             }
         }
@@ -94,7 +100,7 @@ namespace AutomatedBartender
             this.tblInventoryTableAdapter.Fill(this.bartenderDataSet.tblInventory);
             refreshInventoryList();
             DatabaseCalls DBC = new DatabaseCalls();
-            NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE NOT Location = -2 AND NOT Location = 0");
+            NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE NOT Location = -2 AND NOT Location = 0 ORDER BY LiquidName ASC");
             NameComboBox.DisplayMember = "LiquidName";
             NameComboBox.ValueMember = "LiquidName";
             SlotComboBox.DataSource = DBC.GetForDataGrid("SELECT Location FROM tblLocations");

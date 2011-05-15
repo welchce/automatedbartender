@@ -53,6 +53,8 @@
             // 
             // DrinkHistoryDataGrid
             // 
+            this.DrinkHistoryDataGrid.AllowUserToAddRows = false;
+            this.DrinkHistoryDataGrid.AllowUserToDeleteRows = false;
             this.DrinkHistoryDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DrinkHistoryDataGrid.BackgroundColor = System.Drawing.Color.Black;
             this.DrinkHistoryDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
