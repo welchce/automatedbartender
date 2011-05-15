@@ -49,9 +49,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.SlotComboBox = new System.Windows.Forms.ComboBox();
             this.manageInventoryAddBtn = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tblInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
             this.tblInventoryTableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.tblInventoryTableAdapter();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).BeginInit();
@@ -79,8 +81,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.81457F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.05298F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(644, 302);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -142,10 +144,10 @@
             this.manageInventoryGridView.BackgroundColor = System.Drawing.Color.Black;
             this.manageInventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.manageInventoryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manageInventoryGridView.Location = new System.Drawing.Point(3, 108);
+            this.manageInventoryGridView.Location = new System.Drawing.Point(3, 132);
             this.manageInventoryGridView.Name = "manageInventoryGridView";
             this.manageInventoryGridView.RowHeadersVisible = false;
-            this.manageInventoryGridView.Size = new System.Drawing.Size(638, 145);
+            this.manageInventoryGridView.Size = new System.Drawing.Size(638, 121);
             this.manageInventoryGridView.TabIndex = 1;
             // 
             // label1
@@ -166,37 +168,41 @@
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.51097F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.30094F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.63009F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.015674F));
+            this.tableLayoutPanel2.ColumnCount = 7;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.65412F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.00002F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.49326F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.07031F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.69037F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.717869F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.404388F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.manageInventoryAddBtn, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.checkBox1, 5, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 48);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(638, 54);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(638, 78);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.NameComboBox, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.nameTextBox, 0, 2);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(100, 48);
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(99, 72);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label2
@@ -209,7 +215,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 24);
+            this.label2.Size = new System.Drawing.Size(93, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -217,9 +223,9 @@
             // NameComboBox
             // 
             this.NameComboBox.FormattingEnabled = true;
-            this.NameComboBox.Location = new System.Drawing.Point(3, 27);
+            this.NameComboBox.Location = new System.Drawing.Point(3, 26);
             this.NameComboBox.Name = "NameComboBox";
-            this.NameComboBox.Size = new System.Drawing.Size(94, 21);
+            this.NameComboBox.Size = new System.Drawing.Size(93, 21);
             this.NameComboBox.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -228,12 +234,12 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.manageInventoryProofTxt, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(109, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(108, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(100, 48);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(76, 48);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // label3
@@ -246,7 +252,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 24);
+            this.label3.Size = new System.Drawing.Size(70, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Proof";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -255,7 +261,7 @@
             // 
             this.manageInventoryProofTxt.Location = new System.Drawing.Point(3, 27);
             this.manageInventoryProofTxt.Name = "manageInventoryProofTxt";
-            this.manageInventoryProofTxt.Size = new System.Drawing.Size(94, 20);
+            this.manageInventoryProofTxt.Size = new System.Drawing.Size(51, 20);
             this.manageInventoryProofTxt.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -264,12 +270,12 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.manageInventoryAmountTxt, 0, 1);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(215, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(190, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(144, 48);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(142, 48);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // label4
@@ -282,7 +288,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 24);
+            this.label4.Size = new System.Drawing.Size(136, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Amount(mL)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -300,12 +306,12 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.SlotComboBox, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(365, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(338, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(98, 48);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(61, 48);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // label5
@@ -318,7 +324,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 24);
+            this.label5.Size = new System.Drawing.Size(55, 24);
             this.label5.TabIndex = 0;
             this.label5.Text = "Slot";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -330,7 +336,7 @@
             "0"});
             this.SlotComboBox.Location = new System.Drawing.Point(3, 27);
             this.SlotComboBox.Name = "SlotComboBox";
-            this.SlotComboBox.Size = new System.Drawing.Size(92, 21);
+            this.SlotComboBox.Size = new System.Drawing.Size(39, 21);
             this.SlotComboBox.TabIndex = 1;
             // 
             // manageInventoryAddBtn
@@ -339,13 +345,26 @@
             this.manageInventoryAddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.manageInventoryAddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.manageInventoryAddBtn.ForeColor = System.Drawing.Color.White;
-            this.manageInventoryAddBtn.Location = new System.Drawing.Point(469, 3);
+            this.manageInventoryAddBtn.Location = new System.Drawing.Point(420, 3);
             this.manageInventoryAddBtn.Name = "manageInventoryAddBtn";
-            this.manageInventoryAddBtn.Size = new System.Drawing.Size(132, 48);
+            this.manageInventoryAddBtn.Size = new System.Drawing.Size(93, 48);
             this.manageInventoryAddBtn.TabIndex = 4;
             this.manageInventoryAddBtn.Text = "Update";
             this.manageInventoryAddBtn.UseVisualStyleBackColor = false;
             this.manageInventoryAddBtn.Click += new System.EventHandler(this.manageInventoryAddBtn_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(519, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(55, 56);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "New\r\nDrink";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // tblInventoryBindingSource
             // 
@@ -360,6 +379,14 @@
             // tblInventoryTableAdapter
             // 
             this.tblInventoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Enabled = false;
+            this.nameTextBox.Location = new System.Drawing.Point(3, 49);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(93, 20);
+            this.nameTextBox.TabIndex = 2;
             // 
             // ManageInventory
             // 
@@ -376,6 +403,7 @@
             this.tableLayoutPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -415,5 +443,7 @@
         private BartenderDataSetTableAdapters.tblInventoryTableAdapter tblInventoryTableAdapter;
         private System.Windows.Forms.ComboBox SlotComboBox;
         private System.Windows.Forms.ComboBox NameComboBox;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox nameTextBox;
     }
 }
