@@ -66,7 +66,7 @@ namespace AutomatedBartender
             else
             {
                 DatabaseCalls DBC = new DatabaseCalls();
-                string ingredientName = NameComboBox.Text.ToString();
+                string ingredientName = nameTextBox.Text.ToString();
                 string ingredientProof = manageInventoryProofTxt.Text.ToString();
                 string ingredientAmount = manageInventoryAmountTxt.Text.ToString();
                 string ingredientSlot = SlotComboBox.Text.ToString();
