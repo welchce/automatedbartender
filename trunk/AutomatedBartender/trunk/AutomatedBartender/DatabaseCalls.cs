@@ -263,6 +263,7 @@ namespace AutomatedBartender
         }
         public void DispensedDrink(string drinkID, string LicenseNo)
         {
+            myConnection.Close();
             string sqlCmd = "UPDATE dbo.tblRecipe SET numDispensed=numDispensed+1 WHERE ID='" + drinkID + "'";
             SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
             myConnection.Open();
