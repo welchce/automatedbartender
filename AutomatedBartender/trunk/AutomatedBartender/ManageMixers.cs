@@ -24,7 +24,7 @@ namespace AutomatedBartender
         {
             refreshInventoryList();
             DatabaseCalls DBC = new DatabaseCalls();
-            NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE Location = -2");
+            NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE Location = -2 ORDER BY LiquidName ASC");
             NameComboBox.DisplayMember = "LiquidName";
             NameComboBox.ValueMember = "LiquidName";
         }
@@ -42,7 +42,7 @@ namespace AutomatedBartender
         private void refreshInventoryList()
         {
             DatabaseCalls DBC = new DatabaseCalls();
-            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name' FROM tblInventory WHERE NOT Location = -1 AND NOT Location = -2 AND NOT Location > 0");
+            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name' FROM tblInventory WHERE NOT Location = -1 AND NOT Location = -2 AND NOT Location > 0 ORDER BY LiquidName");
             manageInventoryGridView.Columns[0].Visible = false;
         }
 
@@ -60,6 +60,9 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             DBC.RemoveMixer(inventoryID);
             refreshInventoryList();
+            NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE Location = -2 ORDER BY LiquidName ASC");
+            NameComboBox.DisplayMember = "LiquidName";
+            NameComboBox.ValueMember = "LiquidName";
         }
 
         private void manageInventoryUpdateBtn_Click(object sender, EventArgs e)
@@ -68,6 +71,9 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             DBC.UpdateMixer(ingredientName);
             refreshInventoryList();
+            NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE Location = -2 ORDER BY LiquidName ASC");
+            NameComboBox.DisplayMember = "LiquidName";
+            NameComboBox.ValueMember = "LiquidName";
         }
 
         private void manageInventoryAddBtn_Click(object sender, EventArgs e)

@@ -87,7 +87,7 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             Top25DataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             Top25DataGrid.ReadOnly = true;
-            Top25DataGrid.DataSource = DBC.GetForDataGrid("SELECT TOP 25 * FROM tblRecipe ORDER BY numDispensed DESC");
+            Top25DataGrid.DataSource = DBC.GetForDataGrid("SELECT TOP 25 ID,Name,numDispensed AS 'Number Dispensed' FROM tblRecipe ORDER BY numDispensed DESC");
             Top25DataGrid.Columns["ID"].Visible = false;
             //Top25DataGrid.Rows[3].Selected = true;
         }
