@@ -119,7 +119,7 @@ namespace AutomatedBartender
             DataGridViewComboBoxColumn amountColumn = new DataGridViewComboBoxColumn();
             ingredientsColumn.Name = "Ingredient";
             amountColumn.Name = "Amount";
-            ingredientsColumn.DataSource = DBC.GetForDataGrid("SELECT LiquidName From tblInventory ORDER BY LiquidName ASC");
+            ingredientsColumn.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory i WHERE i.Location>=0 ORDER BY LiquidName ASC");
             ingredientsColumn.ValueMember = "LiquidName";
             amountColumn.DataSource = DBC.GetForDataGrid("SELECT Name from tblAmount");
             amountColumn.ValueMember = "Name";

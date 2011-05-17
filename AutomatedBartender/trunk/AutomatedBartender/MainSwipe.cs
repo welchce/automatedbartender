@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -17,15 +18,17 @@ namespace AutomatedBartender
         public int NumQuestionMarks;
         public bool WaitForIDInput;
         public bool WaitForSuffix;
+        public bool LookForQMA;
         /*Author Christopher Welch
          *      2011 01 31     */
+
         private void MainSwipe_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if the character pressed is a %
-            lblMainText.Text = "Reading";
             if (e.KeyChar == 37)
             {
                 WaitForIDInput = true;
+                //if the character pressed is a %
+                lblMainText.Text = "Reading";
             }
             //since % starts an ID, start logging the following characters
             if (WaitForIDInput)
@@ -47,9 +50,31 @@ namespace AutomatedBartender
                 e.Handled = false;  //e.Handled = false; tells the program that the character has NOT been consumed and can be used else where
             }
             //if the character is a question mark, count
+            if (LookForQMA && e.KeyChar == 65 && NumQuestionMarks != 3)
+            {
+                Swipe ThisSwipe = new Swipe();
+                if (ThisSwipe.InfoFromID(IDINFO, Suffix))
+                {
+                    lblMainText.Text = "To Begin\nPlease Swipe\nI.D.";
+                }
+                else
+                {
+                    lblMainText.Text = "Error Reading Card\nPlease Swipe\nI.D. Again";
+                }
+                WaitForIDInput = false;
+                WaitForSuffix = false;
+                NumQuestionMarks = 0;
+                IDINFO = "";
+                Suffix = "";
+            }
             if (e.KeyChar == 63)
             {
                 NumQuestionMarks++;
+                LookForQMA = true;
+            }
+            else
+            {
+                LookForQMA = false;
             }
             //the 3rd question mark ends the ID sequence
             if (NumQuestionMarks == 3)
@@ -122,7 +147,7 @@ namespace AutomatedBartender
         private void MattLoginBtn_Click(object sender, EventArgs e)
         {
             Swipe ThisSwipe = new Swipe();
-            ThisSwipe.InfoFromID("%OHNORTH BEND^Fuller$Matt$E$^31 MUIRFIELD DR^?;6360231921696969=130619880630?%1045052      D B             1600150BROBRO                          92\"*SA     ?", "A");
+            ThisSwipe.InfoFromID("%OHNORTH BEND^Fuller$Matt$E$^31 MUIRFIELD DR^?;6360231921696969=130619980630?%1045052      D B             1600150BROBRO                          92\"*SA     ?", "A");
         }
     }
 }

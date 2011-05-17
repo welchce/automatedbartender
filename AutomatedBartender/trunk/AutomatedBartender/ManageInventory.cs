@@ -111,17 +111,23 @@ namespace AutomatedBartender
         private void refreshInventoryList()
         {
             DatabaseCalls DBC = new DatabaseCalls();
-            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name', Proof, Quantity, Location AS 'Slot' FROM tblInventory WHERE Location > 0 ORDER BY Location ASC");
+            manageInventoryGridView.DataSource = DBC.GetForDataGrid("SELECT ID, LiquidName AS 'Liquid Name', Proof, Quantity, Location AS 'Slot' FROM tblInventory WHERE Location > 0 OR Location = -3 ORDER BY Location ASC");
             manageInventoryGridView.Columns[0].Visible = false;
         }
 
         private void manageInventoryRemovebtn_Click(object sender, EventArgs e)
         {
-            int row = manageInventoryGridView.CurrentCellAddress.Y;
-            int inventoryID = Convert.ToInt32(manageInventoryGridView[0, row].Value);
-            DatabaseCalls DBC = new DatabaseCalls();
-            DBC.RemoveInventory(inventoryID);
-            refreshInventoryList();
+            try
+            {
+                int row = manageInventoryGridView.CurrentCellAddress.Y;
+                int inventoryID = Convert.ToInt32(manageInventoryGridView[0, row].Value);
+                DatabaseCalls DBC = new DatabaseCalls();
+                DBC.RemoveInventory(inventoryID);
+                refreshInventoryList();
+            }
+            catch
+            {
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

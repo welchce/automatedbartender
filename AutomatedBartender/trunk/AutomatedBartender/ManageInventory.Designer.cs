@@ -33,12 +33,14 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.manageInventoryRemovebtn = new System.Windows.Forms.Button();
             this.manageInventoryBackbtn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.manageInventoryGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.NameComboBox = new System.Windows.Forms.ComboBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.manageInventoryProofTxt = new System.Windows.Forms.TextBox();
@@ -50,11 +52,10 @@
             this.SlotComboBox = new System.Windows.Forms.ComboBox();
             this.manageInventoryAddBtn = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tblInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bartenderDataSet = new AutomatedBartender.BartenderDataSet();
             this.tblInventoryTableAdapter = new AutomatedBartender.BartenderDataSetTableAdapters.tblInventoryTableAdapter();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).BeginInit();
@@ -101,6 +102,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel7.Controls.Add(this.manageInventoryRemovebtn, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.manageInventoryBackbtn, 2, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 258);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
@@ -137,6 +139,18 @@
             this.manageInventoryBackbtn.Text = "Back";
             this.manageInventoryBackbtn.UseVisualStyleBackColor = false;
             this.manageInventoryBackbtn.Click += new System.EventHandler(this.manageInventoryBackbtn_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(309, 41);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "If Slot equals -3, either do a remove on the item, or update the item to the corr" +
+                "ect slot after refilling the liquid.";
             // 
             // manageInventoryGridView
             // 
@@ -218,7 +232,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 23);
+            this.label2.Size = new System.Drawing.Size(93, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -226,10 +240,18 @@
             // NameComboBox
             // 
             this.NameComboBox.FormattingEnabled = true;
-            this.NameComboBox.Location = new System.Drawing.Point(3, 26);
+            this.NameComboBox.Location = new System.Drawing.Point(3, 27);
             this.NameComboBox.Name = "NameComboBox";
             this.NameComboBox.Size = new System.Drawing.Size(93, 21);
             this.NameComboBox.TabIndex = 1;
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Enabled = false;
+            this.nameTextBox.Location = new System.Drawing.Point(3, 51);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(93, 20);
+            this.nameTextBox.TabIndex = 2;
             // 
             // tableLayoutPanel4
             // 
@@ -369,6 +391,19 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(618, 30);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "If desired drink is not in the dropdown, please click the \'New Drink\' checkbox th" +
+                "en type in the name in the \'Name\' textbox to add it.";
+            // 
             // tblInventoryBindingSource
             // 
             this.tblInventoryBindingSource.DataMember = "tblInventory";
@@ -383,27 +418,6 @@
             // 
             this.tblInventoryTableAdapter.ClearBeforeFill = true;
             // 
-            // nameTextBox
-            // 
-            this.nameTextBox.Enabled = false;
-            this.nameTextBox.Location = new System.Drawing.Point(3, 49);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(93, 20);
-            this.nameTextBox.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(618, 30);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "If desired drink is not in the dropdown, please click the \'New Drink\' checkbox th" +
-                "en type in the name in the \'Name\' textbox to add it.";
-            // 
             // ManageInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,6 +431,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageInventoryGridView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -462,5 +477,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

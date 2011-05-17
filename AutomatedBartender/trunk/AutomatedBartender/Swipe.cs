@@ -32,6 +32,8 @@ namespace AutomatedBartender
                 int Weight = 0;
                 int ExpireYear = 0;
                 int ExpireMonth = 0;
+                bool Valid = false;
+                bool ofAge = false;
 
                 String INFOOUTPUT = "";
 
@@ -91,21 +93,25 @@ namespace AutomatedBartender
                 if (CurrentYear < ExpireYear)
                 {
                     INFOOUTPUT = INFOOUTPUT + "Valid\n";
+                    Valid = true;
                 }
                 else if (CurrentYear == ExpireYear)
                 {
                     if (CurrentMonth <= ExpireMonth)
                     {
                         INFOOUTPUT = INFOOUTPUT + "Valid\n";
+                        Valid = true;
                     }
                     else
                     {
                         INFOOUTPUT = INFOOUTPUT + "Not Valid\n";
+                        Valid = false;
                     }
                 }
                 else
                 {
                     INFOOUTPUT = INFOOUTPUT + "Not Valid\n";
+                    Valid = false;
                 }
 
                 //get ID DOB Year
@@ -127,32 +133,38 @@ namespace AutomatedBartender
                 if (CurrentYear - 21 > DOBYear)
                 {
                     INFOOUTPUT = INFOOUTPUT + "Legal\n";
+                    ofAge = true;
                 }
                 else if (CurrentYear - 21 == DOBYear)
                 {
                     if (CurrentMonth > DOBMonth)
                     {
                         INFOOUTPUT = INFOOUTPUT + "Legal\n";
+                        ofAge = true;
                     }
                     else if (CurrentMonth == DOBMonth)
                     {
                         if (CurrentDay >= DOBDay)
                         {
                             INFOOUTPUT = INFOOUTPUT + "Legal\n";
+                            ofAge = true;
                         }
                         else
                         {
                             INFOOUTPUT = INFOOUTPUT + "Underage\n";
+                            ofAge = false;
                         }
                     }
                     else
                     {
                         INFOOUTPUT = INFOOUTPUT + "Underage\n";
+                        ofAge = false;
                     }
                 }
                 else
                 {
                     INFOOUTPUT = INFOOUTPUT + "Underage\n";
+                    ofAge = false;
                 }
 
                 //get ID gender
@@ -179,15 +191,19 @@ namespace AutomatedBartender
 
                 DatabaseCalls DBC = new DatabaseCalls();
                 string userType = DBC.verifyUser(LastName, FirstName, DL, Gender, Weight);
-                if (userType == "Admin")
+                if (userType == "Admin" && Valid && ofAge)
                 {
                     Form adminMainScreen = new AdminMain(DL);
                     adminMainScreen.Show();
                 }
-                else if (userType == "Regular")
+                else if (userType == "Regular" && Valid && ofAge)
                 {
                     Form userMainScreen = new UserMain(DL,Gender,Weight);
                     userMainScreen.Show();
+                }
+                else if (!Valid || !ofAge)
+                {
+                    System.Windows.Forms.MessageBox.Show("Invalid ID");
                 }
                 else
                 {

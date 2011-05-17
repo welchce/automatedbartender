@@ -55,16 +55,22 @@ namespace AutomatedBartender
 
         private void manageInventoryRemovebtn_Click(object sender, EventArgs e)
         {
-            int row = manageInventoryGridView.CurrentCellAddress.Y;
-            int inventoryID = Convert.ToInt32(manageInventoryGridView[0, row].Value);
-            DatabaseCalls DBC = new DatabaseCalls();
-            DBC.RemoveMixer(inventoryID);
-            refreshInventoryList();
-            NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE Location = -2 ORDER BY LiquidName ASC");
-            NameComboBox.DisplayMember = "LiquidName";
-            NameComboBox.ValueMember = "LiquidName";
-        }
+            try
+            {
+                int row = manageInventoryGridView.CurrentCellAddress.Y;
+                int inventoryID = Convert.ToInt32(manageInventoryGridView[0, row].Value);
+                DatabaseCalls DBC = new DatabaseCalls();
+                DBC.RemoveMixer(inventoryID);
+                refreshInventoryList();
+                NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE Location = -2 ORDER BY LiquidName ASC");
+                NameComboBox.DisplayMember = "LiquidName";
+                NameComboBox.ValueMember = "LiquidName";
 
+            }
+            catch
+            {
+            }
+        }
         private void manageInventoryUpdateBtn_Click(object sender, EventArgs e)
         {            
             string ingredientName = NameComboBox.Text.ToString();
@@ -74,6 +80,7 @@ namespace AutomatedBartender
             NameComboBox.DataSource = DBC.GetForDataGrid("SELECT LiquidName FROM tblInventory WHERE Location = -2 ORDER BY LiquidName ASC");
             NameComboBox.DisplayMember = "LiquidName";
             NameComboBox.ValueMember = "LiquidName";
+            NameComboBox.Text = "";
         }
 
         private void manageInventoryAddBtn_Click(object sender, EventArgs e)
