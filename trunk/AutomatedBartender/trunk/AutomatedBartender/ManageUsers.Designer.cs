@@ -38,13 +38,13 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ManageUsersRemovebtn = new System.Windows.Forms.Button();
             this.ManageUsersBackbtn = new System.Windows.Forms.Button();
-            this.openFD = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.openFD = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.manageUsersGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -151,7 +151,7 @@
             this.FNLNRB.Size = new System.Drawing.Size(78, 6);
             this.FNLNRB.TabIndex = 1;
             this.FNLNRB.TabStop = true;
-            this.FNLNRB.Text = "First Name Last Name";
+            this.FNLNRB.Text = "First Name,Last Name";
             this.FNLNRB.UseVisualStyleBackColor = true;
             // 
             // LNFNRB
@@ -164,7 +164,7 @@
             this.LNFNRB.Size = new System.Drawing.Size(80, 6);
             this.LNFNRB.TabIndex = 2;
             this.LNFNRB.TabStop = true;
-            this.LNFNRB.Text = "Last Name First Name";
+            this.LNFNRB.Text = "Last Name,First Name";
             this.LNFNRB.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
@@ -215,10 +215,6 @@
             this.ManageUsersBackbtn.UseVisualStyleBackColor = false;
             this.ManageUsersBackbtn.Click += new System.EventHandler(this.ManageUsersBackbtn_Click);
             // 
-            // openFD
-            // 
-            this.openFD.FileName = "openFileDialog1";
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -240,6 +236,23 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(254, 45);
             this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(203, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(48, 39);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -285,22 +298,9 @@
             this.textBox2.Size = new System.Drawing.Size(44, 29);
             this.textBox2.TabIndex = 4;
             // 
-            // button1
+            // openFD
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(203, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 39);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.openFD.FileName = "openFileDialog1";
             // 
             // ManageUsers
             // 

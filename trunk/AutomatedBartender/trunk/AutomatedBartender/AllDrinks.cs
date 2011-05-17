@@ -91,7 +91,7 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             AllDrinksDataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             AllDrinksDataGrid.ReadOnly = true;
-            AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,NAME FROM tblRecipe WHERE ID NOT IN (SELECT RecipeID FROM tblIngredients t WHERE t.LiquidID IN (SELECT ID FROM tblInventory i WHERE i.Location<1 AND i.Proof<>0)) ORDER BY NAME ASC");
+            AllDrinksDataGrid.DataSource = DBC.GetForDataGrid("SELECT ID,NAME FROM tblRecipe WHERE ID NOT IN (SELECT RecipeID FROM tblIngredients t WHERE t.LiquidID IN (SELECT ID FROM tblInventory i WHERE i.Location<0)) ORDER BY NAME ASC");
             //column 0 is ID and we don't want to see it but we will need id later
             AllDrinksDataGrid.Columns[0].Visible = false;
             if (isAdmin)
@@ -101,18 +101,25 @@ namespace AutomatedBartender
         
         private void AllDrinksSubmitBtn_Click(object sender, EventArgs e)
         {
-            int row = AllDrinksDataGrid.CurrentCellAddress.Y;
-            if (row > -1)
+            try
             {
-                string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
-                Form drinkMakerForm = new DrinkMaker(getLicense(), DrinkID, getGender(), getWeight());
-                //DatabaseCalls DBC = new DatabaseCalls();
-                //ADD DRINK TO QUEUE
-                //DBC.AddDrinkToHistory(getLicense(), DrinkID);
-                //DBC.DispensedDrink(DrinkID);
-                drinkMakerForm.Show();
-                this.Close();
+                int row = AllDrinksDataGrid.CurrentCellAddress.Y;
+                if (row > -1)
+                {
+                    string DrinkID = AllDrinksDataGrid[0, row].Value.ToString();
+                    Form drinkMakerForm = new DrinkMaker(getLicense(), DrinkID, getGender(), getWeight());
+                    //DatabaseCalls DBC = new DatabaseCalls();
+                    //ADD DRINK TO QUEUE
+                    //DBC.AddDrinkToHistory(getLicense(), DrinkID);
+                    //DBC.DispensedDrink(DrinkID);
+                    drinkMakerForm.Show();
+                    this.Close();
+                }
+            }
+            catch
+            {
             }
         }
     }
 }
+

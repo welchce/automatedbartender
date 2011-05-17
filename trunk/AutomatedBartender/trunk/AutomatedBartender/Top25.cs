@@ -87,7 +87,7 @@ namespace AutomatedBartender
             DatabaseCalls DBC = new DatabaseCalls();
             Top25DataGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             Top25DataGrid.ReadOnly = true;
-            Top25DataGrid.DataSource = DBC.GetForDataGrid("SELECT TOP 25 ID,Name,numDispensed AS 'Number Dispensed' FROM tblRecipe ORDER BY numDispensed DESC");
+            Top25DataGrid.DataSource = DBC.GetForDataGrid("SELECT TOP 25 ID,NAME,numDispensed AS 'Number Dispensed' FROM tblRecipe WHERE ID NOT IN (SELECT RecipeID FROM tblIngredients t WHERE t.LiquidID IN (SELECT ID FROM tblInventory i WHERE i.Location<0)) AND numDispensed>0 ORDER BY numDispensed DESC");
             Top25DataGrid.Columns["ID"].Visible = false;
             //Top25DataGrid.Rows[3].Selected = true;
         }
@@ -95,14 +95,20 @@ namespace AutomatedBartender
 
         private void Top25SubmitBtn_Click(object sender, EventArgs e)
         {
-            int row = Top25DataGrid.CurrentCellAddress.Y;
-            string DrinkID = Top25DataGrid[0, row].Value.ToString();
-            Form drinkMakerForm = new DrinkMaker(getLicense(), DrinkID,getGender(),getWeight());
-            DatabaseCalls DBC = new DatabaseCalls();
-            //ADD DRINK TO QUEUE
-            DBC.AddDrinkToHistory(getLicense(), DrinkID);
-            drinkMakerForm.Show();
-            this.Close();
+            try
+            {
+                int row = Top25DataGrid.CurrentCellAddress.Y;
+                string DrinkID = Top25DataGrid[0, row].Value.ToString();
+                Form drinkMakerForm = new DrinkMaker(getLicense(), DrinkID, getGender(), getWeight());
+                DatabaseCalls DBC = new DatabaseCalls();
+                //ADD DRINK TO QUEUE
+                DBC.AddDrinkToHistory(getLicense(), DrinkID);
+                drinkMakerForm.Show();
+                this.Close();
+            }
+            catch
+            {
+            }
         }
        
     }

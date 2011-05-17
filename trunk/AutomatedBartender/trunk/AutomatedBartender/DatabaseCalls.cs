@@ -18,9 +18,9 @@ namespace AutomatedBartender
                                    "database=Bartender; " +
                                    "connection timeout=30");*/
 
-            SqlConnection myConnection = new SqlConnection("user id=External;" +
-                                       "password=mattsucks;server=72.49.95.137;" +
-                                       "Trusted_Connection=false;" +
+            SqlConnection myConnection = new SqlConnection("user id=Matt-VAIO\\Work;" +
+                                       "password=Z;server=localhost;" +
+                                       "Trusted_Connection=true;" +
                                        "database=Bartender; " +
                                        "connection timeout=10");
 
@@ -153,11 +153,26 @@ namespace AutomatedBartender
 
         public void AddMixer(string name)
         {
-            string sqlCmd = "INSERT INTO tblInventory VALUES ('"+name+"',0,0,0)";
-            SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+            string sqlCmd2 = "SELECT @LiquidName=LiquidName FROM tblInventory WHERE LiquidName = '" + name + "'";
+            SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
+            SqlParameter liquidName = cmd2.Parameters.Add("@LiquidName", SqlDbType.VarChar,50);
+            liquidName.Direction = ParameterDirection.Output;
             myConnection.Open();
-            cmd.ExecuteNonQuery();
+            cmd2.ExecuteNonQuery();
             myConnection.Close();
+
+            if (liquidName.Value == DBNull.Value)
+            {
+                string sqlCmd = "INSERT INTO tblInventory VALUES ('" + name + "',0,0,0)";
+                SqlCommand cmd = new SqlCommand(sqlCmd, myConnection);
+                myConnection.Open();
+                cmd.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show(name + " already exists in the system");
+            }
         }
 
         public void UpdateMixer(string name)
@@ -379,7 +394,7 @@ namespace AutomatedBartender
             if (warningMessage != "")
                 System.Windows.Forms.MessageBox.Show("Please contact a system adminstrator, the following drinks are running low: \n\n" + warningMessage);    
 
-            string sqlCmd2 = "UPDATE tblInventory SET Location=-3, Quantity = 0 WHERE Quantity < 35 AND Proof <> 0";
+            string sqlCmd2 = "UPDATE tblInventory SET Location=-3, Quantity = 0 WHERE Quantity < 35 AND Proof <> 0 AND Location > 0";
             SqlCommand cmd2 = new SqlCommand(sqlCmd2, myConnection);
             myConnection.Open();
             cmd2.ExecuteNonQuery();
